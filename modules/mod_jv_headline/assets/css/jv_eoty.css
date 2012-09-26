@@ -1,0 +1,115 @@
+.jv_eoty_wrap{
+	padding:0;
+	margin: 0;
+}
+.jv_eoty_wrap .eotySlider {
+	width:100%;
+	position:relative;
+	height: 100%;
+}
+.jv_eoty_wrap .eotySlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.jv_eoty_wrap .eoty-caption h2{
+	padding: 0;
+	font-family: Tahoma;
+	font-size: 100%;
+	margin: 0;
+	margin: 2px 5px;
+	font-weight: bold;
+	color: #EFEFEF;
+}
+.jv_eoty_wrap .eoty-caption h2 a{
+	color:#FFFFFF !important;
+    font-weight: bold;
+    line-height: 20px;
+}
+.jv_eoty_wrap .eoty-caption .eoty_des_wrap{
+	padding: 0;
+	font-size: 100%;
+	margin: 2px 5px;
+	color: #eee;
+}
+/* If an image is wrapped in a link */
+.jv_eoty_wrap .eotySlider a.eoty-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:60;
+	display:none;
+}
+/* The slices in the Slider */
+.jv_eoty_wrap .eoty-slice {
+	display:block;
+	position:absolute;
+	z-index:50;
+	height:100%;
+}
+/* Caption styles */
+.jv_eoty_wrap .eoty-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#1F1F1F;
+	color:#fff;
+	opacity:0.8; /* Overridden by captionOpacity setting */
+	width:100%;
+	z-index:89;
+}
+.jv_eoty_wrap .eoty-caption p {
+	padding:5px;
+	margin:0;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.jv_eoty_wrap .eoty-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:99;
+	cursor:pointer;
+}
+.jv_eoty_wrap .eoty-directionNav .eoty-prevNav {
+	left:15px;
+	background:url(../images/jv_eoty/arrows.png) no-repeat;
+	height:30px;
+	width:30px;
+	text-indent:-9999px;
+}
+.jv_eoty_wrap .eoty-nextNav {
+	right:15px;
+	height:30px;
+	width:30px;
+	text-indent:-9999px;
+	background:url(../images/jv_eoty/arrows.png) -30px 0 no-repeat;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.jv_eoty_wrap .eoty-controlNav a {
+	position:relative;
+	z-index:99;
+	cursor:pointer;
+	float:left;
+	height:11px;
+	width:14px;
+	margin:0 2px;
+	display:block;
+	text-indent:-9999px;
+	background-color:#666666
+}
+.jv_eoty_wrap .eoty-controlNav {
+	position: absolute;
+	right: 15px;
+	bottom: 10px;
+	z-index: 999;
+	padding: 10px;
+	background-color: #1f1f1f;
+}
+.jv_eoty_wrap .eoty-controlNav  a.active {
+	font-weight:bold;
+	background-color:#333333
+}

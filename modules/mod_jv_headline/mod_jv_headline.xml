@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install method="upgrade" type="module" version="1.5.16">
+	<name>JV Headline</name>
+	<author>ZooTemplate</author>
+	<creationDate>August 18, 2010</creationDate>
+	<copyright>Copyright (C) 2008 - 2010 http://www.ZooTemplate.com. All rights reserved.</copyright>
+	<license>GNU/GPL</license>	
+	<authorEmail>support@ZooTemplate.com</authorEmail>
+	<authorUrl>www.ZooTemplate.com</authorUrl>
+	<version>1.5.17</version>
+	<description>JV_INSTALLATION</description>
+	
+	<files>
+		<filename module="mod_jv_headline">mod_jv_headline.php</filename>
+		<filename>helper.php</filename>
+		<filename>cache.php</filename>
+		<filename>index.html</filename>
+		<filename>thumbnail.inc.php</filename>
+		<filename>changelog.txt</filename>
+		<folder>tmpl</folder>
+		<folder>elements</folder>
+		<folder>assets/</folder>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">en-GB.mod_jv_headline.ini</language>
+	</languages>
+	
+	<params addpath="/modules/mod_jv_headline/elements/">
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="content_type" type="contenttype" default="0" label="Select content" description="Select content"></param>
+		<param name="k2_category" type="k2category" label="K2 Category" description=""></param> 
+		<param name="categories" type="categories" label="Content Category" description="Category" />
+		<param name="menuitem_type" default="default" type="list" label="Select menu item type" description="">
+			<option value="default">Default</option>
+			<option value="current_page">Current page</option>
+			<option value="input_value">Enter value</option>
+		</param>
+		<param name="link_limage" type="radio" default="0" label="Link images" description="Link images">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="input_itemid" type="text" default="0" label="Input item id" description="" />
+		<param name="intro_length" type="text" default="30" label="Introtext Length" description="Introtext Length" />
+		<param name="timming" type="text" default="5000" label="Delay Time" description="Time delay between each content" />
+		<param name="trans_duration" type="text" default="500" label="Transition duration" description="Trasition duration" />              
+		<param name="ordering" type="list" default="created" label="Order By" description="Order By">
+			<option value="created">Recently Added</option>
+			<option value="modified">Recently Modified</option>
+			<option value="ordering">Ordering </option>
+		</param>
+		<param name="sort_order" type="radio" default="desc" label="Sort Order" description="Sort Order">
+			<option value="desc">Descending</option>
+			<option value="asc">Ascending</option>
+		</param>
+		<param name="layout_style" type="stylies" default="jv_slide1" label="Style" description="Style"></param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="jv_news_thumbs" default="images/" label="Thumbs path directory" type="text" description="Thumbs path directory" />
+		<param name="jv_news_height" default="360" label="Height of module" type="text" description="Height of module" />
+		<param name="news_thumb_width" default="300" label="Width of Thumbnail" type="text" description="Width of Thumbnail" />
+		<param name="news_thumb_height" default="200" label="Height of Thumbnail" type="text" description="Height of Thumbnail" />   
+		<param name="news_no_item" default="10" label="No.of Item" type="text" description="No. Of Item" />
+		<param name="news_event_type" type="list" default="mouseover" label="Event type" description="Event type">
+			<option value="click">Click</option>
+			<option value="mouseover">Mouseover</option>
+		</param> 
+		<params name="jv_news_slidebar_width" default="300" label="Width Of SlideBar" type="text" description="Width Of SlideBar" />
+		<param name="news_autorun" type="radio" default="1" label="Autorun" description="Autorun">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="jv_eoty_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" />
+		<param name="jveoty_width" type="text" default="960" label="Module Width" description="Module Width" />
+		<param name="jveoty_height" type="text" default="308" label="Module Height" description="Module Height" />
+		<param name="jveoty_autorun" type="radio" default="1" label="Autorun" description="Autorun">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>     
+		<param name="jveoty_no_item" default="5" label="No.of Item" type="text" description="No. Of Item" />
+		<param name="jveoty_enable_description" type="radio" default="1" label="Enable Description" description="Enable Description">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param> 
+		<param name="jveoty_height_des" type="text" default="50" label="Height Of Description" description="Height Of Description" />
+		<param name="jveoty_enable_link_article" type="radio" default="1" label="Enable Link To Article" description="Enable Link To Article">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="jveoty_enable_btn" type="radio" label="Show Next/Prev Button" description="Show Next/Prev Button" default="1">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param> 
+		<param name="jveoty_no_slice" type="text" label="Number Of Slices" description="Number Of Slices" default="15" />
+		<param name="jveoty_effect_type" type="list" label="Animation Type" description="Animation Type" default="random">
+			<option value="random">Random</option>
+			<option value="sliceDownRight">Slice Down Right</option>
+			<option value="sliceDownLeft">Slice Down Left</option>
+			<option value="sliceUpRight">Slice Up Right</option>
+			<option value="sliceUpLeft">Slice Up Left</option>
+			<option value="sliceUpDown">Slice Up Down</option>
+			<option value="sliceUpDownLeft">Slice Up Down Left</option>
+			<option value="fold">Fold</option>
+			<option value="fade">Fade</option>
+		</param>
+    
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="jv_lago_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" />
+		<param name="jv_lago_height" type="text" default="300" label="Module height" description="" />
+		<param name="jv_lago_main_width" type="text" default="590" label="Main Slideshow Width" description="" /> 
+		<param name="jv_lago_slidebar_width" type="text" default="340" label="Slidebar Width" description="" />
+		<param name="lago_hitem_sliderbar" type="text" default="100" label="Item's height of slidebar" description = "Item's height of slidebar" />
+		<param name="lago_thumb_width" type="text" default="75" label="Thumbnail width" description="Thumbnail width" />
+		<param name="lago_thumb_height" type="text" default="75" label="Thumbnail height" description="Thumbnail height" />
+		<param name="lago_no_item" type="text" default="5" label="Limit Items" description="The number of items to display (default 3)" />				
+		<param name="max_show_item" type="text" default="3" label="Max Nav Items display" description="Max Nav Items display" />
+		<param name="lago_show_next" type="radio" default="0" label="Show button next/pre" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>  
+   
+		<param name="lago_enable_link_apanel" type="radio" default="1" label="Enable link to article in panel" description="Enable link to article in panel">
+			<option value="0">Disable</option>
+			<option value="1">Enable</option>
+		</param>
+		<param name="jv_lago_auto" type="list" default="1" label="Auto play" description="Auto play">
+			<option value='1'>Yes</option>
+			<option value='0'>No</option>
+		</param> 
+		<param name="lago_enable_link_artslidebar" type="radio" default="1" label="Enable link to article in slidebar" description="Enable link to article in slidebar">
+			<option value="0">Disable</option>
+			<option value="1">Enable</option>
+		</param>   
+		<param name="lago_animation" default="jvslideshow" type="list" label="Animation duration" description ="Animation duration">
+			<option value="jvslideshow">JV slideshow</option>
+			<option value="fadeslideleft">Fade right to left</option>
+			<option value="fadeslideright">Fade left to right</option>
+			<option value="continuoushorizontal">Continuous right to left</option>
+			<option value="continuoushorizontalright">Continuous left to right</option>
+			<option value="continuousvertical">Continuous bottom to up</option>
+			<option value="continuousverticalbuttom">Continous top to down</option>
+		</param> 
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="jv_sello2_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" />
+		<param name="jv_sello2_height" default="140" type="text" label="Module height" description="" />
+		<param name="jv_sello2_width" default="915" type="text" label="Module width" description="" />
+		<param name="sello2_no_items_per_line" type="text" default="2" label="Number items per line" description="Number items per line.  Only for slideshow4" />
+		<param name="sello2_thumb_width" type="text" default="168" label="Thumbnail Width" description="" />
+		<param name="sello2_thumb_height" type="text" default="69" label="Thumbnail Height" description="" />
+		<param name="sello2_no_item" default="10" label="No.of Item" type="text" description="No. Of Item" />
+		<param name="sello2_show_next" type="radio" default="1" label="Show button next/pre" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+   
+		<param name="sello2_readmore" type="radio" default="1" label="Read more" description="Show readmore">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="sello2_autorun" type="radio" default="1" label="Autorun" description="Autorun">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		
+		<param name="@spacer" type="spacer" default="" label="" description="" />  
+		<param name="jv_sello1_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" /> 	
+		<param name="jv_sello1_width" default="980" type="text" label="Module width" description="" /> 
+		<param name="sello1_imgslide_height" default="340" type="text" label="Height of image slideshow" description="" />
+		<param name="sello1_imgslide_width" default="980" type="text" label="Width of image slideshow" description="Width of image slideshow" />
+		<param name="sello1_no_item" default="8" label="No.of Item" type="text" description="No. Of Item" />
+		<param name="sello1_animation" default="jvslideshow" type="list" label="Animation duration" description ="Animation duration">
+			<option value="jvslideshow">JV slideshow</option>
+			<option value="fadeslideleft">Fade right to left</option>
+			<option value="fadeslideright">Fade left to right</option>
+			<option value="continuoushorizontal">Continuous right to left</option>
+			<option value="continuoushorizontalright">Continuous left to right</option>
+			<option value="continuousvertical">Continuous bottom to up</option>
+			<option value="continuousverticalbuttom">Continous top to down</option>
+		</param>  
+       
+		<param name="sello1_thumb_width" type="text" default="102" label="Thumbnail Width" description="" />
+		<param name="sello1_thumb_height" type="text" default="38" label="Thumbnail Height" description="" />
+		<param name="sello1_show_next" type="radio" default="1" label="Show button next/pre" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+		<param name="sello1_readmore" type="radio" default="1" label="Read more" description="Show readmore">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="jv_maju_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" />
+		<param name="jv_maju_width" default="640" type="text" label="Module Width" description ="" />
+		<param name="jv_maju_height" default="306" type="text" label="Module Height" description ="" />
+		<param name="maju_thumb_width" type="text" default="56" label="Thumbnail Width" description="" />
+		<param name="maju_thumb_height" type="text" default="45" label="Thumbnail Height" description="" />
+		<param name="maju_no_item" default="4" label="No.of Item" type="text" description="No. Of Item" />
+		<param name="maju_animation" default="jvslideshow" type="list" label="Animation duration" description ="Animation duration">
+			<option value="jvslideshow">JV slideshow</option>
+			<option value="fadeslideleft">Fade right to left</option>
+			<option value="fadeslideright">Fade left to right</option>
+			<option value="continuoushorizontal">Continuous right to left</option>
+			<option value="continuoushorizontalright">Continuous left to right</option>
+			<option value="continuousvertical">Continuous bottom to up</option>
+			<option value="continuousverticalbuttom">Continous top to down</option>
+		</param> 
+     
+		<param name="maju_show_next" type="radio" default="0" label="Show button next/pre" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+		<param name="maju_readmore" type="radio" default="1" label="Read more" description="Show readmore">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="jv_jv7_main_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" />
+		<param name="jv7_main_width" default="644" type="text" label="Main Item Width" description =""  />
+		<param name="jv7_height" default="300" type="text" label="Module Height" description ="" />   
+		<param name="jv7_no_item" default="10" label="No.of Item" type="text" description="No. Of Item" />
+		<param name="jv7_show_next" type="radio" default="1" label="Show button next/pre" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+     
+		<param name="jv7_autorun" type="radio" default="1" label="Autorun" description="Autorun">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="jv7_readmore" type="radio" default="1" label="Read more" description="Show readmore">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>    
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="jv_pedon_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" />
+		<param name="jv_pedon_width" default="640" type="text" label="Module Width" description ="" />
+		<param name="jv_pedon_height" default="306" type="text" label="Height Of Main Content" description ="" />
+		<param name="pedon_thumb_width" type="text" default="84" label="Thumbnail Width" description="" />
+		<param name="pedon_thumb_height" type="text" default="35" label="Thumbnail Height" description="" />
+		<param name="pedon_no_item" default="6" label="No.of Item" type="text" description="No. Of Item" />
+		<param name="pedon_animation" default="fadeslideright" type="list" label="Animation duration" description ="Animation duration">
+			<option value="jvslideshow">JV slideshow</option>
+			<option value="fadeslideleft">Fade right to left</option>
+			<option value="fadeslideright">Fade left to right</option>
+			<option value="continuoushorizontal">Continuous right to left</option>
+			<option value="continuoushorizontalright">Continuous left to right</option>
+			<option value="continuousvertical">Continuous bottom to up</option>
+			<option value="continuousverticalbuttom">Continous top to down</option>
+		</param> 
+     
+		<param name="pedon_show_next" type="radio" default="1" label="Show button next/pre" description="">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+		<param name="pedon_readmore" type="radio" default="1" label="Read more" description="Show readmore">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>	 
+		<param name="jv_jv9_main_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" />
+		<param name="jv9_main_width" type="text" default="960" label="Module width" description="Module width" />
+		<param name="jv9_main_height" type="text" default="320" label="Module height" description="Module height" />	 
+		<param name="jv9_expand_width" type="text" default="700" label="Width of Expand Item" description="Width Of Expand Item" />
+		<param name="jv9_height_desc" type="text" default="80" label="Height Of Description" description="Height Of Description" />
+		<param name="jv9_no_item" type="text" default="5" label="No Items" description="No Items" />
+		<param name="jv9_eventtype" type="list" default="mouseenter" label="Event type" description="Event type">
+			<option value="click">Click</option>
+			<option value="mouseenter">Mouse Over</option>
+		</param> 
+		<param name="zt_flow_thumbs" type="text" default="images/" label="Thumbs path directory" description="Thumbs path directory" />
+		<param name="zt_flow_width" default="700" type="text" label="Module Width" description ="" />
+		<param name="zt_flow_height" default="230" type="text" label="Height Of Main Content" description ="" />
+		<param name="zt_flow_thumb_width" type="text" default="350" label="Thumbnail Width" description="" />
+		<param name="zt_flow_thumb_height" type="text" default="230" label="Thumbnail Height" description="" />
+		<param name="zt_flow_no_item" default="6" label="No.of Item" type="text" description="No. Of Item" />
+		<param name="zt_flow_duration" default="4000" label="Transaction" type="text" description="transaction" />
+		<param name="zt_play" default="1" type="radio" label="Auto Play" description ="Auto Play">
+		   <option value="1">Yes</option>
+		   <option value="0">No</option>
+		</param>
+		<param name="zt_flow_show_next" type="radio" default="1" label="Show button next/pre" description="">
+			   <option value="0">Hide</option>
+			   <option value="1">Show</option>
+		</param>
+		<param name="zt_flow_readmore" type="radio" default="1" label="Read more" description="Show readmore">
+				 <option value="0">No</option>
+				 <option value="1">Yes</option>
+		</param> 
+		<param name="cache_thumb" type="text" default="900" label="Thumbnail Cache Time" description="The time before the thumbnail images is recached" />
+		<param name="clearCache" type="cache" label=" " description=" " />
+	</params>
+	<params group="advanced">
+		<param name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</param> 
+	</params>
+</install>

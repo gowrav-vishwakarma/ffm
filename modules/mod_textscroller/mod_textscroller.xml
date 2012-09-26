@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.7" client="site" method="upgrade">
+	<name>Text Scroller</name>
+	<author>Emir Sakic</author>
+	<creationDate>November 2011</creationDate>
+	<copyright>Copyright (C) Emir Sakic 2008-2011. All Rights Reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>emir@sakic.net</authorEmail>
+	<authorUrl>www.sakic.net</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[<h3>Text Scroller by Sakic.Net</h3><b>Text Scroller</b> displays and continuously scrolls through a selected article.<br />Featuring parameter options for size, autoplay, scrolling speed and pausing on mouse-over.<br /><br />For scrolling through multiple articles, banners, RSS feeds and Twitter posts get <a href="http://www.sakic.net/products/ajax_scroller/">AJAX Scroller</a> - advanced slider with dynamic loading of unlimited number of items. No overhead, great performance and user friendliness. Check out the <a href="http://joomla17.sakic.net/ajax-scroller/">DEMO</a>.<br /><br />Visit <a href="http://www.sakic.net/">http://www.sakic.net</a> for more exciting Joomla extensions.<br /><br />]]></description>
+	<files>
+		<folder>assets</folder>
+		<folder>helpers</folder>
+		<filename>index.html</filename>
+		<filename module="mod_textscroller">mod_textscroller.php</filename>
+	</files>
+	<params>
+		<param name="article_id" type="text" default="32" label="Article ID" description="ID of the article to scroll through" />
+		<param name="text_type" type="list" default="both" label="Text to display" description="Display article intro or full text or both">
+			<option value="introtext">Introtext</option>
+			<option value="fulltext">Fulltext</option>
+			<option value="both">Introtext and Fulltext</option>
+		</param>
+		<param name="width" type="text" default="100%" label="Module width" description="Module width in pixels or percents" />
+		<param name="height" type="text" default="200" label="Module height" description="Module height in pixels" />
+		<param name="scrollbar" type="radio" default="0" label="Scrollbar visible" description="Show the scrollbar">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="autoplay" type="radio" default="1" label="Auto-play" description="Scroll automatically">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="time_down" type="text" default="20" label="Scroll time down" description="Time to scroll down, lower number for faster scrolling" />
+		<param name="time_up" type="text" default="200" label="Scroll time up (ms)" description="Time to scroll up, in milliseconds" />
+		<param name="pause_time" type="text" default="500" label="Pause time (ms)" description="Pause time between the scrolls, in milliseconds" />
+		<param name="mouseover_pause" type="radio" default="1" label="Pause on mouse-over" description="Pause the scrolling on mouse over">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="moduleclass_sfx" type="text" default="" label="Module class suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="article_id" type="text" default="32" label="Article ID" description="ID of the article to scroll through" />
+				<field name="text_type" type="list" default="both" label="Text to display" description="Display article intro or full text or both">
+					<option value="introtext">Introtext</option>
+					<option value="fulltext">Fulltext</option>
+					<option value="both">Introtext and Fulltext</option>
+				</field>
+				<field name="width" type="text" default="100%" label="Module width" description="Module width in pixels or percents" />
+				<field name="height" type="text" default="200" label="Module height" description="Module height in pixels" />
+				<field name="scrollbar" type="radio" default="0" label="Scrollbar visible" description="Show the scrollbar">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="autoplay" type="radio" default="1" label="Auto-play" description="Scroll automatically">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="time_down" type="text" default="20" label="Scroll time down" description="Time to scroll down, lower number for faster scrolling" />
+				<field name="time_up" type="text" default="200" label="Scroll time up (ms)" description="Time to scroll up, in milliseconds" />
+				<field name="pause_time" type="text" default="500" label="Pause time (ms)" description="Pause time between the scrolls, in milliseconds" />
+				<field name="mouseover_pause" type="radio" default="1" label="Pause on mouse-over" description="Pause the scrolling on mouse over">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+			<fieldset name="style" label="Style Settings">			
+				<field name="moduleclass_sfx" type="text" default="" label="Module class suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Text Scroller Update Site">http://www.sakic.net/update/mod_textscroller/extension.xml</server>
+	</updateservers>
+</install>

@@ -1,0 +1,173 @@
+.default .ja-tabswrap {
+	border: 1px solid #C9C0B7;
+}
+.default .ja-tabswrap div.ja-tab-content {	
+	width: 95%;
+}
+/* JA Tabs top*/
+.default .ja-tabs-title-top {
+	height: 30px;
+	border-bottom: 1px solid #C9C0B7;
+	position: relative;
+	background: url(grad1.gif) repeat-x top;
+	width:100%;
+}
+
+.default .ja-tabs-title-top ul.ja-tabs-title li {
+	background: none;
+	border: 1px solid #C9C0B7;
+}
+
+.default .ja-tabs-title-top ul.ja-tabs-title li h3 {
+	font-size: 11px;
+	font-weight: bold !important;
+	line-height: 20px;
+	margin: 0;
+	padding: 0 10px;
+	border: 1px solid #F5F4ED;
+	border-bottom: none;
+	background: none;
+	letter-spacing: normal;
+	font-family: "Lucida Grande", Arial, sans-serif;
+
+}
+
+.default .ja-tabs-title-top ul.ja-tabs-title li.hover,
+.default .ja-tabs-title-top ul.ja-tabs-title li.firsthover,
+.default .ja-tabs-title-top ul.ja-tabs-title li.lasthover {
+}
+
+.default .ja-tabs-title-top ul.ja-tabs-title li.active,
+.default .ja-tabs-title-top ul.ja-tabs-title li.firstactive,
+.default .ja-tabs-title-top ul.ja-tabs-title li.lastactive {
+	background: #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.default .ja-tabs-title-top ul li.active h3 ,
+.default .ja-tabs-title-top ul li.firstactive h3,
+.default .ja-tabs-title-top ul li.lastactive h3 {
+	color: #FA6900;
+}
+
+/* JA Tabs left*/
+.default .ja-tabs-title-left {
+	position: relative;
+	float: left;	
+	height: 100%;
+	background: url(17pxblank.gif) repeat-y right #F5F4ED;
+}
+
+.default .ja-tabs-title-left ul.ja-tabs-title li {
+	height: 100%;
+	margin: 0 0 0 1px;
+	padding: 0;
+	cursor: pointer;
+	display: block;
+	background: none;
+}
+
+.default .ja-tabs-title-left ul.ja-tabs-title li h3 {
+	font-size: 11px;
+	font-weight: bold !important;
+	line-height: 30px;
+	margin: 0;
+	padding: 0 10px;
+	background: none;
+	font-family: "Lucida Grande", Arial, sans-serif;
+	letter-spacing: normal;
+}
+
+.default .ja-tabs-title-left ul li.active,
+.default .ja-tabs-title-left ul li.firstactive,
+.default .ja-tabs-title-left ul li.lastactive {
+	background: url(left-active.gif) no-repeat right #FFFFFF;
+}
+
+.default .ja-tabs-title-left ul li.active H3 ,
+.default .ja-tabs-title-left ul li.firstactive H3,
+.default .ja-tabs-title-left ul li.lastactive H3 {
+	color: #FA6900;
+}
+
+
+/* JA Tabs right*/
+.default .ja-tab-panels-right .ja-tab-subcontent {
+	padding-left: 15px !important;
+}
+
+.default .ja-tabs-title-right {
+	background: url(17pxblank2.gif) repeat-y left #F5F4ED;
+}
+
+.default .ja-tabs-title-right ul.ja-tabs-title li {
+	height: 100%;
+	margin: 0 0 0 1px;
+	padding: 0;
+	cursor: pointer;
+	display: block;
+	background: none;
+}
+
+.default .ja-tabs-title-right ul.ja-tabs-title li h3 {
+	font-size: 11px;
+	font-weight: bold !important;
+	line-height: 30px;
+	margin: 0;
+	padding: 0 10px 0 25px;
+	background: none;
+	font-family: "Lucida Grande", Arial, sans-serif;
+	letter-spacing: normal;
+}
+
+.default .ja-tabs-title-right ul li.active,
+.default .ja-tabs-title-right ul li.firstactive,
+.default .ja-tabs-title-right ul li.lastactive {
+	background: url(right-active.gif) no-repeat left #FFFFFF;
+}
+
+.default .ja-tabs-title-right ul li.active H3 ,
+.default .ja-tabs-title-right ul li.firstactive H3,
+.default .ja-tabs-title-right ul li.lastactive H3 {
+	color: #FA6900;
+}
+/* JA Tabs bottom*/
+.default .ja-tabs-title-bottom {
+	width:100%;
+	bottom:0px;
+	height: 30px;
+	border-top: 1px solid #C9C0B7;
+	background: url(grad1.gif) repeat-x top;
+	z-index: 3;
+}
+
+.default .ja-tabs-title-bottom ul.ja-tabs-title li {
+	background: none;
+	border: 1px solid #C9C0B7;
+}
+
+.default .ja-tabs-title-bottom ul.ja-tabs-title li h3 {
+	font-size: 11px;
+	font-weight: bold !important;
+	line-height: 20px;
+	margin: 0;
+	padding: 0 10px;
+	border: 1px solid #F5F4ED;
+	border-top: none;
+	background: none;
+	letter-spacing: normal;
+	font-family: "Lucida Grande", Arial, sans-serif;
+}
+
+.default .ja-tabs-title-bottom ul.ja-tabs-title li.active,
+.default .ja-tabs-title-bottom ul.ja-tabs-title li.firstactive,
+.default .ja-tabs-title-bottom ul.ja-tabs-title li.lastactive {
+	background: #FFFFFF;
+	border-top: 1px solid #FFFFFF;	
+}
+
+.default .ja-tabs-title-bottom ul li.active h3 ,
+.default .ja-tabs-title-bottom ul li.firstactive h3,
+.default .ja-tabs-title-bottom ul li.lastactive h3 {
+	color: #FA6900;
+}

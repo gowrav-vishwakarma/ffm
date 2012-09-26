@@ -1,0 +1,51 @@
+#zt-slide{
+	display: block;
+}
+.zt-container{
+	width: 45%;
+	position: relative;
+	float: left;
+} 
+#zt-items{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	z-index: 100;
+} 
+div.zt-mainContent {
+	float: left;
+	width: 50%;
+	position: relative;
+}
+div#zt-content {
+	left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 5px;
+    visibility: hidden;
+    width: 100%;
+}
+div#zt-content span.zt-title {
+	font-size: 16px;
+	font-weight: bold;
+}
+div#zt-content span.zt-title a{
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	text-decoration: none;
+}
+div#zt-content span.zt-title a:hover{
+	color: #333 !important;
+	text-decoration: none;
+	background: none !important;
+}
+div#zt-next { 
+	float: right;
+	position: relative;
+	right: -4.6em;
+    top: 49%;
+    width: 5%;
+	cursor: pointer;
+	text-align: right;
+}

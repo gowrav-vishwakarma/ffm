@@ -1,0 +1,83 @@
+.adminform .pane-sliders .panel h3{
+	color:#025A8D!important;
+}
+.adminform  .paramlist_key{
+	background:none	!important;
+	border:none!important;
+}
+.zt-group{
+	background:#F3F3F3!important;	
+	color:#025A8D!important;
+	border-right:#CCC solid 5px;
+	border-left:#CCC solid 5px;
+	padding:5px 10px!important;
+}
+.icon-global .paramlist_key{
+	background:url("images/global.png") no-repeat right center !important	;
+	background-color:#FFF !important;
+}
+.icon-menu .paramlist_key{
+	background:url("images/menu.png") no-repeat right center !important	;
+	background-color:#FFF !important;
+}
+.icon-optimize .paramlist_key{
+	background:url("images/global.png") no-repeat right center !important	;
+	background-color:#FFF !important;
+}
+.icon-advanced .paramlist_key{
+	background:url("images/global.png") no-repeat right center !important	;
+	background-color:#FFF !important;
+}
+.paramlist_value{
+	background:#FFF	!important;
+}
+.zt-group-tr td{
+	color:#4D4D4D!important;	
+}
+
+.nav-main {
+	width:400px;
+	height:30px;
+	border-bottom:#CCCCCC solid 5px;
+}
+.nav-item {
+	width:auto;
+	height:19px;
+	float:left;
+	border:#CCCCCC solid 1px;
+	padding:5px;
+	background-color:#F6F6F6;
+	border-bottom:none;
+	cursor:pointer;
+}
+.nav-item a, .nav-item h3 {
+	text-decoration:none;
+	padding:0px;
+	margin:0px;
+	font-size:14px;
+	font-style:italic;
+	color:#333333;
+}
+.nav-active {
+	background-color:#FFF;
+}
+.nav-active a, .nav-active h3{
+	font-style:normal;
+	color:#0B55C4;
+}
+.icon-global {
+	background:url("images/publish_g.png") no-repeat left center !important;
+	padding-left:20px;
+}
+.icon-menu {
+	background:url("images/menu16x.png") no-repeat left center !important;
+	padding-left:20px;
+}
+.icon-optimize {
+	background:url("images/publish_y.png") no-repeat left center !important;
+	padding-left:20px;
+}
+.icon-advanced {
+	background:url("images/publish_x.png") no-repeat left center !important;
+	padding-left:20px;
+}

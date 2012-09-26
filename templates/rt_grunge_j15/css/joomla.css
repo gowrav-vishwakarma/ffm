@@ -1,0 +1,57 @@
+/**
+ * @version		1.5.2 January 10, 2011
+ * @author		RocketTheme, LLC http://www.rockettheme.com
+ * @copyright 	Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @license		http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+ */
+/* Article */
+.rt-articleinfo {width: 100px;float: left;margin-right: 30px;margin-bottom: 30px;}
+.rt-article-inner {margin-left: 130px;}
+.rt-joomla .rt-article {margin: 0;}
+.rt-author, .rt-date-posted, .rt-date-modified {display: block;text-transform: uppercase;text-align: right;font-weight: bold;margin-bottom: 15px;font-size: 10px;letter-spacing: 0.1em;}
+.rt-author span, .rt-date-posted span, .rt-date-modified span {display: block;font-weight: normal;font-size: 12px;line-height: 1.2em;text-transform: none;letter-spacing: normal;}
+.rt-joomla .rt-article-cat {float: left;margin-top: 10px;margin-bottom: 0;}
+.rt-joomla .rt-headline {margin: 15px 0;}
+.rt-comment-text {text-align: right;display: block;margin-bottom: 15px;}
+.rt-joomla .rt-article-bg {border-bottom: none;padding: 0;}
+#rt-mainbody .rt-section-list ul li a {padding:0;display:inline;}
+.contentheading{margin-bottom:5px;}
+.componentheading {font-size: 140%;}
+
+/* Blog Section */
+.rt-joomla .rt-article-links {clear:both;}
+
+/* Typography */
+.rt-joomla .icon {display:block;width:17px;height:16px;float: right;margin-left:3px;}
+#form-login ul li, #com-form-login ul li, ul.rt-more-articles li, .rt-section-list ul li {list-style: none;}
+#form-login ul li a, #com-form-login ul li a, ul.rt-more-articles li a, .rt-section-list ul li a {padding-left: 18px;}
+#com-form-login ul {margin-top: 15px;}
+.rt-joomla .results ol.list {margin-top: 0;}
+.rt-joomla .results ol.list h4 {border: 0;margin-top: 0;margin-bottom: 0;display: inline;}
+.rt-joomla .results ol.list li {padding: 10px 5px;margin-bottom: 5px;}
+.rt-joomla .results ol.list li p {margin-top: 0;font-size: 90%;}
+.rt-joomla .results ol.list .description {margin-bottom: 15px;}
+.rt-joomla .results ol.list li span.small {font-size: 90%;}
+.rt-joomla .user legend, .rt-joomla .contact legend {text-transform: uppercase;font-weight: bold;font-size: 260%;}
+body .rt-poll th, body .rt-poll td {border: none;}
+.pollstableborder td div {border: 0;height: 20px !important;min-width: 2px !important;}
+
+/* Editing */
+.rt-joomla .edit-article fieldset legend {text-transform: uppercase;font-weight: bold;}
+.rt-joomla .edit-article .save {float:none;}
+.rt-joomla .edit-article .inputbox, .rt-joomla .edit-article textarea{border:1px solid #000000;}
+.rt-joomla .edit-article fieldset div {overflow:visible;}
+
+.rt-joomla .edit-article #editor-xtd-buttons .button2-left{float:left;display:block;line-height:25px;padding-right:8px;}
+.rt-joomla .edit-article #editor-xtd-buttons .button2-left div{display:block;line-height:25px;padding-left:10px;position:relative;}
+.rt-joomla .edit-article .button2-left .blank{float:right;}
+
+
+/* Search */
+fieldset {margin-bottom:15px;}
+
+/* Forms */
+#com-form-login #remember,#form-login #form-login-remember #modlgn_remember {float:left;border:0;padding:0;margin:0 5px;height:15px; width:15px;}
+
+/* System */
+#system-message li {background:none;}

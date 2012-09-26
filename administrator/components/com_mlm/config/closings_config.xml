@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="SessionClosing" type="radio" default="0" label="Session Closing" description="Weather use Sesison closing or not. Select Auto for Automatic Session Cloings">
+            <option value="0">Off</option>
+            <option value="1">Mannual</option>
+            <option value="2">Auto</option>
+        </param>
+        <param name="SessionTimings" type="text" default="0,14" label="Session To at time" description="Time to run the session closing each day in 24 Hour pattern"></param>
+        <param name="MidSessionClosing" type="radio" default="0" label="MidSession Closing" description="Weather use MID Sesison closing or not. Select Auto for Automatic Session Cloings">
+            <option value="0">Off</option>
+            <option value="1">Mannual</option>
+            <option value="2">Auto</option>
+        </param>
+        <param name="MainClosing" type="radio" default="1" label="Main Closing" description="The Main Closings are On or not">
+            <option value="0">Off</option>
+            <option value="1">Mannual</option>
+            <option value="2">Auto</option>
+        </param>
+        <param name="UseSimulation" type="radio" default="0" label="Use Simulation/Trimming" description="Weather you want to use simulation /trimming or not">
+            <option value="0">Off</option>
+            <option value="1">Mannual</option>
+            <option value="2">Auto</option>
+        </param>
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="ServiceCharges" type="text" default="5" label="Service Charges in %" description="Service Charges on Total Income to deduct on Payout(Main) Closing"></param>
+        <param name="TDSWithoutPAN" type="text" default="20" label="TDS without PAN %" description="TDS to deduct on payout if joinined without PAN no"></param>
+        <param name="TDSWithPAN" type="text" default="10" label="TDS with PAN %" description="TDS to deduct on payout if joinined with PAN no"></param>
+        <param name="MinIncomeForTDSDeduction" type="text" default="0" label="Start TDS Deducting after Rs" description="When to deduct TDS, minimum limit, Enter 0 to deduct TDS from start"></param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="UpgradationCharges" type="text" default="0" label="Upgradation Charges in %" description="Amount to deduct on each payout to upgrade the ID"></param>
+        <param name="UpgradationChargesTill" type="text" default="0" label="Total Amount to deduct" description="Total Amount to deduct from payout"></param>
+        <param name="UpgradeWhat" type="radio" default="0" label="Upgrade What" description="What Point system to upgrade if all Chrges has been deducted">
+            <option value="PV">PV</option>
+            <option value="BV">BV</option>
+            <option value="RP">RP</option>
+        </param>
+
+        <param name="UpgradePointsWith" type="radio" default="0" label="How Much Upgrade" description="How you want to increase your points selected above">
+            <option value="FixedValue">FixedValue as next textbox</option>
+            <option value="UpgradeKit">as per '_upgrade' kit</option>
+        </param>
+        <param name="FixedUpgradePoints" type="text" default="0" label="Fixed upgrade points" description="How much points you want to increase if it is from fixed type"></param>
+        <param name="UpgradeAnsesstors" type="radio" default="1" label="Upgrade Ansesstors" description="Do this upgrading affacts Ansesstors">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="TDSon" type="radio" default="AfterAllDeductions" label="Deduct TDS On" description="On which amount TDS should be deducted">
+            <option value="TotalClosingAmount">Total Closing Amount</option>
+            <option value="AfterAllDeductions">After Deducting All Other Charges</option>
+        </param>
+        <param name="MinReleasingAmount" type="text" default="0" label="Min Releasing Amount" description="Min Amount to be released"></param>
+        <param name="MinReleasingAmountBasedOn" type="radio" default="MinimumCheque" label="Min Releasing Amount is" description="Total Income based or cheque writing based">
+            <option value="MinimumIncome">Minimum Income Amount </option>
+            <option value="MinimumCheque">Minimum Cheque AMount</option>
+            <option value="AfterServiceChargeAndOtherDeductions">After DEducting Service Charge and Other Deductions</option>
+        </param>
+        <param name="AmountToDeductFromFirstPayout" type="text" default="0" label="Amount to Deduct From First Closing" description="Amount to deduct from first payout main closing"></param>
+        <param name="OtherDeduction" type="text" default="0" label="Other Deduction" description="Either Fixed or in Percentage, Percentage must be defined in terms of fractions like for 1 Percent type '1/100'"></param>
+        <param name="OtherDeductionRemark" type="text" default="Social Welfare Fund" label="Other Deduction Remark" description="Anything for other Deduction Remark"></param>
+    </params>
+</config>

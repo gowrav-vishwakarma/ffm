@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS jos_xcideveloper_projects

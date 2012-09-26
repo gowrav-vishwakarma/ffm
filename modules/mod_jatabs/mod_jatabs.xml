@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>JA Tabs</name>
+	<author>joomlart.com</author>
+	<creationDate>June 2008</creationDate>
+	<copyright>Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.5.0</version>
+	<description>Create a ja tab with module, content ...</description>
+	<files>
+	<filename module="mod_jatabs">mod_jatabs.php</filename>
+	<filename module="mod_jatabs">tmpl/default.php</filename>
+	<filename module="mod_jatabs">elements/jalist.php</filename>
+	<filename module="mod_jatabs">elements/position.php</filename>
+	<filename module="mod_jatabs">helper.php</filename>
+	</files>
+	<params group="advanced">
+		<param name="style" type="folderlist" directory="plugins/content/ja_tabs/themes/" default="" label="Tab style" description="Select a tab style" />
+		<param name="Height" type="text" default="auto" label="Height:" description="Enter the Height of tab module. Exp: 400" />
+		<param name="Width" type="text" default="100%" label="Width:" description="Enter the Width of tab module. Exp: 500" />
+		<param name="position" type="list" default="0" label="Tabs title position" description="Select position of tabs title.">
+			<option value="top">Top</option>
+			<option value="right">Right</option>
+			<option value="bottom">Bottom</option>
+			<option value="left">Left</option>
+		</param>
+		<param name="tHeight" type="text" default="" label="Tabs title Height:" description="Enter the Tabs title Height of tab module" />
+		<param name="tWidth" type="text" default="" label="Tabs title Width:" description="Enter the Tabs title Width of tab module" />
+		<param name="animType" type="list" default="0" label="Animation type:" description="chose animation type?">
+			<option value="animNone">No Animation</option>
+			<option value="animMoveHor">Move Left/Right</option>
+			<option value="animFade">Fade</option>
+			<option value="animMoveVir">Move Up/Down</option>
+		</param>
+		<param name="mouseType" type="radio" default="click" label="Event type :" description="Chose event type?">
+			<option value="click">Click</option>
+			<option value="mouseover">Mouseover</option>
+		</param>
+		<param name="ajax" type="radio" default="false" label="Use ajax :" description="Chose use ajax?">
+			<option value="false">No</option>
+			<option value="true">Yes</option>			
+		</param>
+		<param name="view" type="radio" default="introtext" label="View:" description="Chose view introtext or fulltext.">
+			<option value="introtext">Introtext</option>
+			<option value="fulltext">Fulltext</option>
+		</param>
+		<param name="duration" type="text" default="1000" label="Duration:" description="Enter the duration of tab module" />
+	</params>
+	<params addpath="/modules/mod_jatabs/elements">
+		<param name="type" type="jalist" default="modules" label="Type tabs:" description="Do you want to use the content code to display with tab">
+			<option value="">- Select type -</option>
+			<option value="modules">Modules</option>
+			<option value="content">Contents</option>
+			<option value="module">Module</option>
+			<option value="articlesIDs">Articles-ID</option>
+			<option value="categoryID">Articles-CategoryID</option>
+		</param>
+		<param name="modules-position" type="position" default="" label="Select a position" description="Select module position which will display in tabs" />
+		<param name="module-modulename" type="text" default="mod_search, mod_login" label="List module:" description="Enter module names which are separated by comma. Example: mod_login, mod_search. "/> 
+		<param name="articlesIDs-ids" type="text" default="1, 2, 3, 4" label="ArticleID list:" description="Enter article ids which are separated by comma. Example: 30,31,32 "/>
+		<param name="categoryID-catid" type="text" default="10" label="Category ID:" description=" Enter a category id, articles of this category will be displayed in tabs"/>
+		<param name="content-content" type="textarea" cols="50" rows="8" default="[tab title='Title tab 1']This is tab content 1[/tab]
+ [tab title='Title tab 2']This is tab content 2[/tab]
+ [tab title='Title tab 3']This is tab content 3[/tab]
+ [tab title='Title tab 4']This is tab content 4[/tab]
+" label="Enter content code" description="Enter the content code to display with tab" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+	</params>
+	
+</install>

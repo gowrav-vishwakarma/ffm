@@ -1,0 +1,111 @@
+
+.jv-pedonheadline-wrap {
+	overflow:hidden;
+	width: 100%;
+	clear: both;
+}
+.jv-proshow {
+	overflow:hidden;	
+	position: relative;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+}
+.jv-pedonheadline-wrap .loading{
+    background: url(../images/loading.gif) no-repeat center center;
+}
+.jv-proshow-display {
+	width: 100%;
+}
+.jv-pedonheadline-group {
+	width: 100%;
+	clear: both;
+	overflow: hidden;	
+	margin-bottom: 5px;
+	padding: 5px 0 2px;
+}
+.jv-pedonheadline-group ul {
+	margin: 0;
+	padding: 0;
+}
+.jv-pedonheadline-group ul li {
+	margin: 0 3px 0 2px;
+	padding: 0;
+	float: left;
+	background: none;
+	display: block;
+}
+.jv-pedonheadline-group a {
+	display: block;
+}
+.jv-pedonheadline-group a img {
+	padding: 3px;
+	background: url(../images/img-bg.png) repeat;
+	border: none;
+}
+.jv-pedonheadline-group a:hover img,
+.jv-pedonheadline-group a:active img,
+.jv-pedonheadline-group a:focus img {
+	background: #ff7d2a;
+}
+
+.jv-proshow-intro {
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+	width: 280px;
+}
+.jv-proshow-intro-bb {
+	background: url(../images/box-b.png) no-repeat bottom left;
+	margin-top: 6px;
+	display: inline-block;
+}
+
+.jv-proshow-intro-bt {
+	background: url(../images/box-t.png) no-repeat top left;
+	margin-top: -6px;
+	width: 100%;
+	display: inline-block;
+}
+.jv-proshow-intro-inner {
+	padding: 15px 18px;
+	color: #cbcbcb;
+}
+.jv-proshow-intro-inner h3 {
+	color:#DDDDDC;
+	font-family:Arial;
+	line-height:20px;
+	margin:0;
+	text-transform:uppercase;
+}
+.jv-proshow-intro-inner p {
+	margin: 0.5em 0;
+}
+.jv-proshow-intro-inner a.readon {
+	color: #fff;
+	text-decoration: none;
+	background: url(../images/title-arrow.png) no-repeat 0 6px;
+	padding: 0 0 0 8px;
+	margin: 0;
+	text-shadow: none;
+}
+.jv-proshow-intro-inner a.readon:hover,
+.jv-proshow-intro-inner a.readon:active,
+.jv-proshow-intro-inner a.readon:focus {
+	color: #F58F05;
+	text-shadow: none;
+	background: url(../images/title-arrow.png) no-repeat 0 6px;
+}
+.jv-pedonheadline-wrap .but_pre{
+	background:url(../images/arrow-l.png) no-repeat 5px 9px !important;
+	padding:0px !important;
+	margin: 0 !important;
+	cursor:pointer;
+}
+.jv-pedonheadline-wrap .but_next{
+	background:url(../images/arrow-r.png) no-repeat 5px 9px !important;
+	padding:0px !important;
+	margin: 0 !important;
+	cursor:pointer;
+}
+

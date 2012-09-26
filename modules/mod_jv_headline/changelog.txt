@@ -1,0 +1,76 @@
+Name: JV Headline
+Author: ZooTemplate
+CreationDate: April 2010
+Copyright (c) 2008 - 2009 ZooTemplate. All rights reserved.
+AuthorURL: http://www.ZooTemplate.com/
+Description: JV Headline module by ZooTemplate
+---------------------------------------------------------
+CHANGE LOG:
+
+Legend:
+
+# -> Bug Fix
+$ -> Language fix or change
++ -> Addition
+^ -> Change
+- -> Removed
+! -> Note
+
+------------ 1.5.17 Release [April-14-2011] ------------
+April-14-2011: 
++ Add Style Slide Flow.
+
+------------ 1.5.16 Release [March-04-2011] ------------
+March 04, 2011: HieuJa
+# Fix bug link to file stylesheet and javascript wrong !
+# Fix bug still create Thumb images when it's exist !
++ Add Cache Time and clear cache.
++ Add new folder cache follow module id.
+
+
+------------ 1.5.15 Release [December-16-2010] ------------
+Dec 16, 2010: HieuJa
+# Fix bug path thumb images (from line 178 - 183)
++ Add default path thumb images
+# Warning: Invalid argument supplied for foreach() in helper.php on line 864
+
+------------ 1.5.14 Release [November-19-2010] ------------
++ -> Addition path thumb images
++ -> Addition link images
+
+------------ 1.5.13 Release [October-21-2010] ------------
+# Fix bug link for K2 Items
+
+------------ 1.5.12 Release [September-21-2010] ------------
+^ Update language
+
+------------ 1.5.11 Release [September-15-2010] ------------
+^ Add option select item id
+^ Add option auto play of style jv lago
+
+------------ 1.5.10 Release [September-04-2010] ------------
+^ Add active css class to actived thumbnail(style jv maju,pedon)
+^ Fix bug link to article not working (style jv eoty)
+
+------------ 1.5.9 Release [28-Jun-2010] ------------
+^ Change style JV Slide2 to JV Eoty
+
+------------ 1.5.8 Release [23-Jun-2010] ------------
+# Fix bug css show thumnail in panel slideshow
++ Add option show width of sidebar
+
+------------ 1.5.7 Release [22-Jun-2010] ------------
++ Add display more item in style lago
+
+
+------------ 1.5.6 Release [19-May-2010] ------------
+19-May-2010 Chiennd
++ Add style jv boro
++ Add support k2
+^ Change create thumbnail with external link
+# Fix bug count words of introtext
+
+------------ 1.5.5 Release [26-April-2010] ------------
+26-April-2010 Chiennd
++ Add ordering options
+

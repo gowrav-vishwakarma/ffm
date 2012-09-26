@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="RoyaltyIsSeperate" type="radio" default="1" label="Is Royalty Seperate then all closings" description="Select yes if royalty is not session or mid session basis but monthly basis">
+            <option value="0">NO</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="Royalty1Pair" type="text" default="0" label="Royalty 1 Pair Required" description="Required Pair for royalty Income (Level 1 Royalty)"></param>
+        <param name="Royalty1Fund" type="text" default="0" label="Royalty 1 Fund Reserved" description="Reserved Fund for royalty Income (Level 1 Royalty)"></param>
+
+        <param name="Royalty2Pair" type="text" default="0" label="Royalty 2 Pair Required" description="Required Pair for royalty Income (Level 2 Royalty)"></param>
+        <param name="Royalty2Fund" type="text" default="0" label="Royalty 2 Fund Reserved" description="Reserved Fund for royalty Income (Level 2 Royalty)"></param>
+
+        <param name="Royalty3Pair" type="text" default="0" label="Royalty 3 Pair Required" description="Required Pair for royalty Income (Level 3 Royalty)"></param>
+        <param name="Royalty3Fund" type="text" default="0" label="Royalty 3 Fund Reserved" description="Reserved Fund for royalty Income (Level 3 Royalty)"></param>
+        
+    </params>
+</config>

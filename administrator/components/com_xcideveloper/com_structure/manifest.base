@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD component 1.0//EN" "http://joomla.org/xml/dtd/1.5/component-install.dtd">
+<install type="component" version="1.5.0">
+  <name>{component}</name>
+  <creationDate>{creationDate}</creationDate>
+  <author>{author}</author>
+  <authorEmail>{authorEmail}</authorEmail>
+  <authorUrl>{authorUrl}</authorUrl>
+  <copyright>{copyright}</copyright>
+  <license>{license}</license>
+  <version>{version}</version>
+<releaseDate>{releaseDate}</releaseDate>
+  <description>{description}</description>
+  <installfile/>
+  <uninstallfile/>
+  <install>
+    <sql/>
+  </install>
+  <uninstall>
+    <sql/>
+  </uninstall>
+  <update>
+    <sql/>
+  </update>
+  <files folder="site">
+    <folder>cache</folder>
+    <folder>config</folder>
+    <folder>controllers</folder>
+    <folder>core</folder>
+    <folder>errors</folder>
+    <folder>helpers</folder>
+    <folder>hooks</folder>
+    <folder>language</folder>
+    <folder>libraries</folder>
+    <folder>logs</folder>
+    <folder>models</folder>
+    <folder>third_party</folder>
+    <folder>views</folder>
+    <filename>index.html</filename>
+    <filename>{component}.php</filename>
+  </files>
+  <languages folder="site/language">
+    <language tag="index">english/index.html</language>
+  </languages>
+  <administration>
+    <menu img="component" link="option=com_{component}">{name}</menu>
+    <files folder="admin">
+      <folder>cache</folder>
+      <folder>config</folder>
+      <folder>controllers</folder>
+      <folder>core</folder>
+      <folder>errors</folder>
+      <folder>helpers</folder>
+      <folder>hooks</folder>
+      <folder>language</folder>
+      <folder>libraries</folder>
+      <folder>logs</folder>
+      <folder>models</folder>
+      <folder>third_party</folder>
+      <folder>views</folder>
+	  {systemfolder}
+      <filename>config.xml</filename>
+      <filename>index.html</filename>
+      <filename>{component}.php</filename>
+    </files>
+    <languages folder="admin/language">
+      <language tag="index">english/index.html</language>
+    </languages>
+  </administration>
+  <params>
+    <param name="your_global_param" type="radio" label="Your Global Param" default="Param Value 1"/>
+  </params>
+</install>

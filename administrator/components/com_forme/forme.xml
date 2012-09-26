@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5" method="upgrade">
+	<name>forme</name>
+	<creationDate>07/02/2008</creationDate>
+	<author>www.rsjoomla.com</author>
+	<copyright>(C) 2007 www.rsjoomla.com</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
+	<authorEmail>alex@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0.6</version>
+	<description>With RSform! you can add forms.</description>
+
+	<installfile>install.forme.php</installfile>
+	<uninstallfile>uninstall.forme.php</uninstallfile>
+
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">install.forme.utf8.sql</file>
+			<file driver="mysql">install.forme.nonutf8.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">uninstall.forme.sql</file>
+			<file driver="mysql">uninstall.forme.sql</file>
+		</sql>
+	</uninstall>
+	
+	<files folder="site">
+		<filename>forme.php</filename>
+		<filename>forme.html.php</filename>
+		<filename>forme.class.php</filename>
+		<filename>index.html</filename>
+		<folder>languages</folder>
+		<folder>uploads</folder>
+		<folder>images</folder>
+		<folder>fonts</folder>
+		<folder>calendar</folder>
+	</files>
+
+	<administration>
+		<menu>RSform!</menu>
+		
+		<submenu>
+		  <menu link="option=com_forme&amp;task=forms">Manage Forms</menu>
+		  <menu link="option=com_forme&amp;task=listdata">Manage Submissions</menu>
+		  <menu link="option=com_forme&amp;task=restore">Restore</menu>
+		  <menu link="option=com_forme&amp;task=update">Updates</menu>
+		</submenu>
+	
+	
+		<files>
+			<filename>install.forme.php</filename>
+			<filename>uninstall.forme.php</filename>
+			<filename>install.forme.utf8.sql</filename>
+			<filename>install.forme.nonutf8.sql</filename>
+			<filename>uninstall.forme.sql</filename>
+		</files>
+		
+		<files folder="admin">
+			<filename>admin.forme.php</filename>
+			<filename>admin.forme.html.php</filename>
+			<filename>toolbar.forme.php</filename>
+			<filename>toolbar.forme.html.php</filename>
+			<filename>index.html</filename>
+			<filename>style.css</filename>
+			<folder>images</folder>
+			<folder>help</folder>
+		</files>
+	</administration>
+
+  <params>
+		<param name="fid" type="text" size="60" default="" label="Form id :" description="The form id for this menu item" />
+	</params>
+</install>

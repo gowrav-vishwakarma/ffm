@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="SendSMS" type="list" default="1" label="Send SMS" description="Weather to send SMS or not">
+            <option value="0">No</option>
+            <option value="1">On New Joining</option>
+            <option value="2">On Joining And Closing</option>            
+        </param>
+        <param name="SMSUser" type="text" default="" label="SMS User" description="Sammrat SMS API User ID"></param>
+        <param name="SMSPassword" type="password" default="" label="Password" description="Sammrat SMS API Password"></param>
+        <param name="SENDERID" type="text" default="" label="Sender ID" description="Your Sender ID to use"></param>
+    </params>
+</config>

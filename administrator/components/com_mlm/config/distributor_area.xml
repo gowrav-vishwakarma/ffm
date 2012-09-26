@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="ContactNumberInDataView" type="radio" default="0" label="Show Contact Numbers In Data View" description="Weather To Show Mobile nos in data view or not">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="RowsInData" type="text" default="25" label="Pagination Rows in Any Table View" description="How many lines of data in a table you want in any distributor_area views"></param>
+        <param name="StatementLayout" type="text" default="default" label="Layout for Specific Views" description="Layout name specific to a company, used wherever needed, if left blank 'default' name is used"></param>
+        <param name="PaymentReceiptLayout" type="text" default="" label="Layout for Payment Receipt" description="Leave blank for default use or five prefix of Receipt"></param>
+        <param name="AddDistributorfromTree" type="radio" default="0" label="Add Distributor From Tree" description="Provides a blank Tree node at empty place to auto fill registration form, simple :- entry form, from tree">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="PinManagerPasswordProtected" type="radio" default="0" label="Pin Manager for Distributor area Password Protected" description="Pin Manager for Distributor area is Password Protected or not">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+    </params>
+</config>

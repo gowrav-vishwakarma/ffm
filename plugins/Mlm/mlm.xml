@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="Mlm">
+    <name>MLM  - General MLM event manager</name>
+    <author>Xavoc International</author>
+    <creationDate>February 2011</creationDate>
+    <copyright>Copyright (C) 2005 - 2011 Xavoc International. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>info@xavoc.com</authorEmail>
+    <authorUrl>www.xavoc.com</authorUrl>
+    <version>1.0</version>
+    <description>Manage MLM Events</description>
+    <files>
+        <filename plugin="mlm">mlm.php</filename>
+    </files>
+    <params>
+        <param name="send_email" type="list" default="1" label="Send System Emails" description="Send Emails on various MLM System Notifications">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+
+        <param name="send_sms" type="list" default="0" label="Send System Sms" description="Send SMS on various MLM System Notifications">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+
+    </params>
+</install>

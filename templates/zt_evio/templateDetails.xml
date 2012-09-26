@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="template">
+	<name>zt_evio</name>
+	<creationDate>5/23/2011</creationDate>
+	<author>ZooTemplate.com</author>
+	<copyright>ZooTemplate</copyright>
+	<authorEmail>support@zootemplate.com</authorEmail>
+	<authorUrl>www.zootemplate.com</authorUrl>
+	<version>1.5.0</version>
+	<description><![CDATA[<h1>ZT Evio  - The cool template for Software </h1><strong>Thank you very much for using our services.<br />Please check our  <a href="http://www.zootemplate.com" title="Joomla Templates">Joomla Templates</a> Club for any further support.</strong>]]></description>
+	<files>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>params.ini</filename>
+		<filename>index.php</filename>
+		<filename>index.html</filename>
+		<filename>favicon.ico</filename>
+		<filename>component.php</filename>
+		<filename>_default.php</filename>
+		<filename>_mobile.php</filename>
+
+		<folder>libs</folder>
+		<folder>zt_menus</folder>
+		<folder>js</folder>
+		<folder>images</folder>
+		<folder>html</folder>
+		<folder>css</folder>		
+	</files>
+	<positions>
+		<position>muser5</position>
+		<position>muser6</position>
+		<position>msearch</position>
+		<position>mlogin</position>
+		<position>hornav</position>
+		<position>breadcrumb</position>
+		<position>banner</position>
+		<position>right</position>
+		<position>topmenu</position>
+		<position>login</position>
+		<position>inset</position>
+		<position>search</position>
+		<position>inset</position>
+		<position>slideshow</position>
+		<position>highlight1</position>
+		<position>highlight2</position>
+		<position>top1</position>
+		<position>top2</position>
+		<position>footer</position>
+		<position>col1</position>
+		<position>col2</position>
+		<position>col3</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>user5</position>
+		<position>user6</position>
+		<position>user7</position>
+		<position>user8</position>
+		<position>user9</position>
+		<position>user10</position>
+		<position>user11</position>
+		<position>user12</position>
+		<position>user13</position>
+		<position>user14</position>
+		<position>user15</position>
+		<position>user16</position>
+		<position>user17</position>
+		<position>user18</position>
+		<position>user19</position>
+		<position>footer</position>
+		<position>syndicate</position>
+		<position>debug</position>
+	</positions>
+
+	<languages>
+		<language tag="en-GB">en-GB.tpl_zt_evio.ini</language>
+	</languages>
+
+	<administration>
+    	<languages>
+			<language tag="en-GB">admin/en-GB.tpl_zt_evio.ini</language>
+		</languages>
+    </administration>
+
+	<params addpath="/plugins/system/plg_ztools/element">
+		<param name="zt_font" type="list" default="3" label="FONT SIZE" description="SELECT FONT SIZE">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+		</param>
+		<param name="menutype" type="menu" default="mainmenu" label="MENU MODULE" description="MENU TO SHOW" />
+		<param name="zt_menustyle" type="list" default="moo" label="MENU TYPE" description="MENU TYPE">
+			<option value="mega">MegaMenu</option>
+			<option value="moo">MooMenu</option>
+		</param>
+		<param name="spacer@" type="spacer" />
+		<param name="spacer@" type="spacer" value="" default="Only use for MegaMenu" />
+		<param name="xdelay" type="text" size="50" default="700" label="Time Delay" description="Time delay before vanishing." />
+		<param name="xduration" type="text" size="50" default="2000" label="Time duration" description="Time duration." />
+		<param name="xtransition" type="list" default="Fx.Transitions.Bounce.easeOut" label="Transition" description="Transition">
+			<option value="Fx.Transitions.linear">Linear</option>
+			<option value="Fx.Transitions.Quad.easeIn">Quad.easeIn</option>
+			<option value="Fx.Transitions.Quad.easeOut">Quad.easeOut</option>
+			<option value="Fx.Transitions.Quad.easeInOut">Quad.easeInOut</option>
+			<option value="Fx.Transitions.Cubic.easeIn">Cubic.easeIn</option>
+			<option value="Fx.Transitions.Cubic.easeOut">Cubic.easeOut</option>
+			<option value="Fx.Transitions.Cubic.easeInOut">Cubic.easeInOut</option>
+			<option value="Fx.Transitions.Quart.easeIn">Quart.easeIn</option>
+			<option value="Fx.Transitions.Quart.easeOut">Quart.easeOut</option>
+			<option value="Fx.Transitions.Quart.easeInOut">Quart.easeInOut</option>
+			<option value="Fx.Transitions.Quart.easeInOut">Quart.easeInOut</option>
+			<option value="Fx.Transitions.Quint.easeIn">Quint.easeIn</option>
+			<option value="Fx.Transitions.Quint.easeOut">Quint.easeOut</option>
+			<option value="Fx.Transitions.Quint.easeInOut">Quint.easeInOut</option>
+			<option value="Fx.Transitions.Expo.easeIn">Expo.easeIn</option>
+			<option value="Fx.Transitions.Expo.easeOut">Expo.easeOut</option>
+			<option value="Fx.Transitions.Expo.easeInOut">Expo.easeInOut</option>
+			<option value="Fx.Transitions.Circ.easeIn">Circ.easeIn</option>
+			<option value="Fx.Transitions.Circ.easeOut">Circ.easeOut</option>
+			<option value="Fx.Transitions.Circ.easeInOut">Circ.easeInOut</option>
+			<option value="Fx.Transitions.Sine.easeIn">Sine.easeIn</option>
+			<option value="Fx.Transitions.Sine.easeOut">Sine.easeOut</option>
+			<option value="Fx.Transitions.Sine.easeInOut">Sine.easeInOut</option>
+			<option value="Fx.Transitions.Back.easeIn">Back.easeIn</option>
+			<option value="Fx.Transitions.Back.easeOut">Back.easeOut</option>
+			<option value="Fx.Transitions.Back.easeInOut">Back.easeInOut</option>
+			<option value="Fx.Transitions.Bounce.easeIn">Bounce.easeIn</option>
+			<option value="Fx.Transitions.Bounce.easeOut">Bounce.easeOut</option>
+			<option value="Fx.Transitions.Bounce.easeInOut">Bounce.easeInOut</option>
+			<option value="Fx.Transitions.Elastic.easeIn">Elastic.easeIn</option>
+			<option value="Fx.Transitions.Elastic.easeOut">Elastic.easeOut</option>
+			<option value="Fx.Transitions.Elastic.easeInOut">Elastic.easeInOut</option>
+		</param>
+		<param name="spacer@" type="spacer" />
+		<param name="gzip_folder" type="text" size="50" default="zt-assets" label="Optimize Folder" description="Folder where optimized css/js files are stored. (Please note: This folder must be writable)." />
+		<param name="gzip_merge" type="radio" default="1" label="Merge CSS and JS" description="Choose to merge multiple CSS and JS into one file.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="gzip_optimize_css" type="radio" default="0" label="Optimize CSS" description="This feature will optimize all the CSS files used in your website.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="css-exclude" type="exlfiles" rows="5" cols="28" default="" label="Optimize Exclude CSS" description="Add the CSS files name you do NOT want to optimize." />
+		<param name="gzip_optimize_js" type="radio" default="0" label="Optimize JS" description="This feature will optimize all the JS files used in your website.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="js-exclude" type="exlfiles" rows="5" cols="28" default="" label="Optimize Exclude JS" description="Add the JS files name you do NOT want to optimize." />
+		<param name="gzip_optimize_html" type="radio" default="1" label="Optimize HTML" description="This feature will optimize all HTML used in your website.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="spacer@" type="spacer" />
+		<param name="zt_footer" type="radio" default="0" label="COPYRIGHT TEMPLATE" description="COPYRIGHT TEMPLATE DESCRIPTION">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="zt_footer_text" type="text" size="50" default="Copyright (c) 2008 - 2011 Joomla Templates by ZooTemplate.Com" label=" " description=" " />
+		<param name="spacer@" type="spacer" />
+		<param name="zt_fontfeature" type="radio" default="1" label="FONTS FEATURE" description="FONTS FEATURE DESCRIPTION">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="zt_rtl" type="radio" default="0" label="RTL LANGUAGES" description="RTL LANGUAGES DESCRIPTION">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+
+
+
+</install>

@@ -1,0 +1,182 @@
+/*------------------------------------------------------------------------
+* ZT Template 1.5
+* ------------------------------------------------------------------------
+* Copyright (c) 2008-2011 ZooTemplate. All Rights Reserved.
+* @license - Copyrighted Commercial Software
+* Author: ZooTemplate
+* Websites:  http://www.zootemplate.com
+-------------------------------------------------------------------------*/
+html {direction: rtl;}
+
+.rtl img.img_capleft{
+	float: right;
+	margin: 10px 0 0 10px;
+}
+.rtl img.personal {
+	margin: 0 0 0px 10px;
+	float: right;
+}
+ol li {
+	margin-right: 21px;
+	margin-left: 0;
+}
+ul li{
+	padding-left: 0;
+	padding-right: 20px;
+	background: url("../images/rtl/arrow-2.png") no-repeat 99% 6px;
+}
+.rtl ul.menu li {
+	background: url(../images/rtl/arrow-2.png) no-repeat 100% 12px;
+}
+.rtl ul.menu ul {
+	margin: 0px;
+	padding: 0 10px 0 0;
+}
+#zt-footer{float:left;}
+#zt-copyright { float: right;}
+
+/* Mega Menu---------*/
+#menusys_mega li{
+	float: right;
+	width: auto;
+}
+#menusys_mega ul.mega-ul li span.has-image{
+	display: block;
+	background: url(../images/rtl/arrow-2.png) no-repeat right center !important ;
+	padding: 0 15px 0 0;
+}
+.rtl #menusys_mega .megacol .megacol .menusub_mega{
+	margin : -20px -10px 0 0 !important;
+}
+.rtl #menusys_mega .megacol ul li.hasChild {
+	background: url(../images/arrow-rtl.png) no-repeat 0 7px;
+}
+#menusys_mega .megacol{
+	float: right;
+}
+#menusys_mega li ul.mega-ul a span.no-image,
+#menusys_mega li:hover ul.mega-ul a span.no-image {
+	padding: 0;
+	padding-right: 12px;
+	display: block;
+	background: url(../images/rtl/arrow-2.png) no-repeat 100% 9px;
+}
+#menusys_mega .mega-group span.has-image, 
+#menusys_mega .mega-group span.no-image,
+ #menusys_mega .mega-group span.has-image {
+    padding-right: 20px;
+}
+/* Moo Menu---------*/
+#menusys_moo li ul a img{
+	float: right;
+	margin: 9px 5px 0 5px ;
+}
+#menusys_moo {
+	margin: 0;
+	float: right;
+	width: 100%;
+}
+#menusys_moo li {
+	float: right;
+}
+#menusys_moo li ul {
+	right: -999em;
+	left: auto;
+}
+#menusys_moo li ul ul {
+	margin: -2.25em 16.9em 0 0;
+}
+.rtl #menusys_moo li ul li.first-item a,
+.rtl #menusys_moo li ul li.first-item a:hover{
+	width: auto;
+	height: auto;
+	background: url("../images/rtl/arrow-2.png") no-repeat  97% 9px !important;
+}
+#menusys_moo li ul a span{
+	padding: 0;
+	padding-right: 15px !important;
+	width: auto;
+}
+.rtl #menusys_moo li ul a{
+	background: url(../images/rtl/arrow-2.png) no-repeat 97% 10px;
+}
+#menusys_moo li ul a:hover,
+#menusys_moo li ul a:active,
+#menusys_moo li ul a:focus,
+#menusys_moo ul li:hover,
+#menusys_moo ul li.hover,
+#menusys_moo ul li.havesubchildhover,
+#menusys_moo ul li.havesubchild-activehover,
+#menusys_moo ul ul li:hover,
+#menusys_moo ul ul li.hover,
+#menusys_moo ul ul li.havesubchildhover,
+#menusys_moo ul ul li.havesubchild-activehover {
+	background: #f6f6f6  url(../images/rtl/arrow-2.png) no-repeat 97% 10px;
+	
+}	
+#menusys_moo li:hover ul ul, #menusys_moo li:hover ul ul ul,
+#menusys_moo li.hover ul ul, #menusys_moo li.havechildhover ul ul, #menusys_moo li.havechild-activehover ul ul, #menusys_moo li.activehover ul ul,
+#menusys_moo li.hover ul ul ul, #menusys_moo li.havechildhover ul ul ul, #menusys_moo li.havechild-activehover ul ul ul, #menusys_moo li.activehover ul ul ul {
+	right: -999em;
+	left: auto;
+}
+#menusys_moo li:hover ul, #menusys_moo li li:hover ul, #menusys_moo li li li:hover ul,
+#menusys_moo li.hover ul, #menusys_moo li.havechildhover ul, #menusys_moo li.havechild-activehover ul, #menusys_moo li.activehover ul,
+#menusys_moo li li.hover ul, #menusys_moo li li.havesubchildhover ul, #menusys_moo li li.havesubchild-activehover ul, #menusys_moo li li.activehover ul,
+#menusys_moo li li li.hover ul, #menusys_moo li li li.havesubchildhover ul, #menusys_moo li li li.havesubchild-activehover ul, #menusys_moo li li li.activehover ul {
+	right: auto;
+	left: auto;
+}
+
+.rtl .zt-user {float: right;}
+.rtl .zt-box-right {float: left;}
+
+.rtl ul.list li{
+	padding: 3px 15px 3px 0px !important;
+	background: url("../images/rtl/arrow-list.png") no-repeat  99% 10px  !important;
+}
+.rtl ul.list li:hover{
+	background: #f5f4f4 url("../images/rtl/arrow-list.png") no-repeat  99% 10px  !important;
+}
+.rtl ul.latestnews li,
+.rtl ul.mostread li{
+	padding: 3px 20px 3px 0;
+	background: url(../images/rtl/arrow.png) no-repeat 100% 5px;
+}
+.rtl div.icon{
+	right: auto;
+	left: 10px;
+}
+/*
+* Module Class
+*/
+#zt-logo {float: right;}
+#zt-mainmenu{float: right;}
+.rtl a.readmore {right: auto;left:10px;}
+.rtl ul.share{float: left}
+/*Title Flash----------*/
+.rtl #modlgn_username,.rtl #modlgn_passwd{text-align: right;}
+.rtl .jv-titleflash-pagination{float: right; display: inline-block;}
+.rtl .jv-titleflash-pagination li{float: right;}
+.jv-jvtitleflash ul {overflow: hidden;}
+.rtl .breadcrumbs { float: right;}
+.rtl .search{ float: left;   border-right: 1px solid #202020;} 
+.rtl #mod-search-searchword{ float: right;text-align: left;}
+.rtl h2.contentheading{display: inline-block; }
+.rtl #zt-breadcrumb span.first{ float: right;}
+/*
+* Badge
+*/
+.rtl div.badge-new div.badge,
+.rtl div.badge-hot div.badge,
+.rtl div.badge-pich div.badge,
+.rtl div.badge-top div.badge{
+	right: auto;
+	left: 10px;
+}
+.rtl img.img_capleft{
+	float: right;
+	margin: 0 0 10px 10px;
+}
+.rtl .zt-field-submit{	float: left;}
+.rtl .zt-field-greeting{float: left;}

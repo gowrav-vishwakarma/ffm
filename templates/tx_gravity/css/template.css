@@ -1,0 +1,290 @@
+/*******************************************************************
+ * @file       template.css 
+ * @package    ZOE ThemExpert Template framework.
+ * @version   1.5.5 June 01, 2010
+ * @author    ThemeXpert http://www.themexpert.com
+ * @copyright Copyright (C) 2009 - 2010 ThemeXpert.com
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * 
+*******************************************************************/
+/* Default font settings.
+   The font-size percentage is of 16px. (0.75 * 16px = 12px) */
+
+html { font-size:100.01%; }
+body {
+  font-size: 90%;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+/* General class's
+-----------------------------------------------*/
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+/* More advance*/
+.clearfix:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+/* Roof+Head+Top+Feature+bottom+footer Style
+-----------------------------------------------*/
+#tx-roof, #tx-header, #tx-top, #tx-feature, #tx-bottom, #tx-footer{
+   padding: 10px 0;
+}
+
+/* logo Style
+-----------------------------------------------*/
+h1#logo a{
+    background: url(../images/logo.png) no-repeat;
+    width: 238px;
+    height: 75px;
+    margin-left: 10px;
+    display: block;
+    text-indent: -9999px;
+}
+/* Navigation Style
+----------------------------------------------*/
+#tx-navigation { 
+    height: 42px;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    z-index: 999;
+}
+#tx-navigation .tx-alpha {
+    margin-left: 0;
+}
+#tx-navigation .tx-block { padding: 0; margin-bottom: 0;}
+
+/* Header Style
+-----------------------------------------------*/
+#tx-header{
+
+}
+
+/* Top Style
+-----------------------------------------------*/
+#tx-top{
+    padding-bottom: 0;
+}
+#tx-top .tx-block { padding: 0;}
+#tx-tabs .nav li a.current:hover { background-color: none !important;}
+/* Feature Style
+-----------------------------------------------*/
+#tx-feature{
+
+}
+
+/* Main Content top and bottom
+----------------------------------------------*/
+#tx-content-top{
+
+}
+#tx-content-top .tx-alpha,#tx-content-bottom .tx-alpha{
+    margin-left: 0;
+}
+#tx-content-top .tx-omega,#tx-content-bottom .tx-omega{
+    margin-right: 0;
+}
+#tx-content-bottom{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Main Encloser style
+----------------------------------------------------------------*/
+#tx-main-enclose{
+    padding: 15px 0;
+}
+
+/* Main Body
+----------------------------------------------------------------*/
+#tx-mainBody{
+}
+
+/* Article Style
+----------------------------------------------------------------*/
+div.tx-article-content{
+    margin-top: 10px;
+}
+.readon{
+    margin: 10px 10px 0;
+    height: 21px;
+    line-height: 21px;
+    display: inline-block;
+}
+.readon span{
+    height: 21px;
+    line-height: 20px;
+    padding: 1px 16px 0 12px;
+    display: block;
+    margin-left: -9px;
+}
+/* Left + Right common
+----------------------------------------------------------------*/
+#tx-left ul, #tx-right ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#tx-left ul li a, #tx-right ul li a{
+    display: block;
+    padding: 4px 8px;
+    text-decoration: none;
+}
+
+/* Bottom style
+----------------------------------------------------------------*/
+a#toggle{
+    padding: 3px 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+#tx-bottom{
+}
+/* Footer style
+----------------------------------------------------------------*/
+
+
+/* Copyright style
+----------------------------------------------------------------*/
+#tx-copyright{
+    width: 940px;
+    margin: 0 auto;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+a.scroll{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+a.scroll:hover{
+    color: #fff;
+}
+/* Tools style
+----------------------------------------------------------------*/
+#tx-tools { height: 28px;}
+#tx-tools p{
+    margin: 3px 0;
+    position: relative;
+}
+
+/* Login Area
+----------------------------------------------------------------*/
+div.login{
+    text-align: right;
+    left:210px;
+    top: 2px;
+    position: relative;
+    z-index: 99999;
+}
+div.login span#login_btn a{
+    text-decoration: none;
+}
+/* popups */
+div#popup_login{
+    position: absolute;
+    z-index: 1000;
+    width: 530px;
+    display: none;
+    text-align: left;
+    left: 0;
+    top: 0;
+}
+div#popup_login p{
+    width: 50%;
+    float:left;
+    color:#191919;
+}
+div#close_button_login{
+    background: url(../images/close_button.png) no-repeat -24px 0;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position:absolute;
+    right: -10px;
+    top: 15px;
+}
+
+div.login-enclose{
+    background:rgba(0,0,0,0.5);
+    padding: 10px 10px 0;
+    margin: 27px 0 0 0;
+    /***Css3 style*****/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+div.login-enclose ul{
+    list-style: none;
+    margin: 0;
+    padding-left: 15px;
+}
+div.login-enclose ul li{
+    float: left;
+    margin: 5px 10px 5px 0;
+}
+
+div#popup_login ul li a{
+    display:block;
+    text-decoration: none;
+    color: #181818;
+    font-weight: bold;
+    font-size: 13px;
+}
+div#popup_login ul li:last-child{
+    background: url(../images/button-bg.png) repeat-x 0 100% #2b2b2b;
+    padding: 5px;
+    margin: 0;
+}
+div#popup_login ul li:last-child a{
+    color:#fff;
+}
+
+/* Module style
+----------------------------------------------------------------*/
+div.tx-block{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+div.module-encloser{}
+
+form.tx-poll fieldset{
+    border:none;
+    margin: 0;
+    padding: 0;
+}

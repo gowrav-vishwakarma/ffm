@@ -1,0 +1,146 @@
+.jvcarousel{    
+    position:absolute;
+}
+.jvcarousel div{    
+
+}
+.jvcarousel-slide
+{
+    float:left;
+    overflow:hidden;
+    height:100%;
+}
+.jvcarousel_frame{
+    position:relative;
+    overflow:hidden;
+}
+.jvcarousel-item
+{
+    float:left;
+    height:100%;
+    margin: 10px;
+    padding-right:5px;
+    font-size: 11px;
+    font-family: Arial,Tahoma,Helvetica,sans-serif;
+    line-height: 18px;
+    
+}
+.jvcarousel-item div
+{
+    float: left;
+}
+
+
+.jvcarousel_mtitle{
+    font-size: 20px;
+/*  float:left;*/
+    
+}
+.mod_jv_headline .jvcarousel_title {   
+	display:block;   
+    line-height:20px;   
+    margin-bottom: 11px;    
+}
+.mod_jv_headline  span{
+    color:#2A2A2A;
+    font-size:15px;    
+    margin-top:2px;
+}
+.mod_jv_headline  span .jvcarousel_subtitle{
+    padding-top:3px;
+    
+}
+
+.jvcarousel-item img
+{
+    border:5px solid #E5E5E5;
+    float:left;
+    margin:0 20px 10px 0;
+}
+.mod_jv_headline .readmore
+{   
+    height:20px;
+    display:block;
+    width: 100%;
+/*  float: none;*/
+}
+
+.mod_jv_headline a {
+color:#3B5468;
+text-decoration:none;
+}
+.mod_jv_headline a:hover, a:focus{
+    color:#000000;
+    text-decoration:underline;
+}
+.jvcarousel-item p
+{
+    margin: 0;  
+}
+.handles
+{
+    float: left;
+    margin:10px 0 0 0px;
+}
+.handles .handles_item
+{
+    background:#668B00 none repeat scroll 0 0;
+    color:#FFF;
+    cursor:pointer;
+    float:left;
+    height:10px;
+    line-height:10px;
+    margin:0 5px 0 0;
+    overflow:hidden;
+    width:10px;
+	font-size: 8px;
+    text-align: center;
+}
+span.next,
+span.pre {
+	float:left;
+	cursor:pointer;
+	margin:0 5px 0 0;
+	font-size: 11px;
+	width:18px;
+	text-indent: -999em;
+	line-height:10px;
+}
+span.next {
+	background: url(../images/next.jpg) no-repeat 0 0;
+}
+span.pre {
+	background: url(../images/pre.jpg) no-repeat 0 0;
+}
+.jvcarousel-pagi
+{
+    float: right;
+}
+.mod_jv_headline .prev
+{
+    float: left;    
+    margin:0 5px 0 0;
+    cursor:pointer;
+    display: block;
+}
+.prev img
+{
+    display: block;
+    
+}
+.next
+{
+    float: left;
+    margin:0 0 0 5px;
+    cursor:pointer;
+    display: block;
+}
+.next img
+{
+    display: block;
+}
+.handles span.active{    
+	background:#EE8D00 none repeat scroll 0 0;
+}
+
+

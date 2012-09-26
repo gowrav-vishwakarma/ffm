@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <state>
+    <params>
+      <param name="font_size" type="text" default="16" />
+      <param name="font_size2" default="16" />
+    </params>
+    <url>
+      <param />
+      ...
+    </url>
+    <advanced>
+      <param />
+      ...
+    </advanced>
+  </state>
+</metadata>
+

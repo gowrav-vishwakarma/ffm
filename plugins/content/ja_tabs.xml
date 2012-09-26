@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>JA Tabs for Joomla! 1.5</name>
+	<author>Joomlart.com</author>
+	<creationDate>April 2008</creationDate>
+	<copyright>Copyright (C) Copyright © 2005 - 2008 JoomlArt.com. All rights reserved.</copyright>
+	<license>http://www.joomlart.com GNU/GPL</license>
+	<authorEmail>info@joomsolutions.com</authorEmail>
+	<authorUrl>http://joomlart.com</authorUrl>
+	<version>1.0</version>
+	<description>Ja Tab for Joomla! 1.5</description>
+	<files>
+		<filename plugin="ja_tabs">ja_tabs.php</filename>		
+		<filename plugin="ja_tabs">ja_tabs/ja_tabs.css</filename>	
+		<filename plugin="ja_tabs">ja_tabs/ja_tabs.js</filename>
+		<filename plugin="ja_tabs">ja_tabs/ajaxloader.php</filename>
+		<filename plugin="ja_tabs">ja_tabs/parser.php</filename>
+		<filename plugin="ja_tabs">ja_tabs/loading.gif</filename>
+
+		<filename plugin="ja_tabs">ja_tabs/themes/default/style.css</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/default/17pxblank.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/default/grad1.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/default/left-active.gif</filename>
+
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/active2.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/active.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/bg_tab2.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/bg_tab.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/grad1.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/grad2.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/left-active.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/right-active.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/barite/style.css</filename>
+		
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/17pxblank.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/17pxblank2.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/grad1.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/grad2.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/tab-active.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/tab-active2.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/left-active.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/right-active.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/tab-sep.gif</filename>
+		<filename plugin="ja_tabs">ja_tabs/themes/kulanite/style.css</filename>
+		
+		<filename plugin="ja_tabs">ja_tabs/themes/teline_ii/style.css</filename>
+	</files>	
+	
+	<params>
+		<param name="style" type="folderlist" directory="plugins/content/ja_tabs/themes/" default="default" label="Default style" description="Select a tab style" />
+	</params>
+</install>

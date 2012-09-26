@@ -1,0 +1,38 @@
+/**
+ * @version		1.5.2 January 10, 2011
+ * @author		RocketTheme, LLC http://www.rockettheme.com
+ * @copyright 	Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @license		http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+ */
+
+/* top Menu */
+#rt-header ul.menu li a {background:none;color:#fff;}
+#rt-header ul.menu li.active a{background-image:none;font-weight:bold;color:#fff;background:#47270A;}
+#rt-header ul.menu li a:hover{background:#47270A;font-weight:bold;color:#fff;text-decoration:none;}
+
+#rt-header ul.menu li.sfHover li a,
+#rt-header ul.menu li li.sfHover li a,
+#rt-header ul.menu li li li.sfHover li a,
+#rt-header ul.menu li li li li.sfHover li a,
+#rt-header ul.menu li li li li li.sfHover li a,
+#rt-header ul.menu li.sfHover li a span
+{background:none;color:#fff;}
+#rt-header ul.menu li li.sfHover a,
+#rt-header ul.menu li li li.sfHover a,
+#rt-header ul.menu li li li li.sfHover a,
+#rt-header ul.menu li li li li li.sfHover a
+{background:#53300C;background-image:none;font-weight:bold;color:#fff;background:#47270A;}
+#rt-header ul.menu li.sfHover li span,
+#rt-header ul.menu li li.sfHover li span,
+#rt-header ul.menu li li li.sfHover li span,
+#rt-header ul.menu li li li li.sfHover li span,
+#rt-header ul.menu li li li li li.sfHover li span
+{background:none;color:#fff;}
+#rt-header ul.menu li li.sfHover span,
+#rt-header ul.menu li li li.sfHover span,
+#rt-header ul.menu li li li li.sfHover span,
+#rt-header ul.menu li li li li li.sfHover span
+{background:#53300C;background-image:none;font-weight:bold;color:#fff;background:#47270A;}
+
+/* Joomla */
+#emailForm legend {color:#000;padding:5px 2px 10px 2px;}

@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install version="1.5.0" type="module" method="upgrade">
+	<name>Art Sexy Lightbox Lite Edition</name>
+	<author>Artetics</author>
+	<creationDate>May 2010</creationDate>
+	<copyright>Copyright (C) 2010 artetics.com. All rights reserved.</copyright>
+	<license>http://www.artetics.com/License/license</license>
+	<authorEmail>info@artetics.com</authorEmail>
+	<authorUrl>www.artetics.com</authorUrl>
+	<version>1.5.3</version>
+	<description><![CDATA[Art Sexy Lightbox: module to show image galleries, single images, external pages with lightbox effect. <br /><br /><br />&copy;&nbsp;<a href="http://www.artetics.com">Artetics.com</a> - Start Point For Your Website.]]></description>
+	<files>
+		<filename module="mod_artsexylightbox">mod_artsexylightbox.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/js/jquery.js</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/js/jquery.1.4.js</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/js/jquery.easing.1.3.js</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/js/sexylightbox.v2.2.jquery.min.js</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/js/sexylightbox.v2.3.4.jquery.min.js</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/js/jquery.nc.js</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/css/sexylightbox.css</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/css/oldsexylightbox.css</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/black/bgSexy.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/black/loading.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/black/404.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/black/404html.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/black/bgSexy.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/black/SexyBtLeft.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/black/SexyBtRight.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/black/SexyClose.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/white/bgSexy.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/white/loading.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/white/404.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/white/404html.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/white/bgSexy.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/white/SexyBtLeft.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/white/SexyBtRight.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/white/SexyClose.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_black/bgSexy.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_black/loading.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_black/404.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_black/404html.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_black/bgSexy.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_black/buttons.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_white/bgSexy.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_white/loading.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_white/404.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_white/404html.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_white/bgSexy.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/new_white/buttons.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/rotate-left.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/rotate-right.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/negro/bgSexy.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/negro/loading.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/negro/404.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/negro/404html.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/negro/bgSexy.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/negro/buttons.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/blanco/bgSexy.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/blanco/loading.gif</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/blanco/404.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/blanco/404html.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/blanco/bgSexy.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/images/blanco/buttons.png</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/json.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/LICENSE</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.asido.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.gd.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.gd_hack.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.imagick_ext.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.imagick_ext_hack.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.imagick_shell.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.imagick_shell_hack.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.magick_wand.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.driver.shell.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.image.php</filename>
+		<filename module="mod_artsexylightbox">artsexylightbox/library/asido/class.imagick.php</filename>
+	</files>
+	<params>
+    <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix" />
+    <param name="path" type="text" default="" label="Path to images folder" description="Path to images folder. Relative to Joomla! directory. If you would like to show images from JOOMLA_DIR/images/my_images then you should indicate path as images/my_images "/>
+    <param name="thumbnailPath" type="text" default="" label="Path to thumbnail folder" description="Path to thumbnail folder - if you would like to take thumbnails from specific folder. Relative to Joomla! directory. If you would like to show images from JOOMLA_DIR/images/my_images then you should indicate path as images/my_images "/>
+    <param name="@spacer" type="spacer" default="&lt;br /&gt;&lt;b&gt;Common options &lt;/b&gt;&lt;hr /&gt;" />
+    <param name="loadJQuery" type="list" default="1" label="Load jQuery library" description="Load jQuery javascript library? Choose no if it is always included in your pages">
+      <option value="1">yes</option>
+      <option value="0">no</option>
+    </param>
+    <param name="modal" type="list" default="0" label="Modal" description="Should lightbox be modal or not">
+      <option value="1">yes</option>
+      <option value="0">no</option>
+    </param>
+    <param name="color" type="list" default="black" label="Theme" description="Theme">
+      <option value="black">black</option>
+      <option value="white">white</option>
+      <option value="new_black">black new style</option>
+      <option value="new_white">white new style</option>
+      <option value="spanish_black">spanish black</option>
+      <option value="spanish_white">spanish white</option>
+    </param>
+    <param name="downloadLink" type="list" default="0" label="Download link" description="Show download link in a lightbox or not">
+      <option value="1">yes</option>
+      <option value="0">no</option>
+    </param>
+    <param name="showDuration" type="text" default="200" label="Show duration" description="Show duration" />
+    <param name="closeDuration" type="text" default="400" label="Close duration" description="Close duration" />
+    <param name="moveDuration" type="text" default="800" label="Move duration" description="Move duration" />
+    <param name="resizeDuration" type="text" default="800" label="Resize duration" description="Resize duration" />
+    <param name="showEffect" type="list" default="linear" label="Show effect" description="Show effect">
+	    <option value="linear">linear</option>
+	    <option value="swing">swing</option>
+	    <option value="easeInQuad">easeInQuad</option>
+	    <option value="easeOutQuad">easeOutQuad</option>
+	    <option value="easeInOutQuad">easeInOutQuad</option>
+	    <option value="easeInCubic">easeInCubic</option>
+	    <option value="easeOutCubic">easeOutCubic</option>
+	    <option value="easeInOutCubic">easeInOutCubic</option>
+	    <option value="easeInQuart">easeInQuart</option>
+	    <option value="easeOutQuart">easeOutQuart</option>
+	    <option value="easeInOutQuart">easeInOutQuart</option>
+	    <option value="easeInQuint">easeInQuint</option>
+	    <option value="easeOutQuint">easeOutQuint</option>
+	    <option value="easeInOutQuint">easeInOutQuint</option>
+	    <option value="easeInSine">easeInSine</option>
+	    <option value="easeOutSine">easeOutSine</option>
+	    <option value="easeInOutSine">easeInOutSine</option>
+	    <option value="easeInExpo">easeInExpo</option>
+	    <option value="easeOutExpo">easeOutExpo</option>
+	    <option value="easeInOutExpo">easeInOutExpo</option>
+	    <option value="easeInCirc">easeInCirc</option>
+	    <option value="easeOutCirc">easeOutCirc</option>
+	    <option value="easeInOutCirc">easeInOutCirc</option>
+	    <option value="easeInElastic">easeInElastic</option>
+	    <option value="easeOutElastic">easeOutElastic</option>
+	    <option value="easeInOutElastic">easeInOutElastic</option>
+	    <option value="easeInBack">easeInBack</option>
+	    <option value="easeOutBack">easeOutBack</option>
+	    <option value="easeInOutBack">easeInOutBack</option>
+	    <option value="easeInBounce">easeInBounce</option>
+	    <option value="easeOutBounce">easeOutBounce</option>
+	    <option value="easeInOutBounce">easeInOutBounce</option>
+    </param>
+    <param name="closeEffect" type="list" default="linear" label="Close effect" description="Close effect">
+	    <option value="linear">linear</option>
+	    <option value="swing">swing</option>
+	    <option value="easeInQuad">easeInQuad</option>
+	    <option value="easeOutQuad">easeOutQuad</option>
+	    <option value="easeInOutQuad">easeInOutQuad</option>
+	    <option value="easeInCubic">easeInCubic</option>
+	    <option value="easeOutCubic">easeOutCubic</option>
+	    <option value="easeInOutCubic">easeInOutCubic</option>
+	    <option value="easeInQuart">easeInQuart</option>
+	    <option value="easeOutQuart">easeOutQuart</option>
+	    <option value="easeInOutQuart">easeInOutQuart</option>
+	    <option value="easeInQuint">easeInQuint</option>
+	    <option value="easeOutQuint">easeOutQuint</option>
+	    <option value="easeInOutQuint">easeInOutQuint</option>
+	    <option value="easeInSine">easeInSine</option>
+	    <option value="easeOutSine">easeOutSine</option>
+	    <option value="easeInOutSine">easeInOutSine</option>
+	    <option value="easeInExpo">easeInExpo</option>
+	    <option value="easeOutExpo">easeOutExpo</option>
+	    <option value="easeInOutExpo">easeInOutExpo</option>
+	    <option value="easeInCirc">easeInCirc</option>
+	    <option value="easeOutCirc">easeOutCirc</option>
+	    <option value="easeInOutCirc">easeInOutCirc</option>
+	    <option value="easeInElastic">easeInElastic</option>
+	    <option value="easeOutElastic">easeOutElastic</option>
+	    <option value="easeInOutElastic">easeInOutElastic</option>
+	    <option value="easeInBack">easeInBack</option>
+	    <option value="easeOutBack">easeOutBack</option>
+	    <option value="easeInOutBack">easeInOutBack</option>
+	    <option value="easeInBounce">easeInBounce</option>
+	    <option value="easeOutBounce">easeOutBounce</option>
+	    <option value="easeInOutBounce">easeInOutBounce</option>
+    </param>
+    <param name="moveEffect" type="list" default="easeOutBack" label="Move effect" description="Move effect">
+	    <option value="linear">linear</option>
+	    <option value="swing">swing</option>
+	    <option value="easeInQuad">easeInQuad</option>
+	    <option value="easeOutQuad">easeOutQuad</option>
+	    <option value="easeInOutQuad">easeInOutQuad</option>
+	    <option value="easeInCubic">easeInCubic</option>
+	    <option value="easeOutCubic">easeOutCubic</option>
+	    <option value="easeInOutCubic">easeInOutCubic</option>
+	    <option value="easeInQuart">easeInQuart</option>
+	    <option value="easeOutQuart">easeOutQuart</option>
+	    <option value="easeInOutQuart">easeInOutQuart</option>
+	    <option value="easeInQuint">easeInQuint</option>
+	    <option value="easeOutQuint">easeOutQuint</option>
+	    <option value="easeInOutQuint">easeInOutQuint</option>
+	    <option value="easeInSine">easeInSine</option>
+	    <option value="easeOutSine">easeOutSine</option>
+	    <option value="easeInOutSine">easeInOutSine</option>
+	    <option value="easeInExpo">easeInExpo</option>
+	    <option value="easeOutExpo">easeOutExpo</option>
+	    <option value="easeInOutExpo">easeInOutExpo</option>
+	    <option value="easeInCirc">easeInCirc</option>
+	    <option value="easeOutCirc">easeOutCirc</option>
+	    <option value="easeInOutCirc">easeInOutCirc</option>
+	    <option value="easeInElastic">easeInElastic</option>
+	    <option value="easeOutElastic">easeOutElastic</option>
+	    <option value="easeInOutElastic">easeInOutElastic</option>
+	    <option value="easeInBack">easeInBack</option>
+	    <option value="easeOutBack">easeOutBack</option>
+	    <option value="easeInOutBack">easeInOutBack</option>
+	    <option value="easeInBounce">easeInBounce</option>
+	    <option value="easeOutBounce">easeOutBounce</option>
+	    <option value="easeInOutBounce">easeInOutBounce</option>
+    </param>
+    <param name="resizeEffect" type="list" default="easeOutBack" label="Resize effect" description="Resize effect">
+	    <option value="linear">linear</option>
+	    <option value="swing">swing</option>
+	    <option value="easeInQuad">easeInQuad</option>
+	    <option value="easeOutQuad">easeOutQuad</option>
+	    <option value="easeInOutQuad">easeInOutQuad</option>
+	    <option value="easeInCubic">easeInCubic</option>
+	    <option value="easeOutCubic">easeOutCubic</option>
+	    <option value="easeInOutCubic">easeInOutCubic</option>
+	    <option value="easeInQuart">easeInQuart</option>
+	    <option value="easeOutQuart">easeOutQuart</option>
+	    <option value="easeInOutQuart">easeInOutQuart</option>
+	    <option value="easeInQuint">easeInQuint</option>
+	    <option value="easeOutQuint">easeOutQuint</option>
+	    <option value="easeInOutQuint">easeInOutQuint</option>
+	    <option value="easeInSine">easeInSine</option>
+	    <option value="easeOutSine">easeOutSine</option>
+	    <option value="easeInOutSine">easeInOutSine</option>
+	    <option value="easeInExpo">easeInExpo</option>
+	    <option value="easeOutExpo">easeOutExpo</option>
+	    <option value="easeInOutExpo">easeInOutExpo</option>
+	    <option value="easeInCirc">easeInCirc</option>
+	    <option value="easeOutCirc">easeOutCirc</option>
+	    <option value="easeInOutCirc">easeInOutCirc</option>
+	    <option value="easeInElastic">easeInElastic</option>
+	    <option value="easeOutElastic">easeOutElastic</option>
+	    <option value="easeInOutElastic">easeInOutElastic</option>
+	    <option value="easeInBack">easeInBack</option>
+	    <option value="easeOutBack">easeOutBack</option>
+	    <option value="easeInOutBack">easeInOutBack</option>
+	    <option value="easeInBounce">easeInBounce</option>
+	    <option value="easeOutBounce">easeOutBounce</option>
+	    <option value="easeInOutBounce">easeInOutBounce</option>
+    </param>
+    <param name="@spacer" type="spacer" default="&lt;br /&gt;&lt;b&gt;Thumbnail options &lt;/b&gt;&lt;hr /&gt;" />
+    <param name="previewWidth" type="text" default="" label="Thumbnail width" description="Thumbnail width"/>
+  	<param name="previewHeight" type="text" default="" label="Thumbnail height" description="Thumbnail height"/>
+    <param name="autoGenerateThumbs" type="list" default="0" label="Generate thumbnails" description="Automatically generate thumbnails saving aspect ratio or just resize images">
+      <option value="1">yes</option>
+      <option value="0">no</option>
+    </param>
+    <param name="convertImageOption" type="list" default="0" label="Convert image" description="Generate thumbnails using this convert option">
+      <option value="0">none</option>
+      <option value="resize">resize</option>
+      <option value="crop">crop</option>
+      <option value="crop_resize">crop and resize</option>
+    </param>
+    <param name="cropStart" type="text" default="" label="Crop start" description="Crop start. Format: 100,200"/>
+    <param name="cropEnd" type="text" default="" label="Crop end" description="Crop end. Format: 300,500"/>
+    <param name="arotate" type="text" default="" label="Angle to rotate thumbnails" description="Angle to rotate thumbnails"/>
+    <param name="numberOfImages" type="text" default="" label="Number of images" description="Number of images to show. Leave empty for all images"/>
+    <param name="caption" type="list" default="0" label="Show caption" description="Show caption under thumbnail">
+      <option value="1">yes</option>
+      <option value="0">no</option>
+    </param>
+    <param name="singleOption" type="list" default="0" label="Show single image or text" description="Show single image or text">
+      <option value="full">Show full gallery</option>
+      <option value="singleImage">Single image</option>
+      <option value="singleText">Single text</option>
+    </param>
+    <param name="singleContent" type="text" default="" label="Single image or text" description="Single image or text. Indicate random to show random single image"/>
+    <param name="altTag" type="text" default="" label="Alt tag for images" description="Alt tag for images. If empty then alt tags will be automatically generated"/>
+    <param name="sort" type="list" default="asc" label="Sort images" description="Sort images">
+      <option value="asc">ascending</option>
+      <option value="desc">descending</option>
+    </param>
+  </params>
+  <config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="path" type="text" default="" label="Path to images folder" description="Path to images folder. Relative to Joomla! directory. If you would like to show images from JOOMLA_DIR/images/my_images then you should indicate path as images/my_images "/>
+			<field name="thumbnailPath" type="text" default="" label="Path to thumbnail folder" description="Path to thumbnail folder - if you would like to take thumbnails from specific folder. Relative to Joomla! directory. If you would like to show images from JOOMLA_DIR/images/my_images then you should indicate path as images/my_images "/>
+			<field name="loadJQuery" type="list" default="1" label="Load jQuery library" description="Load jQuery javascript library? Choose no if it is always included in your pages">
+			  <option value="1">yes</option>
+			  <option value="0">no</option>
+			</field>
+			<field name="modal" type="list" default="0" label="Modal" description="Should lightbox be modal or not">
+			  <option value="1">yes</option>
+			  <option value="0">no</option>
+			</field>
+			<field name="color" type="list" default="black" label="Theme" description="Theme">
+			  <option value="black">black</option>
+			  <option value="white">white</option>
+			  <option value="new_black">black new style</option>
+			  <option value="new_white">white new style</option>
+			  <option value="spanish_black">spanish black</option>
+			  <option value="spanish_white">spanish white</option>
+			</field>
+			<field name="downloadLink" type="list" default="0" label="Download link" description="Show download link in a lightbox or not">
+			  <option value="1">yes</option>
+			  <option value="0">no</option>
+			</field>
+			<field name="showDuration" type="text" default="200" label="Show duration" description="Show duration" />
+			<field name="closeDuration" type="text" default="400" label="Close duration" description="Close duration" />
+			<field name="moveDuration" type="text" default="800" label="Move duration" description="Move duration" />
+			<field name="resizeDuration" type="text" default="800" label="Resize duration" description="Resize duration" />
+			<field name="showEffect" type="list" default="linear" label="Show effect" description="Show effect">
+				<option value="linear">linear</option>
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<field name="closeEffect" type="list" default="linear" label="Close effect" description="Close effect">
+				<option value="linear">linear</option>
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<field name="moveEffect" type="list" default="easeOutBack" label="Move effect" description="Move effect">
+				<option value="linear">linear</option>
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<field name="resizeEffect" type="list" default="easeOutBack" label="Resize effect" description="Resize effect">
+				<option value="linear">linear</option>
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<field name="previewWidth" type="text" default="" label="Thumbnail width" description="Thumbnail width"/>
+			<field name="previewHeight" type="text" default="" label="Thumbnail height" description="Thumbnail height"/>
+			<field name="autoGenerateThumbs" type="list" default="0" label="Generate thumbnails" description="Automatically generate thumbnails saving aspect ratio or just resize images">
+			  <option value="1">yes</option>
+			  <option value="0">no</option>
+			</field>
+			<field name="convertImageOption" type="list" default="0" label="Convert image" description="Generate thumbnails using this convert option">
+			  <option value="0">none</option>
+			  <option value="resize">resize</option>
+			  <option value="crop">crop</option>
+			  <option value="crop_resize">crop and resize</option>
+			</field>
+			<field name="cropStart" type="text" default="" label="Crop start" description="Crop start. Format: 100,200"/>
+			<field name="cropEnd" type="text" default="" label="Crop end" description="Crop end. Format: 300,500"/>
+			<field name="arotate" type="text" default="" label="Angle to rotate thumbnails" description="Angle to rotate thumbnails"/>
+			<field name="numberOfImages" type="text" default="" label="Number of images" description="Number of images to show. Leave empty for all images"/>
+			<field name="caption" type="list" default="0" label="Show caption" description="Show caption under thumbnail">
+			  <option value="1">yes</option>
+			  <option value="0">no</option>
+			</field>
+			<field name="singleOption" type="list" default="0" label="Show single image or text" description="Show single image or text">
+			  <option value="full">Show full gallery</option>
+			  <option value="singleImage">Single image</option>
+			  <option value="singleText">Single text</option>
+			</field>
+			<field name="singleContent" type="text" default="" label="Single image or text" description="Single image or text. Indicate random to show random single image"/>
+			<field name="altTag" type="text" default="" label="Alt tag for images" description="Alt tag for images. If empty then alt tags will be automatically generated"/>
+			<field name="sort" type="list" default="asc" label="Sort images" description="Sort images">
+			  <option value="asc">ascending</option>
+			  <option value="desc">descending</option>
+			</field>
+		  </fieldset>
+		</fields>
+		</config>
+</install>

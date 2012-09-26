@@ -1,0 +1,87 @@
+/*******************************************************************
+ * @file       grid.css 
+ * @package    ZOE ThemExpert Template framework.
+ * @version   1.5.5 June 01, 2010
+ * @author    ThemeXpert http://www.themexpert.com
+ * @copyright Copyright (C) 2009 - 2010 ThemeXpert.com
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * 
+*******************************************************************/
+
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+.tx-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+    position: relative;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+.tx-grid-1, .tx-grid-2, .tx-grid-3, .tx-grid-4, .tx-grid-5, .tx-grid-6, .tx-grid-7, .tx-grid-8,.tx-grid-9, .tx-grid-10, .tx-grid-11, .tx-grid-12
+{
+	display:inline;
+	float: left;
+    position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+/* Grid 
+----------------------------------------------------------------------------------------------------*/
+.tx-container .tx-grid-1 {width:60px;}
+.tx-container .tx-grid-2 {width:140px;}
+.tx-container .tx-grid-3 {width:220px;}
+.tx-container .tx-grid-4 {width:300px;}
+.tx-container .tx-grid-5 {width:380px;}
+.tx-container .tx-grid-6 {width:460px;}
+.tx-container .tx-grid-7 {width:540px;}
+.tx-container .tx-grid-8 {width:620px;}
+.tx-container .tx-grid-9 {width:700px;}
+.tx-container .tx-grid-10 {width:780px;}
+.tx-container .tx-grid-11 {width:860px;}
+.tx-container .tx-grid-12 {width:940px;}
+
+/* Grid Prefix for extra left spacing
+----------------------------------------------------------------------------------------------------*/
+.tx-container .tx-prefix-1 {padding-left:80px;}
+.tx-container .tx-prefix-2 {padding-left:160px;}
+.tx-container .tx-prefix-3 {padding-left:240px;}
+.tx-container .tx-prefix-4 {padding-left:320px;}
+.tx-container .tx-prefix-5 {padding-left:400px;}
+.tx-container .tx-prefix-6 {padding-left:480px;}
+.tx-container .tx-prefix-7 {padding-left:560px;}
+.tx-container .tx-prefix-8 {padding-left:640px;}
+.tx-container .tx-prefix-9 {padding-left:720px;}
+.tx-container .tx-prefix-10 {padding-left:800px;}
+.tx-container .tx-prefix-11 {padding-left:880px;}
+
+/* Grid Push Space
+----------------------------------------------------------------------------------------------------*/
+.tx-container .tx-push-1  {left:80px;}
+.tx-container .tx-push-2  {left:160px;}
+.tx-container .tx-push-3  {left:240px;}
+.tx-container .tx-push-4  {left:320px;}
+.tx-container .tx-push-5  {left:400px;}
+.tx-container .tx-push-6  {left:480px;}
+.tx-container .tx-push-7  {left:560px;}
+.tx-container .tx-push-8  {left:640px;}
+.tx-container .tx-push-9  {left:720px;}
+.tx-container .tx-push-10 {left:800px;}
+.tx-container .tx-push-11 {left:880px;}
+
+/* Grid Pull Space
+----------------------------------------------------------------------------------------------------*/
+.tx-container .tx-pull-1 {left:-80px;}
+.tx-container .tx-pull-2 {left:-160px;}
+.tx-container .tx-pull-3 {left:-240px;}
+.tx-container .tx-pull-4 {left:-320px;}
+.tx-container .tx-pull-5 {left:-400px;}
+.tx-container .tx-pull-6 {left:-480px;}
+.tx-container .tx-pull-7 {left:-560px;}
+.tx-container .tx-pull-8 {left:-640px;}
+.tx-container .tx-pull-9 {left:-720px;}
+.tx-container .tx-pull-10 {left:-800px;}
+.tx-container .tx-pull-11 {left:-880px;}

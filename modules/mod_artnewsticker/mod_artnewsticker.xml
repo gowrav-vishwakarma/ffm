@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" position="status" method="upgrade">
+	<name>Art News Ticker</name>
+	<author>artetics.com</author>
+	<creationDate>November 2011</creationDate>
+	<copyright>Copyright (C) 2011 artetics.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@artetics.com</authorEmail>
+	<authorUrl>www.artetics.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[Art News Ticker module shows article titles and links in a cool way. <br /><br />&copy;&nbsp;<a href="http://www.artetics.com">Artetics.com</a> - Start Point For Your Website.]]></description>
+	<files>
+		<filename module="mod_artnewsticker">mod_artnewsticker.php</filename>
+		<filename module="mod_artnewsticker">js/jquery.js</filename>
+		<filename module="mod_artnewsticker">js/jquery.nc.js</filename>
+		<filename module="mod_artnewsticker">js/script.js</filename>
+		<filename module="mod_artnewsticker">css/style.css</filename>
+		<folder module="mod_artnewsticker">images</folder>
+	</files>
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix" />
+		<param name="controls" type="radio" default="1" label="Controls" description="Show next, previous, play, pause buttons">
+			<option value="1">yes</option>
+			<option value="0">no</option>
+		</param>
+		<param name="loadJ" type="list" default="1" label="Load jQuery" description="Load jQuery library or not. Select no if you already have jQuery on your page">
+			<option value="1">yes</option>
+			<option value="0">no</option>
+		</param>
+		<param name="category" type="sql" default="" label="Category" description="Select category" query="SELECT id AS value, title AS category from #__categories ORDER BY title"/>
+		<param name="titleText" type="text" default="Latest" label="Title text" description="Title text" />
+		<param name="direction" type="radio" default="ltr" label="Direction" description="Direction">
+			<option value="ltr">ltr</option>
+			<option value="rtl">rtl</option>
+		</param>
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix" />
+				<field name="controls" type="radio" default="1" label="Controls" description="Show next, previous, play, pause buttons">
+					<option value="1">yes</option>
+					<option value="0">no</option>
+				</field>
+				<field name="loadJ" type="list" default="1" label="Load jQuery" description="Load jQuery library or not. Select no if you already have jQuery on your page">
+					<option value="1">yes</option>
+					<option value="0">no</option>
+				</field>
+				<field name="category" type="sql" default="" label="Category" description="Select category" query="SELECT id AS value, title AS category from #__categories ORDER BY title"/>
+				<field name="titleText" type="text" default="Latest" label="Title text" description="Title text" />
+				<field name="direction" type="radio" default="ltr" label="Direction" description="Direction">
+					<option value="ltr">ltr</option>
+					<option value="rtl">rtl</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+</install>

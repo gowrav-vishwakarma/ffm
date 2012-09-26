@@ -1,0 +1,35 @@
+/**
+ * @package   Somaxiom Template - RocketTheme
+ * @version   1.5.2 January 10, 2011
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+body {word-wrap:break-word;background-position: 50% 0 !important;}
+body.rtl #rt-menu ul, body.rtl #rt-menu ul li {direction:ltr;float:left !important;}
+body span.inset-left, body span.inset-right {width:45%;}
+body .rt-wrapper {overflow:hidden;}
+.rt-normal .rt-container, .rt-flipped .rt-container, .rt-left .rt-container, .rt-right .rt-container {background: none;}
+
+body #rt-top {height: 110px;}
+body #rt-logo {width:155px !important;height:82px !important;float:none !important;position:relative;background:url(../images/iphone/logo.png) no-repeat;}
+body .article-title1 {font-size: 140%;clear:both;}
+body .rt-block {margin: 0 10px;}
+body #rt-main {-webkit-background-size: 105% 100%;}
+
+body #developed-by, body #powered-by {width:148px;font-size:100%;}
+body #developed-by a {background-position-y: 8px;}
+body #powered-by {width: 102px;}
+body #developed-by a, body #powered-by a {margin:0;height:26px;vertical-align:middle;}
+body #rocket {margin-bottom: 15px !important;}
+body #rt-copyright {padding:0;}
+body #gantry-totop {bottom:5px;right:0; position:absolute;}
+body #rt-showcase, body #rt-main {padding:0;}
+body #rt-showcase .rt-container .rt-block {border-radius:0;-webkit-border-radius:0;border:0;-webkit-box-shadow:none;color:#fff;text-shadow:1px 1px 1px #000;}
+body #rt-showcase .readon-wrap1 span {text-shadow:none;}
+body .rt-module-surround {margin: 0;}
+body .rt-joomla .rt-articleinfo {padding: 5px;}
+
+/* Style 1 */
+body #rt-main {background: #C8B694 url(../images/backgrounds/style1/mb12.jpg) center top repeat-y;}

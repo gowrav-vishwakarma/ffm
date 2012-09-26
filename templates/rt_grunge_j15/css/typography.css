@@ -1,0 +1,66 @@
+/**
+ * @version		1.5.2 January 10, 2011
+ * @author		RocketTheme, LLC http://www.rockettheme.com
+ * @copyright 	Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @license		http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+ */
+
+.font-family-optima {font-family: Optima, Lucida, 'MgOpen Cosmetica', 'Lucida Sans Unicode', sans-serif;}
+.font-family-geneva {font-family: Geneva, Tahoma, "Nimbus Sans L", sans-serif;}
+.font-family-helvetica {font-family: Helvetica, Arial, FreeSans, sans-serif;}
+.font-family-lucida {font-family: "Lucida Grande",Helvetica,Verdana,sans-serif;}
+.font-family-georgia {font-family: Georgia, sans-serif;}
+.font-family-trebuchet {font-family: "Trebuchet MS", sans-serif;}
+.font-family-palatino {font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", Times, serif;}
+@font-face {font-family: Bebas;src: url(../fonts/Bebas.eot);}
+@font-face {font-family: "Bebas";src:local("Bebas"), url(../fonts/Bebas.ttf) format("truetype");}
+.font-family-bebas h1, .font-family-bebas h2.title, .font-family-bebas .rt-joomla .user legend, .font-family-bebas .rt-joomla .contact legend, .font-family-bebas .componentheading , .font-family-bebas .edit-article legend {font-family: Bebas,Helvetica,Arial,sans-serif;letter-spacing: normal;font-weight: normal;word-spacing:4px;}
+
+.rt-image {border:1px dashed #000;background:#F4EBD0;padding: 3px;}
+
+em.color {font-style: italic;font-weight: bold;}
+em.bold {font-size: 120%;font-weight: bold;line-height: 135%;font-style: normal;}
+em.bold2 {font-size: 135%;font-weight: bold;line-height: 120%;font-style: normal;}
+
+p.dropcap {overflow: hidden;}
+span.dropcap {font-size: 400%;margin: 0 5px 0 0;line-height: 110%;float: left;display: block;font-family: georgia,garamond,serif;}
+
+span.inset-left, span.inset-right{border:1px dashed #000;background:#F4EBD0;color:#000;display:block;font-size:100%;font-style:italic;padding:12px 8px 8px;position:relative;text-align:center;width:20%;}
+span.inset-right{float:right;margin:25px 0 20px 20px;}
+span.inset-left{float:left;margin:25px 20px 20px 0;}
+span.inset-right-title, span.inset-left-title{background:none;background:#F4EBD0;display:block;font-size:100%;font-weight:bold;left:10px;padding:3px 8px;position:absolute;top:-12px;}
+
+.important {border:1px dashed #000;background:#F4EBD0;margin:25px 0 10px;padding:15px;position:relative;}
+span.important-title {background:#F4EBD0;color:#000000;display:block;font-size:120%;font-weight:bold;left:10px;padding:3px 8px;position:absolute;top:-0.8em;}
+
+pre {background:#F4EBD0;border:1px dashed #000;font-style:italic;overflow:auto;padding:10px;margin: 10px 0;}
+
+.alert, .approved, .attention, .camera, .cart, .doc, .download, .media, .note, .notice, .quote {display: block;margin: 15px 0;background-repeat: repeat-x;background-position: 0 100%;}
+.typo-icon, .quote-l {display: block;padding: 8px 10px 0px 36px;margin: 15px 0;background: no-repeat 10px 12px;}
+.quote-r {display: block;padding: 0 10px 0 0;}
+.approved .typo-icon {background-image: url(../images/typography/approved-icon.png);}
+.alert .typo-icon {background-image: url(../images/typography/alert-icon.png);}
+.attention .typo-icon {background-image: url(../images/typography/attention-icon.png);}
+.camera .typo-icon {background-image: url(../images/typography/camera-icon.png);}
+.cart .typo-icon {background-image: url(../images/typography/cart-icon.png);}
+.doc .typo-icon {background-image: url(../images/typography/doc-icon.png);}
+.download .typo-icon {background-image: url(../images/typography/download-icon.png);}
+.media .typo-icon {background-image: url(../images/typography/media-icon.png);}
+.note .typo-icon {background-image: url(../images/typography/note-icon.png);}
+.notice .typo-icon {background-image: url(../images/typography/notice-icon.png);}
+.quote-l {background-image: url(../images/typography/quote-l.png);}
+.quote-r {background: url(../images/typography/quote-r.png) no-repeat 100% 100%;}
+.alert {color: #D0583F;background-image: url(../images/typography/alert.png);background-color: #FFFBFB;border-bottom: 1px solid #F8C9BB;border-right: 1px solid #F8C9BB;}
+.approved {color: #6CB656;background-image: url(../images/typography/approved.png);background-color: #FAFDF9;border-bottom: 1px solid #C1CEC1;border-right: 1px solid #C1CEC1;}
+.attention {color: #E1B42F;background-image: url(../images/typography/attention.png);background-color: #FFFDF6;border-bottom: 1px solid #E4E4D5;border-right: 1px solid #E4E4D5;}
+.camera {color: #55A0B4;background-image: url(../images/typography/camera.png);background-color: #F6FBFB;border-bottom: 1px solid #C9D5D8;border-right: 1px solid #C9D5D8;}
+.cart {color: #559726;background-image: url(../images/typography/cart.png);background-color: #FCFCFC;border-bottom: 1px solid #D3D3D3;border-right: 1px solid #D3D3D3;}
+.doc {color: #666666;background-image: url(../images/typography/doc.png);background-color: #FFFFFF;border-bottom: 1px solid #E5E5E5;border-right: 1px solid #E5E5E5;}
+.download {color: #666666;background-image: url(../images/typography/download.png);background-color: #FCFCFC;border-bottom: 1px solid #D3D3D3;border-right: 1px solid #D3D3D3;}
+.media {color: #8D79A9;background-image: url(../images/typography/media.png);background-color: #FBF9FD;border-bottom: 1px solid #DBE1E6;border-right: 1px solid #DBE1E6;}
+.note {color: #B76F38;background-image: url(../images/typography/note.png);background-color: #FFFAF6;border-bottom: 1px solid #E6DAD2;border-right: 1px solid #E6DAD2;}
+.notice {color: #6187B3;background-image: url(../images/typography/notice.png);background-color: #FAFCFD;border-bottom: 1px solid #C7CDDA;border-right: 1px solid #C7CDDA;}
+.quote {color: #727272;background-image: url(../images/typography/quote.png);background-color: #F3F3F3;border-bottom: 1px solid #D4D4D4;border-right: 1px solid #D4D4D4;}
+
+/* RTL Support */
+body.rtl span.dropcap {float:right;}

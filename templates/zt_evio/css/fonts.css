@@ -1,0 +1,53 @@
+/*------------------------------------------------------------------------
+* ZT Template 1.5
+* ------------------------------------------------------------------------
+* Copyright (c) 2008-2011 ZooTemplate. All Rights Reserved.
+* @license - Copyrighted Commercial Software
+* Author: ZooTemplate
+* Websites:  http://www.zootemplate.com
+-------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('fonts/bebas/bebas-webfont.eot');
+    src: url('fonts/bebas/bebas-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bebas/bebas-webfont.woff') format('woff'),
+         url('fonts/bebas/bebas-webfont.ttf') format('truetype'),
+         url('fonts/bebas/bebas-webfont.svg#BebasRegular') format('svg');
+}
+@font-face {
+    font-family: 'Vera-webfont';
+    src: url('fonts/bebas/Vera-webfont.eot');
+    src: url('fonts/bebas/Vera-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bebas/Vera-webfont.woff') format('woff'),
+         url('fonts/bebas/Vera-webfont.ttf') format('truetype'),
+         url('fonts/bebas/Vera-webfont.svg#Vera-webfont') format('svg');
+}
+
+h1.componentheading,
+.componentheading {
+	font-size: 200%;
+	font-weight: normal;	
+	font-family: 'BebasRegular', arial, serif;
+}
+h2.contentheading,
+.contentheading {
+	font-size: 140%;
+	font-weight: normal;	
+	font-family: 'BebasRegular', arial, serif;
+}
+.advertisement .title,
+h3.moduletitle span{
+	font-size: 90%;
+	font-weight: normal;	
+	font-family: 'BebasRegular', arial, serif;
+}
+div.box-c h3.title{
+	font-weight: normal;	
+	font-family: 'BebasRegular', arial, serif;
+}
+
+h3.moduletitle{
+	font-size: 150%;
+}
+

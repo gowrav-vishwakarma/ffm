@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>JT SlideShow</name>
+	<author>Ümit Kenan Gönüllü</author>
+	<creationDate>February 2010</creationDate>
+	<copyright>Joomla! Türkçe Eğitim ve Destek Sitesi</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>bilgi@jt.gen.tr</authorEmail>
+	<authorUrl>www.jt.gen.tr</authorUrl>
+	<version>1.6</version>
+	<description>DESCSLIDESHOW</description>
+	<files>
+		<filename module="mod_jt_slideshow">mod_jt_slideshow.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+		<filename>images/index.html</filename>
+		<filename>images/loading.gif</filename>
+		<filename>images/logo.png</filename>
+		<filename>images/next.png</filename>
+		<filename>images/prev.png</filename>
+		<filename>photos/index.html</filename>
+		<filename>photos/photo01.jpg</filename>
+		<filename>photos/photo02.jpg</filename>
+		<filename>photos/photo03.jpg</filename>
+		<filename>photos/photo04.jpg</filename>
+		<filename>photos/photo05.jpg</filename>
+		<filename>scripts/index.html</filename>
+		<filename>scripts/jquery.cycle.all.min.js</filename>
+		<filename>scripts/jquery.easing.1.3.js</filename>
+		<filename>scripts/jquery.easing.compatibility.js</filename>
+		<filename>scripts/jquery.js</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">en-GB.mod_jt_slideshow.ini</language>
+		<language tag="tr-TR">tr-TR.mod_jt_slideshow.ini</language>
+	</languages>
+
+	<params>
+		<param name="folder" type="text" size="50" default="modules/mod_jt_slideshow/photos" label="IMAGE FOLDER" description="DESCIMAGEFOLDER" /> 
+		<param name="showallimages" type="radio" default="0" label="SHOW ALL IMAGES" description="DESCSHOWALLIMAGES">
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="images" type="textarea" default="photo01.jpg\nphoto02.jpg\nphoto03.jpg\nphoto04.jpg\nphoto05.jpg" label="IMAGES" description="DESCIMAGES" cols="50" rows="4" /> 
+		<param name="titles" type="textarea" default="Photo Title 1\nPhoto Title 2\nPhoto Title 3\nPhoto Title 4\nPhoto Title 5" label="TITLES" description="DESCTITLES" cols="50" rows="4" /> 
+		<param name="urls" type="textarea" default="www.jt.gen.tr\nwww.jt.gen.tr\nwww.jt.gen.tr\nwww.jt.gen.tr\nwww.jt.gen.tr" label="URLS" description="DESCURLS" cols="50" rows="4" /> 
+		<param name="linked" type="radio" default="1" label="LINKED URLS" description="DESCLINKEDURLS">
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="target" type="list" default="_blank" label="TARGET" description="DESCTARGET">
+			<option value="_blank">TARGET_BLANK</option> 
+			<option value="_parent">TARGET_PARENT</option> 
+			<option value="_self">TARGET_SELF</option> 
+			<option value="_top">TARGET_TOP</option> 
+		</param>
+		<param name="addhttp" type="radio" default="1" label="ADDHTTP" description="DESCADDHTTP">
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="showcaption" type="radio" default="0" label="CAPTION" description="DESCCAPTION">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="captionposition" type="list" default="bottom" label="CAPTION POSITION" description="DESCCAPTIONPOSITION">
+			<option value="top">Top</option> 
+			<option value="bottom">Bottom</option> 
+		</param>
+		<param name="captionalign" type="list" default="center" label="CAPTIONALIGN" description="DESCCAPTIONALIGN">
+			<option value="left">Left</option> 
+			<option value="center">Center</option> 
+			<option value="right">Right</option> 
+		</param>
+	</params>
+
+	<params group="advanced">
+		<param name="fx" type="list" default="all" label="FX" description="DESCFX">
+			<option value="all">ALL</option>
+			<option value="fade">FADE</option>
+			<option value="blindX">BLINDX</option>
+			<option value="blindY">BLINDY</option>
+			<option value="blindZ">BLINDZ</option>
+			<option value="cover">COVER</option>
+			<option value="curtainX">CURTAINX</option>
+			<option value="curtainY">CURTAINY</option>
+			<option value="fadeZoom">FADEZOOM</option>
+			<option value="growX">GROWX</option>
+			<option value="growY">GROWY</option>
+			<option value="scrollUp">SCROLLUP</option>
+			<option value="scrollDown">SCROLLDOWN</option>
+			<option value="scrollLeft">SCROLLLEFT</option>
+			<option value="scrollRight">SCROLLRIGHT</option>
+			<option value="scrollHorz">SCROLLHORZ</option>
+			<option value="scrollVert">SCROLLVERT</option>
+			<option value="shuffle">SHUFFLE</option>
+			<option value="slideX">SLIDEX</option>
+			<option value="slideY">SLIDEY</option>
+			<option value="toss">TOSS</option>
+			<option value="turnUp">TURNUP</option>
+			<option value="turnDown">TURNDOWN</option>
+			<option value="turnLeft">TURNLEFT</option>
+			<option value="turnRight">TURNRIGHT</option>
+			<option value="uncover">UNCOVER</option>
+			<option value="wipe">WIPE</option>
+			<option value="zoom">ZOOM</option>
+		</param>
+		<param name="timeout" type="text" size="5" default="4000" label="TIMEOUT" description="DESCTIMEOUT" /> 
+		<param name="speed" type="text" size="5" default="1000" label="SPEED" description="DESCSPEED" /> 
+		<param name="delay" type="text" size="5" default="0" label="DELAY" description="DESCDELAY" /> 
+		<param name="speedIn" type="text" size="5" default="null" label="SPEEDIN" description="DESCSPEEDIN" /> 
+		<param name="speedOut" type="text" size="5" default="null" label="SPEEDOUT" description="DESCSPEEDOUT" />
+		<param name="shufflesetting" type="text" size="5" default="null" label="SHUFFLESETTING" description="DESCSHUFFLESETTING" /> 
+		<param name="pagerEvent" type="list" default="click" label="PAGEREVENT" description="DESCPAGEREVENT">
+			<option value="click">Click</option> 
+			<option value="mouseover">Mouse Over</option> 
+		</param>
+		<param name="easing" type="list" default="null" label="EASING" description="DESCEASING">
+			<option value="null">NONE</option>
+			<option value="jswing">jswing</option>
+			<option value="def">def</option>
+			<option value="easeInQuad">easeInQuad</option>
+			<option value="easeOutQuad">easeOutQuad</option>
+			<option value="easeInOutQuad">easeInOutQuad</option>
+			<option value="easeInCubic">easeInCubic</option>
+			<option value="easeOutCubic">easeOutCubic</option>
+			<option value="easeInOutCubic">easeInOutCubic</option>
+			<option value="easeInQuart">easeInQuart</option>
+			<option value="easeOutQuart">easeOutQuart</option>
+			<option value="easeInOutQuart">easeInOutQuart</option>
+			<option value="easeInQuint">easeInQuint</option>
+			<option value="easeOutQuint">easeOutQuint</option>
+			<option value="easeInOutQuint">easeInOutQuint</option>
+			<option value="easeInSine">easeInSine</option>
+			<option value="easeOutSine">easeOutSine</option>
+			<option value="easeInOutSine">easeInOutSine</option>
+			<option value="easeInExpo">easeInExpo</option>
+			<option value="easeOutExpo">easeOutExpo</option>
+			<option value="easeInOutExpo">easeInOutExpo</option>
+			<option value="easeInCirc">easeInCirc</option>
+			<option value="easeOutCirc">easeOutCirc</option>
+			<option value="easeInOutCirc">easeInOutCirc</option>
+			<option value="easeInElastic">easeInElastic</option>
+			<option value="easeOutElastic">easeOutElastic</option>
+			<option value="easeInOutElastic">easeInOutElastic</option>
+			<option value="easeInBack">easeInBack</option>
+			<option value="easeOutBack">easeOutBack</option>
+			<option value="easeInOutBack">easeInOutBack</option>
+			<option value="easeInBounce">easeInBounce</option>
+			<option value="easeOutBounce">easeOutBounce</option>
+			<option value="easeInOutBounce">easeInOutBounce</option>
+		</param>
+		<param name="easeIn" type="list" default="null" label="EASEIN" description="DESCEASEIN">
+			<option value="null">NONE</option>
+			<option value="jswing">jswing</option>
+			<option value="def">def</option>
+			<option value="easeInQuad">easeInQuad</option>
+			<option value="easeOutQuad">easeOutQuad</option>
+			<option value="easeInOutQuad">easeInOutQuad</option>
+			<option value="easeInCubic">easeInCubic</option>
+			<option value="easeOutCubic">easeOutCubic</option>
+			<option value="easeInOutCubic">easeInOutCubic</option>
+			<option value="easeInQuart">easeInQuart</option>
+			<option value="easeOutQuart">easeOutQuart</option>
+			<option value="easeInOutQuart">easeInOutQuart</option>
+			<option value="easeInQuint">easeInQuint</option>
+			<option value="easeOutQuint">easeOutQuint</option>
+			<option value="easeInOutQuint">easeInOutQuint</option>
+			<option value="easeInSine">easeInSine</option>
+			<option value="easeOutSine">easeOutSine</option>
+			<option value="easeInOutSine">easeInOutSine</option>
+			<option value="easeInExpo">easeInExpo</option>
+			<option value="easeOutExpo">easeOutExpo</option>
+			<option value="easeInOutExpo">easeInOutExpo</option>
+			<option value="easeInCirc">easeInCirc</option>
+			<option value="easeOutCirc">easeOutCirc</option>
+			<option value="easeInOutCirc">easeInOutCirc</option>
+			<option value="easeInElastic">easeInElastic</option>
+			<option value="easeOutElastic">easeOutElastic</option>
+			<option value="easeInOutElastic">easeInOutElastic</option>
+			<option value="easeInBack">easeInBack</option>
+			<option value="easeOutBack">easeOutBack</option>
+			<option value="easeInOutBack">easeInOutBack</option>
+			<option value="easeInBounce">easeInBounce</option>
+			<option value="easeOutBounce">easeOutBounce</option>
+			<option value="easeInOutBounce">easeInOutBounce</option>
+		</param>
+		<param name="easeOut" type="list" default="null" label="EASEOUT" description="DESCEASEOUT">
+			<option value="null">NONE</option>
+			<option value="jswing">jswing</option>
+			<option value="def">def</option>
+			<option value="easeInQuad">easeInQuad</option>
+			<option value="easeOutQuad">easeOutQuad</option>
+			<option value="easeInOutQuad">easeInOutQuad</option>
+			<option value="easeInCubic">easeInCubic</option>
+			<option value="easeOutCubic">easeOutCubic</option>
+			<option value="easeInOutCubic">easeInOutCubic</option>
+			<option value="easeInQuart">easeInQuart</option>
+			<option value="easeOutQuart">easeOutQuart</option>
+			<option value="easeInOutQuart">easeInOutQuart</option>
+			<option value="easeInQuint">easeInQuint</option>
+			<option value="easeOutQuint">easeOutQuint</option>
+			<option value="easeInOutQuint">easeInOutQuint</option>
+			<option value="easeInSine">easeInSine</option>
+			<option value="easeOutSine">easeOutSine</option>
+			<option value="easeInOutSine">easeInOutSine</option>
+			<option value="easeInExpo">easeInExpo</option>
+			<option value="easeOutExpo">easeOutExpo</option>
+			<option value="easeInOutExpo">easeInOutExpo</option>
+			<option value="easeInCirc">easeInCirc</option>
+			<option value="easeOutCirc">easeOutCirc</option>
+			<option value="easeInOutCirc">easeInOutCirc</option>
+			<option value="easeInElastic">easeInElastic</option>
+			<option value="easeOutElastic">easeOutElastic</option>
+			<option value="easeInOutElastic">easeInOutElastic</option>
+			<option value="easeInBack">easeInBack</option>
+			<option value="easeOutBack">easeOutBack</option>
+			<option value="easeInOutBack">easeInOutBack</option>
+			<option value="easeInBounce">easeInBounce</option>
+			<option value="easeOutBounce">easeOutBounce</option>
+			<option value="easeInOutBounce">easeInOutBounce</option>
+		</param>
+		<param name="continuous" type="radio" default="0" label="CONTINUOUS" description="DESCCONTINUOUS"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="random" type="radio" default="0" label="RANDOM" description="DESCRANDOM"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="fit" type="radio" default="0" label="FIT" description="DESCFIT"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="containerResize" type="radio" default="1" label="CONTAINERRESIZE" description="DESCCONTAINERRESIZE"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="pause" type="radio" default="1" label="PAUSE" description="DESCPAUSE"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="pauseOnPagerHover" type="radio" default="0" label="PAUSEONPAGEHOVER" description="DESCPAUSEONPAGEHOVER"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="autostop" type="radio" default="0" label="AUTOSTOP" description="DESCAUTOSTOP"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="nowrap" type="radio" default="0" label="NOWRAP" description="DESCNOWRAP"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="randomizeEffects" type="radio" default="1" label="RANDOMIZEEFFECTS" description="DESCRANDOMIZEEFFECTS"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+		<param name="rev" type="radio" default="0" label="REV" description="DESCREV"> 
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param>
+	</params>
+
+	<params group="other">
+		<param name="loadjquery" type="radio" default="1" label="LOAD JQUERY" description="DESCLOADJQUERY">
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param> 
+		<param name="boxname" type="text" default="slideshowbox" label="BOX NAME" description="DESCBOXNAME" /> 
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="imgwidth" type="text" size="10" default="170px" label="IMAGE WIDTH" description="DESCIMAGEWIDTH" />
+		<param name="imgheight" type="text" size="10" default="128px" label="IMAGE HEIGHT" description="DESCIMAGEHEIGHT" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="imgborder" type="radio" default="0" label="IMAGE BORDER" description="DESCIMAGEBORDER">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="imgbordersize" type="text" size="10" default="5px" label="IMAGE BORDER SIZE" description="DESCIMAGEBORDERSIZE" />
+		<param name="imgbordercolor" type="text" size="10" default="#ccc" label="IMAGE BORDER COLOR" description="DESCIMAGEBORDERCOLOR" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="navigationbar" type="radio" default="0" label="NAVIGATION BAR" description="DESCNAVIGATIONBAR">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="navigationbarposition" type="list" default="bottom" label="NAVIGATION BAR POSITION" description="DESCNAVIGATIONBARPOSITION">
+			<option value="top">Top</option> 
+			<option value="bottom">Bottom</option> 
+		</param>
+		<param name="navigationborder" type="radio" default="1" label="NAVIGATION BAR BORDER" description="DESCNAVIGATIONBARBORDER">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="navigationbordercolor" type="text" size="10" default="#ccc" label="NAVIGATION BAR BORDER COLOR" description="DESCNAVIGATIONBARBORDERCOLOR" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="pagination" type="radio" default="0" label="PAGINATION" description="DESCPAGINATION">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="paginationbarposition" type="list" default="top" label="PAGINATION BAR POSITION" description="DESCPAGINATIONBARPOSITION">
+			<option value="top">Top</option> 
+			<option value="bottom">Bottom</option> 
+		</param>
+		<param name="paginationbaralign" type="list" default="center" label="PAGINATION BAR ALIGN" description="DESCPAGINATIONBARALIGN">
+			<option value="caption">Caption Align</option> 
+			<option value="left">Left</option> 
+			<option value="center">Center</option> 
+			<option value="right">Right</option> 
+		</param>
+		<param name="paginationbarborder" type="radio" default="0" label="PAGINATION BAR BORDER" description="DESCPAGINATIONBARBORDER">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="paginationbarbordercolor" type="text" size="10" default="#eee" label="PAGINATION BAR BORDER COLOR" description="DESCPAGINATIONBARBORDERCOLOR" />
+		<param name="paginationitemsborder" type="radio" default="1" label="PAGINATION ITEMS BORDER" description="DESCPAGINATIONITEMSBORDER">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="gallery" type="radio" default="0" label="GALLERY" description="DESCGALLERY">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="gallerywidth" type="text" size="10" default="auto" label="GALLERY WIDTH" description="DESCGALLERYWIDTH" />
+		<param name="galleryposition" type="list" default="top" label="GALLERY POSITION" description="DESCGALLERYPOSITION">
+			<option value="top">Top</option> 
+			<option value="left">Left</option> 
+			<option value="right">Right</option> 
+		</param>
+		<param name="gallerydirection" type="list" default="left" label="GALLERY DIRECTION" description="DESCGALLERYDIRECTION">
+			<option value="left">Left to right</option> 
+			<option value="right">Right to left</option> 
+		</param>
+		<param name="gallerythumbnailboxwidth" type="text" size="10" default="90px" label="THUMBNAIL BOX WIDTH" description="DESCTHUMBNAILBOXWIDTH" />
+		<param name="gallerythumbnailboxheight" type="text" size="10" default="90px" label="THUMBNAIL BOX HEIGHT" description="DESCTHUMBNAILBOXHEIGHT" />
+		<param name="galleryfitthumbnail" type="radio" default="0" label="FIT THUMBNAIL" description="DESCFITTHUMBNAIL">
+			<option value="0">No</option> 
+			<option value="1">Yes</option> 
+		</param> 
+		<param name="gallerythumbnailwidth" type="text" size="10" default="180px" label="THUMBNAIL WIDTH" description="DESCTHUMBNAILWIDTH" />
+		<param name="gallerythumbnailheight" type="text" size="10" default="100%" label="THUMBNAIL HEIGHT" description="DESCTHUMBNAILHEIGHT" />
+		<param name="gallerythumbnailspace" type="text" size="10" default="5px" label="THUMBNAIL SPACE" description="DESCTHUMBNAILSPACE" />
+		<param name="gallerythumbnailborder" type="radio" default="1" label="THUMBNAIL BORDER" description="DESCTHUMBNAILBORDER">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+		<param name="gallerythumbnailbordersize" type="text" size="10" default="3px" label="THUMBNAIL BORDER SIZE" description="DESCTHUMBNAILBORDERSIZE" />
+		<param name="gallerythumbnailbordercolor" type="text" size="10" default="#eee" label="THUMBNAIL BORDER COLOR" description="DESCTHUMBNAILBORDERCOLOR" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="jtslideshowfooter" type="radio" default="1" label="SHOW FOOTER" description="DESCSHOWFOOTER">
+			<option value="0">Hide</option> 
+			<option value="1">Show</option> 
+		</param>
+	</params>
+</install>

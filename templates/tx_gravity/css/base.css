@@ -1,0 +1,27 @@
+/*******************************************************************
+ * @file       base.css 
+ * @package    ZOE ThemExpert Template framework.
+ * @version   1.5.5 June 01, 2010
+ * @author    ThemeXpert http://www.themexpert.com
+ * @copyright Copyright (C) 2009 - 2010 ThemeXpert.com
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * 
+*******************************************************************/
+
+/* reset styling */
+@import url(reset.css);
+
+/* 12 Grid */
+@import url(grid.css);
+
+/* Basic Typography */
+@import url(typography.css);
+
+/* Joomla Override styling */
+@import url(joomla.css);
+
+/* Moo menu styling */
+@import url(menu.css);
+
+/* layouat styling */
+@import url(template.css);

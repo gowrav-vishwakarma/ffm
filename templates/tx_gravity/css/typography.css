@@ -1,0 +1,222 @@
+/*******************************************************************
+ * @file       typography.css 
+ * @package    ZOE ThemExpert Template framework.
+ * @version   1.5.5 June 01, 2010
+ * @author    ThemeXpert http://www.themexpert.com
+ * @copyright Copyright (C) 2009 - 2010 ThemeXpert.com
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * 
+*******************************************************************/
+
+/* Headings
+-------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+
+h1 { font-size: 2em; line-height: 1; margin-bottom: 0.5em; }
+h2 { font-size: 1.5em; margin-bottom: 0.75em; }
+h3 { font-size: 1.3em; line-height: 1; margin-bottom: 0.5em; }
+h4 { font-size: 1.0em; line-height: 1.25; margin-bottom: 1.25em; }
+h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h6 { font-size: 1em; font-weight: bold; }
+
+h1 img, h2 img, h3 img,
+h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p           { margin: 0 0 .5em; }
+p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus,
+a:hover     { color: #000; }
+a           { color: #009; text-decoration: none; }
+
+blockquote  { margin: 1.5em; color: #666; font-style: italic; }
+strong      { font-weight: bold; }
+em,dfn      { font-style: italic; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr,
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre         { margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+
+/* Lists
+-------------------------------------------------------------- */
+
+li ul,
+li ol       { margin: 0; }
+ul, ol      { margin: 0 1.5em 1.5em 0; padding-left: 3.333em; }
+
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+
+/* Tables
+-------------------------------------------------------------- */
+
+/*table       { margin-bottom: 1.4em; width:100%; }*/
+th          { font-weight: bold; }
+thead th    { background: #c3d9ff; }
+/*th,td,caption { padding: 4px 10px 4px 5px; }*/
+tr.even td  { background: #e5ecf9; }
+tfoot       { font-style: italic; }
+caption     { background: #eee; }
+
+
+/* Success, notice and error boxes
+-------------------------------------------------------------- */
+
+.error,
+.notice,
+.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd; }
+
+.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
+.success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }
+.error a    { color: #8a1f11; }
+.notice a   { color: #514721; }
+.success a  { color: #264409; }
+
+
+/* --------------------------------------------------------------
+   * Sets up some default styling for forms
+   Usage:
+   * For text fields, use class .title or .text
+   * For inline forms, use .inline (even when using columns)
+
+-------------------------------------------------------------- */
+
+label       { font-weight: bold; }
+fieldset    { padding:1.4em; margin: 0 0 1.5em 0; border: 1px solid #ccc; }
+legend      { font-weight: bold; font-size:1.2em; }
+
+
+/* Form fields
+-------------------------------------------------------------- */
+
+input[type=text], input[type=password],
+input.text, input.title,
+textarea, select {
+  background-color:#fff;
+  border:1px solid #bbb;
+}
+input[type=text]:focus, input[type=password]:focus,
+input.text:focus, input.title:focus,
+textarea:focus, select:focus {
+  border-color:#666;
+}
+
+input[type=text], input[type=password],
+input.text, input.title,
+textarea, select {
+  margin:0.5em 0;
+}
+
+input.text,
+input.title   { width: 300px; padding:5px; }
+input.title   { font-size:1.5em; }
+textarea      { width: 390px; height: 250px; padding:5px; }
+
+input[type=checkbox], input[type=radio],
+input.checkbox, input.radio {
+  position:relative; top:.25em;
+}
+
+form.inline { line-height:3; }
+form.inline p { margin-bottom:0; }
+
+/* --------------------------------------------------------------
+   * Bonus Typography for this tempalte
+   Usage:
+   * For text div, use class .info or .rss or .alert or .notice or .announce or .tips etc
+   * For ul, use .star or .arrow or .check or .plus
+
+-------------------------------------------------------------- */
+
+code, pre{
+    background: #fff;
+    border-left: 20px solid #999;
+    padding: 10px 10px;
+}
+blockquote{
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+}
+/********** List Items **********/
+ul.check,ul.star,ul.plus{
+    list-style:none outside;
+    margin:10px 0;
+    padding-left:20px;
+}
+ul.check li, 
+ul.star li,
+ul.plus li{
+    padding-left: 35px;
+    line-height:26px;
+    font-weight:bold;
+}
+ul.check li{background: url(../images/typo/list_check.png) no-repeat;}
+ul.star li{background: url(../images/typo/list_star.png) no-repeat;}
+ul.plus li{background: url(../images/typo/list_plus.png) no-repeat;}
+
+/********** div items **********/
+div.info,
+div.alert,
+div.announce,
+div.tip,
+div.sticky,
+div.rss,
+div.support{
+    margin:10px 0;
+    padding: 10px 10px 10px 40px;
+    background-position: 0 50%;
+}
+div.info{
+    background: #daeffb url(../images/typo/info.png) no-repeat 0 50%;
+    border-top:1px dotted #67afd9;
+    border-bottom:1px dotted #67afd9;
+}
+div.alert{
+    background: #fbf3ea url(../images/typo/alert.png) no-repeat 0 50%;
+    border-bottom: 1px dotted #e52212;
+    border-top: 1px dotted #e52212;
+}
+div.announce{
+    background: #ffdcb3 url(../images/typo/announce.png) no-repeat 0 50%;
+    border-bottom: 1px dotted #f7741c;
+    border-top: 1px dotted #f7741c;
+}
+div.tip{
+    background: #f8fcbc url(../images/typo/tip.png) no-repeat 0 50%;
+    border-bottom: 1px dotted #ffcf59;
+    border-top: 1px dotted #ffcf59;
+}
+div.sticky{
+    background: #dfe2f7 url(../images/typo/sticky.png) no-repeat 0 50%;
+    border-bottom: 1px dotted #a4adf4;
+    border-top: 1px dotted #a4adf4;
+}
+div.rss{
+    background: #ffeae8 url(../images/typo/rss.png) no-repeat 0 50%;
+}
+div.support{
+    background: #fafafa url(../images/typo/support.png) no-repeat 0 50%;
+    border-bottom:1px dotted #939393;
+    border-top:1px dotted #939393;
+}

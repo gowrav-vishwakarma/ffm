@@ -1,0 +1,77 @@
+.drillmenu{ /* main DIV container of menu */
+width: 100%; /*width of menu*/
+height: 190px; /*Height of DIV for those with JavaScript disabled*/
+overflow-y: scroll; /*Scrollable DIV for those with JavaScript disabled*/
+background: lightyellow; /*background of menu.*/
+}
+
+
+.drillmenu ul{ /*menu ULs*/
+margin: 0;
+padding: 0;
+list-style-type: none;
+background: #f0eded; /*background of menu*/
+}
+.drillmenu li{ 
+width: 100%;
+padding: 0;
+background: none;
+border-bottom: 1px solid #d9d9d9;
+}
+.drillmenu li a{ /*menu links*/
+display: block;
+color: black;
+text-decoration: none;
+padding: 5px;
+}
+.drillmenu li a img{
+	margin-top: 1px;
+	float: left;
+}
+.drillmenu li a span.menusys_name{
+	padding-left: 5px;
+}
+* html .drillmenu li{ /*IE6 CSS hack*/
+display: inline-block;
+border-bottom: 1px solid #a9a9a9;
+}
+
+.drillmenu li a:hover{
+background-color: #fff;
+color: #084368;
+}
+
+li.backcontroltitle{ /*style of top level menu title*/
+background: #8ab5d1;
+color: #043f64;
+font-weight: bold;
+padding: 6px 4px 5px ;
+background: url(../../images/mobile/backcontrol-bg.png) repeat-x left top;
+
+}
+
+li.backcontrol{ /*style of back button control that gets added to the top of each sub UL*/
+color: #043f64;
+font-weight: bold;
+padding: 6px 4px;
+cursor: pointer;
+padding: 6px 4px 5px ;
+background: url(../../images/mobile/backcontrol-bg.png) repeat-x left top;
+}
+
+#drillcrumb{ /*custom, user defined DIV that contains breadcrumb trail*/
+	margin-bottom: 20px;
+	color: #ddd;
+	padding-left: 25px;
+	background: url(../../images/mobile/icon-home.png) no-repeat ;
+}
+#drillcrumb img{
+	margin: 0 5px;
+}
+#drillcrumb a{ /*custom element*/
+	color: #43aeed;
+	text-decoration: none;
+}
+#drillcrumb a:hover{
+	text-decoration: underline;
+}

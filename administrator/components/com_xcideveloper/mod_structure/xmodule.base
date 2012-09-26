@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+  <name>{component}</name>
+  <creationDate>{creationDate}</creationDate>
+  <author>{author}</author>
+  <authorEmail>{authorEmail}</authorEmail>
+  <authorUrl>{authorUrl}</authorUrl>
+  <copyright>{copyright}</copyright>
+  <license>{license}</license>
+  <version>{version}</version>
+  <releaseDate>{releaseDate}</releaseDate>
+  <description>{description}</description>
+  <installfile/>
+  <uninstallfile/>
+  <install>
+    <sql/>
+  </install>
+  <uninstall>
+    <sql/>
+  </uninstall>
+  <update>
+    <sql/>
+  </update>
+  <files>
+    <folder module="mod_{component}">cache</folder>
+    <folder module="mod_{component}">config</folder>
+    <folder module="mod_{component}">controllers</folder>
+    <folder module="mod_{component}">core</folder>
+    <folder module="mod_{component}">errors</folder>
+    <folder module="mod_{component}">helpers</folder>
+    <folder module="mod_{component}">hooks</folder>
+    <folder module="mod_{component}">language</folder>
+    <folder module="mod_{component}">libraries</folder>
+    <folder module="mod_{component}">logs</folder>
+    <folder module="mod_{component}">models</folder>
+    <folder module="mod_{component}">third_party</folder>
+    <folder module="mod_{component}">views</folder>
+    <filename module="mod_{component}">index.html</filename>
+    <filename module="mod_{component}">mod_{component}.php</filename>
+  </files>
+  <languages folder="site/language">
+    <language tag="index">english/index.html</language>
+  </languages>
+  <params>
+    <param name="your_global_param" type="text" label="Your Global Param" default="Param Value 1"/>
+  </params>
+</install>

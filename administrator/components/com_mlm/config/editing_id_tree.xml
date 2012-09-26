@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="AllowEditingName" type="radio" default="1" label="Allow Name Editing" description="Name change is allowed or not">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="SeeUserPassword" type="radio" default="password" label="See User Password" description="See User Password at editing time or just allow to change password without seeing original one">
+            <option value="password">As Password</option>
+            <option value="text">As Text</option>
+        </param>
+        <param name="AllowKitChange" type="list" default="1" label="Allow Kit Editing" description="Allow Kit Change or Not">
+            <option value="0">No</option>
+            <option value="1">Only to Higher DP</option>
+            <option value="2">To Any Kit</option>
+        </param>
+        <param name="AllowTreeShift" type="radio" default="3" label="Allow Tree Shift" description="Leg Shifting based on bellow options">
+            <option value="0">No</option>
+            <option value="1">Just Shift</option>
+            <option value="2">Update Ancesstors Points, Allow Negitive Points</option>
+            <option value="3">Update Ancesstors Points, Zero Negitive Points</option>
+        </param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="LegsInSystem" type="text" default="2" label="Max Legs allowed in System" description="Maximum number of legs allowed (-1 for no restriction)"></param>
+    </params>
+</config>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD component 1.0//EN" "http://joomla.org/xml/dtd/1.5/component-install.dtd">
+<install type="component" version="1.5.0">
+  <name>xCIDeveloper</name>
+  <creationDate>28-Feb-2011</creationDate>
+  <author>Gowrav Vishwakarma</author>
+  <authorEmail>gowravvishwakarma@gmail.com</authorEmail>
+  <authorUrl>www.xavoc.com</authorUrl>
+  <copyright>Copyright (C) 2011 Xavoc International. All rights reserved.</copyright>
+  <downloadUrl>http://www.xavoc.com</downloadUrl>
+  <license>http://www.gnu.org/licenseses/gpl-2.0.html GNU/GPL</license>
+  <version>1.5.0</version>
+  <description><![CDATA[
+	<div align="left"><img src="components/com_xcideveloper/assets/images/xavoc_logo_small.jpg" alt="Xavoc Logo" /></div>
+	<h2>Successfully installed XCIDeveloper&nbsp;</h2>
+	XCIDeveloper is a seamless merging of worlds two most powerfull extensions to php ie. CODE IGNITER and JOOMLA
+	<br/>Features 
+	  <ul><li>No Seperate Database Configuration, CI uses joomlas configurations including Table prefix also</li>
+	  <li>Same sessions for CI and Joomla ie. use $this->session->userdata({ANY Joomla session including users etc here})</li>
+	  <li>No seperation where you can use CI or where you can use joomla, use anything, anywhere in your component development</li>
+	  <li>Joomla layout system looks typical, leave it and use your own $this->load->view as before</li>
+	  <li>Want to take joomla layout system's benifits use $this->load->view with joomlas template directory system .. look for help for more </li>
+	  <strong>Visit <a href="http://www.xavoc.com" target="_blank">Xavoc International</a> for updates or more information</strong>
+	]]></description>
+  <installfile/>
+  <uninstallfile/>
+  <install>
+  <sql>
+  <files folder="admin/sql" driver="mysql" charset="utf8">install.sql</files>
+    </sql>
+  </install>
+  <uninstall>
+    <sql>
+  <files folder="admin/sql" driver="mysql" charset="utf8">uninstall.sql</files>
+    </sql>
+  </uninstall>
+  <update>
+    <sql/>
+  </update>
+  <files folder="site">
+	<folder>assets</folder>
+    <folder>cache</folder>
+    <folder>config</folder>
+    <folder>controllers</folder>
+    <folder>core</folder>
+    <folder>errors</folder>
+    <folder>helpers</folder>
+    <folder>hooks</folder>
+    <folder>language</folder>
+    <folder>libraries</folder>
+    <folder>logs</folder>
+    <folder>models</folder>
+    <folder>third_party</folder>
+    <folder>views</folder>
+    <filename>index.html</filename>
+    <filename>xcideveloper.php</filename>
+  </files>
+  <languages folder="site/language">
+    <language tag="index">english/index.html</language>
+  </languages>
+  <administration>
+    <menu img="components/com_xcideveloper/assets/images/x.jpg" link="option=com_xcideveloper">xCI Developer</menu>
+    <files folder="admin">
+	  <folder>assets</folder>
+      <folder>cache</folder>
+      <folder>com_structure</folder>
+      <folder>config</folder>
+      <folder>controllers</folder>
+      <folder>core</folder>
+      <folder>errors</folder>
+      <folder>helpers</folder>
+      <folder>hooks</folder>
+      <folder>language</folder>
+      <folder>libraries</folder>
+      <folder>logs</folder>
+      <folder>mod_structure</folder>
+      <folder>models</folder>
+	  <folder>system</folder>
+      <folder>third_party</folder>
+      <folder>views</folder>
+      <filename>config.xml</filename>
+      <filename>index.html</filename>
+      <filename>xcideveloper.php</filename>
+	  <filename>install.sql</filename>
+	  <filename>uninstall.sql</filename>
+    </files>
+    <languages folder="admin/language">
+      <language tag="index">english/index.html</language>
+    </languages>
+  </administration>
+  <params>
+    <param name="your_global_param" type="radio" label="Your Global Param" default="Param Value 1"/>
+  </params>
+</install>

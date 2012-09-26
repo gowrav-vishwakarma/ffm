@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="TailPV" type="text" default="0" label="Tail PV" description="PV for Tail, Enter 0 for No Tail Systems"></param>
+        <param name="LeftFields" type="text" default="A" label="Left Fields" description="Comma Seperated Fields to be sum as Left Field"></param>
+        <param name="RightFields" type="text" default="B" label="Right Fields" description="Comma Seperated Fields to be sum as Right Field"></param>
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="TailRP" type="text" default="0" label="Tail RP" description="RP for Tail, Enter 0 for No Tail Systems, Only Afacted if set RP as binary system in config paramter"></param>
+        <param name="RPCapping" type="text" default="0" label="RP Capping" description="Capping for RP Binary,  Only Afacted if set RP as binary system in config paramter"></param>
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="BinaryShareToIntro" type="text" default="0" label="Binary Share To Introducer in %" description="If Introducer shares certain percentage of Binary Income of his Introducee then give that percentage here or leave/0 to deactivate this binary Income"></param>
+    </params>
+</config>

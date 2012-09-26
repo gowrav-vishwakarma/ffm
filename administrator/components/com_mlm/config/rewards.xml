@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="PlanHasRewards" type="radio" default="0" label="Plan Has Rewards" description="Weather This plan has point/pair based rewards system or not.">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="RewardsBasedOn" type="radio" default="0" label="Rewards Based On" description="Which Point system is to use for Reward Calculation">
+            <option value="PV">PV</option>
+            <option value="BV">BV</option>
+            <option value="RP">RP</option>
+        </param>
+        <param name="RewardsPointsType" type="radio" default="Next" label="Rewards Pair Are" description="Weather the reward points are cumulative or Next">
+            <option value="Commulative">Commulative</option>
+            <option value="Next">Next</option>
+        </param>
+        <param name="RewardsDaysType" type="radio" default="Commulative" label="Rewards Days Are" description="Weather the reward Days are cumulative or Next">
+            <option value="Commulative">Commulative</option>
+            <option value="Next">Next</option>
+        </param>
+        <param name="Rewards" type="text" default="10" label="Total Rewards" description="Total Rewards to give from bellow" />
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+
+        <param name="Reward1_PairPoint" type="text" default="0" label="Reward 1 Pair Point" description="Pair Points for Reward 1" />
+        <param name="Reward1_DaysRequired" type="text" default="0" label="Reward 1 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward2_PairPoint" type="text" default="0" label="Reward 2 Pair Point" description="Pair Points for Reward 2" />
+        <param name="Reward2_DaysRequired" type="text" default="0" label="Reward 2 Required Days" description="Days For Reward 1" />
+        
+        <param name="Reward3_PairPoint" type="text" default="0" label="Reward 3 Pair Point" description="Pair Points for Reward 3" />
+        <param name="Reward3_DaysRequired" type="text" default="0" label="Reward 3 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward4_PairPoint" type="text" default="0" label="Reward 4 Pair Point" description="Pair Points for Reward 4" />
+        <param name="Reward4_DaysRequired" type="text" default="0" label="Reward 4 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward5_PairPoint" type="text" default="0" label="Reward 5 Pair Point" description="Pair Points for Reward 5" />
+        <param name="Reward5_DaysRequired" type="text" default="0" label="Reward 5 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward6_PairPoint" type="text" default="0" label="Reward 6 Pair Point" description="Pair Points for Reward 6" />
+        <param name="Reward6_DaysRequired" type="text" default="0" label="Reward 6 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward7_PairPoint" type="text" default="0" label="Reward 7 Pair Point" description="Pair Points for Reward 7" />
+        <param name="Reward7_DaysRequired" type="text" default="0" label="Reward 7 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward8_PairPoint" type="text" default="0" label="Reward 8 Pair Point" description="Pair Points for Reward 8" />
+        <param name="Reward8_DaysRequired" type="text" default="0" label="Reward 8 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward9_PairPoint" type="text" default="0" label="Reward 9 Pair Point" description="Pair Points for Reward 9" />
+        <param name="Reward9_DaysRequired" type="text" default="0" label="Reward 9 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward10_PairPoint" type="text" default="0" label="Reward 10 Pair Point" description="Pair Points for Reward 10" />
+        <param name="Reward10_DaysRequired" type="text" default="0" label="Reward 10 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward11_PairPoint" type="text" default="0" label="Reward 11 Pair Point" description="Pair Points for Reward 11" />
+        <param name="Reward11_DaysRequired" type="text" default="0" label="Reward 11 Required Days" description="Days For Reward 1" />
+
+        <param name="Reward12_PairPoint" type="text" default="0" label="Reward 12 Pair Point" description="Pair Points for Reward 12" />
+        <param name="Reward12_DaysRequired" type="text" default="0" label="Reward 12 Required Days" description="Days For Reward 1" />
+    </params>
+</config>

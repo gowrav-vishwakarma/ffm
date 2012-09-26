@@ -1,0 +1,70 @@
+/**
+ * @version		1.5.2 January 10, 2011
+ * @author		RocketTheme, LLC http://www.rockettheme.com
+ * @copyright 	Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @license		http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+ */
+
+body.rtl #rt-header ul {float: left;}
+body.rtl #rt-header ul li {float: right;}
+body.rtl #rt-header li ul {position:absolute;width:201px;top:-999em;left: auto;padding:0;margin:0;}
+body.rtl #rt-header li ul ul {margin: 0;}
+body.rtl #rt-header li:hover ul ul, body.rtl #rt-header li:hover ul ul ul, body.rtl #rt-header li:hover ul ul ul ul {top:-999em;left: auto;}
+body.rtl #rt-header li li {margin: 0;padding: 0;height:auto;width:201px;}
+body.rtl #rt-header li li a, body.rtl #rt-header li li.active a, body.rtl #rt-header li li a:hover, body.rtl #rt-header li li .separator, body.rtl #rt-header li li.active .separator {margin:0;padding:1px 10px 1px 0;height: auto;float: none;width: auto;line-height:20px;display: block;}
+body.rtl #rt-header li li a span, body.rtl #rt-header li li.active a span, body.rtl #rt-header li li a:hover span, body.rtl #rt-header li li .separator span, body.rtl #rt-header li li.active .separator span {width: auto;display: block;line-height: 20px;text-transform: none;padding: 5px 5px 5px 10px;}
+body.rtl #rt-header li li a, body.rtl #rt-header li.active li a, body.rtl #rt-header li li .separator, body.rtl #rt-header li.active li .separator {font-weight:normal;padding-right:10px;}
+body.rtl #rt-header li:hover ul {top: 29px;margin-right:-1px;}
+body.rtl #rt-header li li:hover ul, body.rtl #rt-header li li li:hover ul, body.rtl #rt-header li li li li:hover ul {top: -1px;right: 201px;}
+body.rtl #rt-header ul.menu li a, body.rtl #rt-header ul.menu li .separator {margin-right: 5px;}
+body.rtl #rt-header ul.menu ul > li.parent {background-position: 97% 50%;}
+body.rtl #rt-header ul.menu ul > li.parent a, body.rtl #rt-header ul.menu ul > li.parent .separator {margin-left: 5px;}
+body.rtl #rt-header ul.menu ul > li:hover {margin-right:-1px;}
+body.rtl div.breadcrumbs .sep, body.rtl div.breadcrumbs .pathway{float:right;}
+body.rtl .date-block {float: left;}
+
+body.rtl .contentdate{float:left;}
+body.rtl .pagination{display:inline;}
+body.rtl .pagination span{float:inline-block;}
+body.rtl p.buttonheading {left:10px;right:0;top:2px;}
+
+body.rtl #rt-main-surround ul li a,body.rtl #rt-main-surround ul li .separator {padding-right:15px;padding-left:0px;}
+body.rtl #rt-mainbody ul li {padding-right:20px;}
+
+body.rtl .rt-joomla-table tbody tr th {text-align:right;}
+body.rtl tr.sectiontableentry0 td, body.rtl tr.sectiontableentry1 td, body.rtl tr.sectiontableentry2 td, body.rtl td.sectiontableentry0, body.rtl td.sectiontableentry1, body.rtl td.sectiontableentry2 {text-align: right;}
+body.rtl #com-form-login #remember, body.rtl #form-login #form-login-remember #modlgn_remember {float: right;}
+
+body.rtl #mod_search_searchword, body.rtl #search_searchword  {padding-left: 0;padding-right: 3px;margin-left: 1px;margin-right: 5px;}
+body.rtl #searchForm input, body.rtl #searchForm label {float:right;}
+body.rtl #searchForm .contentpaneopen input, body.rtl #searchForm .contentpaneopen label {float:right;}
+body.rtl #rt-copyright {text-align: right;}
+body.rtl #gantry-totop {float:left;}
+body.rtl #gantry-logo {float:right;margin-left: 5px;}
+
+body.rtl #rt-footer li {padding-right:20px;padding-left:0px;}
+
+body.rtl .floatleft {float:right;}
+body.rtl .floatright {float:left;}
+body.rtl #rt-showcase .feature-block .readon-wrap1 .readon1-r,body.rtl  .readon a,body.rtl  .readon2 a,body.rtl .readon span ,body.rtl .readon .button {float:right;}
+body.rtl #rt-showcase .feature-block .readon-wrap1 .readon1-m,body.rtl  #rt-mainbody .readon,body.rtl .readon,body.rtl a.readon,body.rtl #rt-main-surround .readon{margin: 5px 8px 5px 5px;}
+
+/* Rok Stories */
+body.rtl .feature-block .readon-wrap1 {float:right;}
+body.rtl .feature-block {margin-right:187px;margin-left:0;}
+body.rtl .rokstories-layout2 .image-container {float: right !important;}
+body.rtl #rt-showcase .feature-block .feature-pad {margin-left: 0;margin-right: 30px;}
+
+/* RTL JComment */
+body.rtl #jc h4 {text-align:right;}
+body.rtl #jc span.bbcode {float:right;}
+body.rtl #comments-form p, body.rtl #comments-form #comments-form-buttons, body.rtl #comments-form #comments-form-error {text-align:right;}
+body.rtl #comments-form .btn {float:right;}
+
+/* Joomla */
+.rtl .rt-joomla .edit-article #editor-xtd-buttons div {float:right;}
+.rtl .rt-joomla .edit-article .button2-left .blank{float:left;}
+.rtl .rt-joomla .edit-article label.label-left {float:right;}
+body.rtl #rt-mainbody ol {padding-left:0px;padding-right:20px;}
+body.rtl .searchintro {float:right;}
+body.rtl #rt-main-surround ul.menu li.parent > ul {padding-left:0px;padding-right:25px;}

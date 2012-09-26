@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<params>
+		<param name="pure_ci" type="radio" default="0" label="Use Pure CI Method" description="Basic Difference is in Layout/View representation">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+</config>

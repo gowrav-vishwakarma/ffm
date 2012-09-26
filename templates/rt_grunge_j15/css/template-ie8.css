@@ -1,0 +1,17 @@
+/**
+ * @version		1.5.2 January 10, 2011
+ * @author		RocketTheme, LLC http://www.rockettheme.com
+ * @copyright 	Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @license		http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+ */
+p {line-height:150%;}
+h1.rt-article-title{line-height:100%;}
+h2{font-size:150%;color:#510D05;font-family:georgia,garamond,serif;line-height:210%;}
+h2.title{line-height:120%;}
+#rt-main-surround .rt-article-title {line-height:220%;}
+#rt-header ul.menu li a {zoom:1;}
+.rtl #rt-main-surround .rt-joomla ul {list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;border:0;padding:0;}
+.rtl #rt-main-surround .rt-joomla ul li {text-align:right;zoom:1;}
+
+body.rtl .rokstories-layout2 .feature-desc {direction:ltr;text-align:right;display:block;}
+body.rtl blockquote {direction:ltr;text-align:right;}

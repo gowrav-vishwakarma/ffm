@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="PlanHasIntroductionIncome" type="radio" default="1" label="Plan Has Introduction Income" description="Weather this plan has introduction income or not">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="BinarySystem" type="radio" default="1" label="Use Binary Pair System" description="Is this General Binary pair system">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="PlanHasLevelIncome" type="radio" default="0" label="Plan Has Level Income" description="If your Plan has Level Income then Select Yes">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+         <param name="PlanHasSurveyIncome" type="radio" default="0" label="Plan Has Survey Income" description="Weather this plan has Survey income or not">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="PlanHasRoyaltyIncome" type="radio" default="0" label="Plan Has Royalty Income" description="Weather this plan has Royalty income or not, based on pairs and equal share of reserved amount">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="RPAsBinary" type="radio" default="0" label="User RP As Binary System" description="Use RP as another BInary system, mainly usefull for Upgradation type of plans">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="TreeViewStyle" type="radio" default="0" label="Tree View Style" description="Weather you like expandable tree ot just normal tree">
+            <option value="default">Normal Tree</option>
+            <option value="dtree">DTree</option>
+        </param>
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+
+        <param name="LegsInSystem" type="text" default="2" label="Max Legs allowed in System" description="Maximum number of legs allowed (-1 for no restriction)"></param>
+        <param name="treeLevels" type="text" default="4" label="Default Tree Levels in treeview" description="No of tree levels to show in one shot"></param>
+        <param name="PairCarryForword" type="radio" default="1" label="Carry Forward Pairs" description="Carry Forward Pairs or Colleps them after closing">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="UseSession" type="radio" default="0" label="Use Sessions" description="Use Session for short time calculations, Session Closing will be run">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="SessionTitle" type="text" default="Session" label="Default Session Title" description="How you define your Session like Session or Day or Hour"></param>
+        <param name="UseMidSession" type="radio" default="0" label="Use Mid Sessions" description="Use Mid Session for Mid time calculations, Mid Session Closing will be run">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="MidSessionTitle" type="text" default="Week" label="Default MidSession Title" description="How you define your Session like Week or 10 Days"></param>
+        <param name="ClosingTitle" type="text" default="Month" label="Default Closing Title" description="How you define your Session like Moth, Closing"></param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="PVTitle" type="text" default="PV" label="Default PV Title" description="First Point System Name, We say this PV"></param>
+        <param name="PVRate" type="text" default="1" label="1 PV = ? Rs" description="PV Rate, PV will be multiplied with this factor for PV based Incomes"></param>
+        
+        <param name="UseBV" type="radio" default="0" label="Use BV points" description="Use second point system as BV">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="BVTitle" type="text" default="BV" label="Default BV Title" description="Second Point System Name, We say this BV"></param>
+        <param name="UseRP" type="radio" default="0" label="Use RP points" description="Use third point system as RP">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="RPTitle" type="text" default="RP" label="Default RP Title" description="Third Point System Name, We say this RP"></param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="TotalMembers" type="radio" default="0" label="Total Members are" description="Do Red Ids also counted as Total Member in Front?">
+            <option value="OnlyGreen">Only GReen IDs</option>
+            <option value="BothGreenAndRed">All Green and Red IDs</option>
+        </param>
+
+        <param name="ShowRedPinsInRed" type="radio" default="1" label="Show Red Pins in Red" description="Do you want to show red pins as red or just select no for same tree icons">
+            <option value="0">No, Keep all Ids same</option>
+            <option value="1">Yes</option>
+        </param>
+
+        <param name="StopPaymentForRedIDs" type="radio" default="1" label="Stop Payment For Red Pins" description="Do you want to show red pins as red or just select no for same tree icons">
+            <option value="0">No, ReleasePayment</option>
+            <option value="1">Yes</option>
+        </param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="WhereToGoAfterRegistration" type="radio" default="0" label="Where To Go After Registration" description="To a Generalised Welcome Page, more suited for regular new joining or login the new distributor , more good feel to new distributor">
+            <option value="0">Common Welcome Letter</option>
+            <option value="1">Login to new ID</option>
+        </param>
+        <param name="DefaultPinStatus" type="radio" default="0" label="Status WHen Creating Pins" description="When creating pins weather they are published by default or unpublished">
+            <option value="0">UNPublished</option>
+            <option value="1">Published</option>
+        </param>
+        <param name="WhenPinsAreUsed" type="radio" default="1" label="Action on used Pins" description="When Used pins are found in transferring or publish status changing, what action to be taken">
+            <option value="0">No TRansfer, No Status Change</option>
+            <option value="1">No TRansfer, Allow Status Change</option>
+            <option value="2">Allow TRansfer, Allow Status Change</option>
+        </param>
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="InformationInToolTip" type="radio" default="1" label="Information In Tooltip" description="What information you want when mouse comes up on tree id">
+            <option value="PI">Just Personal Info</option>
+            <option value="BI">Commulative Point Structure</option>
+            <option value="LI">Level Structure</option>
+            <option value="BILI">Point Structure and Level Structure</option>
+        </param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="WrongPanNo" type="list" default="1" label="if Wrong Pan Number" description="What action to take if Wrong Pan Number is proded by user">
+            <option value="0">Accept and treat as correct</option>
+            <option value="1">Accept Entry but don't store wrong pan no in database (Make it empty)</option>
+            <option value="2">Don't Accept Entry with Wrong Pan No (Or leave it Empty)</option>
+            <option value="3">Don't Accept Entry without Correct Pan No (Mandetory)</option>
+            <option value="4">Either leave it empty or 10 digits check</option>
+        </param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="ProductList" type="text" default="" label="Product List (If not from Pins)" description="Give Product List if To be selected at the time of Registration, Leave blank if auto selected from Pin"></param>
+        <param name="PrintStatement" type="list" default="0" label="Print Seperate Statement" description="Do you want the user to print special statement to be printed per closing">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+    </params>
+</config>

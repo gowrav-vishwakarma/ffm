@@ -1,0 +1,20 @@
+/**
+ * @version		1.5.2 January 10, 2011
+ * @author		RocketTheme, LLC http://www.rockettheme.com
+ * @copyright 	Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @license		http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+ */
+
+body.rtl #rt-mainbody ul li {background: url(../images/body/style1/arrow-off-rtl.png) no-repeat 100% 5px;}
+body.rtl #rt-header ul.menu ul > li.parent, body.rtl #rt-header ul.menu li > a, body.rtl #rt-header ul.menu li > span {background-image: url(../images/body/style1/arrow-on-rtl.png);}
+body.rtl #rt-header ul.menu li:hover > span, body.rtl #rt-header ul.menu li:hover > a {background-image: url(../images/body/style1/arrow-down.png);}
+body.rtl .rokstories-layout2{background: url(../images/backgrounds/style1/showcasebase-rtl.png) no-repeat;}
+body.rtl .module .sections li a,body.rtl .module .latestnews li a {background: url(../images/body/style1/arrow-off-rtl.png) no-repeat right center;}
+body.rtl .module .sections li a:hover,.module .latestnews li a:hover {background: url(../images/body/style1/arrow-on-rtl.png) no-repeat right center;}
+body.rtl #rt-main-surround .rt-joomla ul li{background: url(../images/body/style1/arrow-off-rtl.png) no-repeat 100% 5px;}
+body.rtl .contentdate{background: url(../images/body/style1/buttons-rtl.png) -148px 0 no-repeat;}
+body.rtl .button-search{background: url(../images/body/style1/buttons-rtl.png) -402px -166px no-repeat; }
+body.rtl #form-login ul li, body.rtl #com-form-login ul li, body.rtl ul.rt-more-articles li, body.rtl .rt-section-list ul li{background: url(../images/body/style1/arrow-off-rtl.png) no-repeat right center;}
+body.rtl #rt-main-surround ul.menu li {background: url("../images/body/style1/arrow-off-rtl.png") no-repeat 100% 13px;}
+body.rtl #rt-main-surround ul.menu ul > li {background: url("../images/body/style1/arrow-off-rtl.png") no-repeat 100% 12px;}
+body.rtl .module ul li, body.rtl .module-content li {background: url("../images/body/style1/arrow-off-rtl.png") no-repeat 100% 50%;}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="LevelIncomeBasedOn" type="radio" default="DC" label="Level Income is Based On" description="Your Level Income is based on Just Distributor Count or PV">
+            <option value="DC">DistributorCount</option>
+            <option value="PV">Point Value (PV)</option>
+        </param>
+        <param name="LevelIncomeRedCount" type="radio" default="0" label="Count Red Entries in Level" description="Do you want to count Red entries also in Level Plan based on Just DistributorCount">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="AllowTopupAmount" type="radio" default="0" label="Allow Topup Amount" description="Allow user to put more money on his/her ID">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="TopupAmountTime" type="radio" default="Merged" label="Topup Amount Timing" description="Weather each Topup have own timing from start or Merged in existing Amount">
+            <option value="Seperate">Seperate For Each Topup</option>
+            <option value="Merged">Merged in exiting Amount</option>
+        </param>
+
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="LevelsToCount" type="text" default="10" label="Levels Used For Income" description="Upto which level depth you are distributing Income"></param>
+        
+        <param name="IncomeLevel1" type="text" default="" label="Income from Level 1" description="Income in Rs from the level just bellow your ID"></param>
+        <param name="IncomeLevel2" type="text" default="" label="Income from Level 2" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel3" type="text" default="" label="Income from Level 3" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel4" type="text" default="" label="Income from Level 4" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel5" type="text" default="" label="Income from Level 5" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel6" type="text" default="" label="Income from Level 6" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel7" type="text" default="" label="Income from Level 7" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel8" type="text" default="" label="Income from Level 8" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel9" type="text" default="" label="Income from Level 9" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel10" type="text" default="" label="Income from Level 10" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel11" type="text" default="" label="Income from Level 11" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel12" type="text" default="" label="Income from Level 12" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel13" type="text" default="" label="Income from Level 13" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel14" type="text" default="" label="Income from Level 14" description="Income in Rs from the level"></param>
+        <param name="IncomeLevel15" type="text" default="" label="Income from Level 15" description="Income in Rs from the level"></param>
+    </params>
+</config>

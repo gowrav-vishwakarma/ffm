@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <params>
+        <param name="SurveyType" type="radio" default="QUES" label="Survey is of Type" description="Survey is Question based or Advertisement baesd">
+            <option value="QUES">Question Based</option>
+            <option value="ADVT">Advertisement Based</option>
+        </param>
+        <param name="SurveyPointsNeededForIncome" type="text" default="" label="Survey Points Needed" description="The sum of total surveys must exeed this value to get survey income"></param>
+        <param name="SurveyIncome" type="text" default="" label="Total Survey Income" description="Total Survey Income to be given if all Points needed are cleared by Distributor"></param>
+    </params>
+</config>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system" method="upgrade">
+	<name>ZTools</name>
+	<author>ZooTemplate</author>
+	<creationDate>December 14, 2010</creationDate>
+	<copyright>Copyright (c) 2008 - 2010 http://www.ZooTemplate.com. All rights reserved.</copyright>
+	<license>http://www.zootemplate.com GNU/GPL</license>
+	<authorEmail>support@zootemplate.com</authorEmail>
+	<authorUrl>www.zootemplate.com</authorUrl>
+	<version>1.5.7</version>
+	<description>Plugin ZooTools support for ZooTemplate.</description>	
+	
+	<files>
+		<folder plugin="plg_ztools">plg_ztools</folder>
+		<filename plugin="plg_ztools">plg_ztools.php</filename>
+	</files>
+	
+	<languages>
+    	<language tag="en-GB">en-GB.plg_system_plg_ztools.ini</language>
+    </languages>
+	
+	<params addpath="/plugins/system/plg_ztools/element">
+		<param name="gzip_browsercache" type="radio" default="0" label="ZT FULL PAGE CACHING" description="ZT FULL PAGE CACHING DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="gzip_cachetime" type="text" default="15" label="ZT CACHE TIME" description="ZT CACHE TIME DESC" />
+		<param name="@spacer1" type="spacer" default="ZT EXCLUDE COMPONENTS CACHING" label="" description="ZT EXCLUDE COMPONENTS CACHING DESC" />
+		<param name="components" type="components" default="" label="ZT COMPONENTS"  description="ZT COMPONENTS DESC" />
+		
+		<param name="@spacer1" type="spacer" default="ZT EXCLUDE CATEGORIES CACHING" label="" description="ZT EXCLUDE CATEGORIES CACHING DESC" />
+		<param name="content_category" type="categories" default="" label="ZT CONTENT CATEGORIES"  description="ZT CONTENT CATEGORIES DESC" />
+		<param name="k2_category" type="k2category" default="" label="ZT K2 CATEGORIES"  description="ZT K2 CATEGORIES DESC" />
+	</params>
+</install>

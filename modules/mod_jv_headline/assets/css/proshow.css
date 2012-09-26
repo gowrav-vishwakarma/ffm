@@ -1,0 +1,96 @@
+.jv-majuheadline-wrapper {	
+	/*margin: 50px auto;*/
+	padding: 10px;
+	background: #fff;
+	border: 6px solid #ccc;
+}
+.jv-proshowwrap {
+	overflow:hidden;
+	width: 100%;
+	clear: both;
+}
+.jv-proshow {
+	overflow:hidden;	
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.jv-proshowwrap .loading{
+    background: url(../images/loading.gif) no-repeat center center;
+}
+.jv-proshow-display {
+	width: 100%;
+}
+.jv-proshow-group {
+	position: absolute;
+	top: 20px;
+	left: 15px;
+}
+.jv-proshow-group ul {
+	margin: 0;
+	padding: 0;
+}
+.jv-proshow-group ul li {
+	margin: 7px 0;
+	padding: 0;
+	background: none;
+	display: block;
+}
+.jv-proshow-group a {
+	display: block;
+}
+.jv-proshow-group a img {
+	padding: 5px;
+	background: url(../images/img-bg.png) repeat;
+	border: none;
+}
+
+.jv-proshow-intro {
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+	width: 280px;
+}
+.jv-proshow-intro-bb {
+	background: url(../images/box-b.png) no-repeat bottom left;
+	margin-top: 6px;
+}
+.jv-proshow-intro-bt {
+	background: url(../images/box-t.png) no-repeat top left;
+	margin-top: -6px;
+	width: 100%;
+	display: inline-block;
+}
+.jv-proshow-intro-inner {
+	padding: 15px 18px;
+	color: #cbcbcb;
+}
+.jv-proshow-intro-inner h3 {
+	color: #dddddc;
+	margin: 0;
+	line-height: 30px;
+	font-family: Arial;
+}
+.jv-proshow-intro-inner p {
+	margin: 0.5em 0;
+}
+.jv-proshow-intro-inner a.readon {
+	color: #339ef7;
+	text-decoration: none;
+}
+.jv-proshow-intro-inner a.readon:hover,
+.jv-proshow-intro-inner a.readon:active,
+.jv-proshow-intro-inner a.readon:focus {
+	color: #FFF;
+}
+.but_pre{
+	background:url(../images/fleche1.png) no-repeat bottom center !important;
+	padding:5px !important;
+	cursor:pointer;
+}
+.but_next{
+	background:url(../images/fleche2.png) no-repeat top center !important;
+	padding:5px !important;
+	cursor:pointer;
+}
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="PlanHasIntroductionIncome" type="radio" default="1" label="Plan Has Introduction Income" description="Weather this plan has introduction income or not">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+    </params>
+</config>

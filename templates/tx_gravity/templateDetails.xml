@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template" method="upgrade">
+    <name>tx_gravity</name>
+    <version>2.2.0</version>
+    <creationDate>June 01, 2010</creationDate>
+    <author>ThemeXpert</author>
+    <authorEmail>support@themexpert.com</authorEmail>
+    <authorUrl>http://www.themexpert.com</authorUrl>
+    <copyright>Copyright 2009-2010 - ThemeXpert.com</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only</license>
+    <description>
+            <![CDATA[
+            <h2 class="template-title nudge">ZOE Template Framework</h2>
+            
+            <h3>ZOE A framework used for assembling, building and maintaining a ThemeXpert template</h3>
+            <img src="../templates/tx_gravity/template_thumbnail.png" align="right" style="margin: 0px 0px 10px 10px; width:250px" />
+
+            <h2>Overview of Our ZOE Template Framework</h2>
+
+            <h2>Key Features</h2>
+
+            <p>Our framework is packed with many great features that enable the rapid development of feature-rich designs with a minimum amount of effort. Check out a sampling of the features our framework brings to the table:</p>
+
+            <ul>
+                <li>Grid based layout.</li>
+                <li>Tableless design and 100% css based.</li>
+                <li>4 Color Theme's.</li>
+                <li>Support Multiple Layout option, configurable via admin.</li>
+                <li>100% Div based and no table on Joomla Core Pages.</li>
+                <li>Modules suffix's built-in template for module styling.</li>
+    
+                <li>Support for <a href="http://cufon.shoqolate.com/generate/" rel="nofollow">Cufon</a></li>
+                <li>Support for <a href="http://code.google.com/webfonts" rel="nofollow">Google Font API</a></li>
+                <li>All 35 modules are fully collapsible</li>
+                <li>Lightweight, modern and very fast-loading design.</li>
+                <li>Joomla 1.5 Native</li>
+                <li>W3C XHTML 1.0 Transitional. W3C CSS Valid</li>
+                <li>Fully compatible with: IE7+, Firefox 2+, Firefox 3, Flock 0.7+, Netscape, Safari, Opera 9.5, Chrome.</li>
+                <li>Delivered with “QuickStart Package”.</li>
+
+
+            </ul>
+            ]]>
+            
+</description>
+    <files>
+        <filename>index.php</filename>
+        <filename>config.php</filename>
+        <filename>component.php</filename>
+        <filename>params.ini</filename>
+        <filename>index.html</filename>
+        <filename>htaccess.txt</filename>
+        <filename>templateDetails.xml</filename>
+        <filename>template_thumbnail.png</filename>
+        <folder>admin</folder>
+        <folder>css</folder>
+        <folder>element</folder>
+        <folder>html</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+        <folder>layouts</folder>
+        <folder>lib</folder>
+    </files>
+    <positions>
+        <position>roof1</position>
+        <position>roof2</position>
+        <position>roof3</position>
+        <position>roof4</position>
+        <position>top1</position>
+        <position>top2</position>
+        <position>top3</position>
+        <position>top4</position>
+        <position>header1</position>
+        <position>header2</position>
+        <position>header3</position>
+        <position>header4</position>
+        <position>feature1</position>
+        <position>feature2</position>
+        <position>feature3</position>
+        <position>feature4</position>
+        <position>left</position>
+        <position>right</position>
+        <position>main-menu</position>
+        <position>breadcrumb</position>
+        <position>maintop1</position>
+        <position>maintop2</position>
+        <position>maintop3</position>
+        <position>mainbottom1</position>
+        <position>mainbottom2</position>
+        <position>mainbottom3</position>
+        <position>bottom1</position>
+        <position>bottom2</position>
+        <position>bottom3</position>
+        <position>bottom4</position>
+        <position>login</position>
+        <position>footer1</position>
+        <position>footer2</position>
+        <position>footer3</position>
+        <position>footer4</position>
+    </positions>
+    <languages>
+        <language tag="en-GB">en-GB.tpl_tx_gravity.ini</language>
+    </languages>
+      
+    <administration>
+        <languages folder="admin">
+            <language tag="en-GB">en-GB.tpl_tx_gravity.ini</language>
+        </languages>
+    </administration>  
+    
+    <params addpath="/templates/tx_gravity/element">
+        <param name="@group" type="txparamhelper" value="logoType|fontLibrary|tempStyle|showDate|analytics|copyright"  hiderow="true" />
+        
+        <param name="@title" class="green" type="txparamhelper" label="Presets" description="TEMPLATE STYLE DESC" />
+        <param name="tempStyle" type="list" default="style1" label="Preset Styles" description="STYLE TYPE DESCRIPTION">
+            <option value="style1">Style1</option>
+            <option value="style2">Style2</option>
+            <option value="style3">Style3</option>
+            <option value="style4">Style4</option>
+            <option value="custom">Custom</option>
+        </param>
+        <param name="tempStyle-custom-background" type="list" default="bg1" label="Select Background" description="SELECT BG">
+            <option value="bg1">Background1</option>
+            <option value="bg2">Background2</option>
+            <option value="bg3">Background3</option>
+            <option value="bg4">Background4</option>
+        </param>
+        <param name="tempStyle-custom-featureTitleColor" type="text" default="" size="15" label="Feature Title Color" description="FEATURE TITLE DESC" />
+        <param name="tempStyle-custom-featureTextColor" type="text" default="" size="15" label="Feature Text Color" description="FEATURE TEXT DESC" />
+        <param name="tempStyle-custom-featureLinkColor" type="text" default="" size="15" label="Feature Link Color" description="FEATURE LINK DESC" />
+        <param name="tempStyle-custom-h1" type="text" default="" size="15" label="Heading Color" description="H1 COLOR" />
+        <param name="tempStyle-custom-bodyTextColor" type="text" default="" size="15" label="Body Text Color" description="BODY TEXT COLOR DESC" />
+        <param name="tempStyle-custom-bodyLinkColor" type="text" default="" size="15" label="Body Link Color" description="BODY LINK COLOR DESC" />
+        <param name="@title" class="blue" type="txparamhelper" label="Layout Option" description="LAYOUT DESC" />
+        <param name="layoutOption" type="list" default="left.main.right" label="Choose Layout" Description="CHOOSE LAYOUT DESC" >
+            <option value="left.main.right">Left+Main+Right</option>
+            <option value="left.right.main">Left+Right+Main</option>
+            <option value="main.left.right">Main+Left+Right</option>
+        </param>
+        <param name="leftGrid" type="text" default="3" size="5" label="Left Grid" description="LEFT GRID DESC"  />
+        <param name="mainGrid" type="text" default="6" size="5" label="Main Grid" description="MAIN GRID DESC"  />
+        <param name="rightGrid" type="text" default="3" size="5" label="Right Grid" description="RIGHT GRID DESC"  />
+        
+        <param name="@title" class="violate" type="txparamhelper" label="Template Logo" description="TEMPLATE LOGO DESC" />
+        <param name="logoType" type="list" default="image" label="Logo type" description="LOGO TYPE DESCRIPTION">
+            <option value="image">Image</option>
+            <option value="text">Text</option>
+        </param>
+        <param name="logoType-text-title" type="text" default="ZOE" size="50" label="Logo text" description="LOGO TEXT DESCRIPTION" />
+        <param name="logoType-text-slogan" type="text" default="Bring Your Tempalte to new life" size="50" label="Slogan" description="SLOGAN DESCRIPTION" />
+        
+        
+        <param name="@title" class="orange" type="txparamhelper" label="Font Renderer" description="FONT RENDER DESC" />
+            
+            <param name="fontLibrary" type="list" default="google" label="Font Library" description="CHOOSE FONT DESC">
+                <option value="google">Google Font</option>
+                <option value="cufon">Cufon</option>
+                <option value="custom">Custom</option>
+            </param>
+            
+            <param name="fontLibrary-google-Fonts" type="list" default="Yanone+Kaffeesatz" label="Google Fonts List" description="GOOGLE FONT DESC">
+                <option value="Cantarell">Cantarell</option>
+                <option value="Cardo">Cardo</option>
+                <option value="Crimson+Text">Crimson</option>
+                <option value="Droid+Sans">Droid Sans</option>
+                <option value="Droid+Sans+Mono">Droid Sans Mono</option>
+                <option value="Droid+Serif">Droid Serif</option>
+                <option value="IM+Fell+DW+Pica">IMFell DW Pica</option>
+                <option value="IM+Fell+DW+Pica+SC">IMFell DW Pica SC</option>
+                <option value="IM+Fell+Double+Pica">IMFell Double Pica</option>
+                <option value="IM+Fell+Double+Pica+SC">IMFell Double Pica SC</option>
+                <option value="IM+Fell+English">IMFell English</option>
+                <option value="IM+Fell+English+SC">IMFell English SC</option>
+                <option value="IM+Fell+French+Canon+SC">IMFell French Canon SC</option>
+                <option value="IM+Fell+Great+Primer">IMFell Great Primer</option>
+                <option value="IM+Fell+Great+Primer+SC">IMFell Great Primer SC</option>
+                <option value="Inconsolata">Inconsolata</option>
+                <option value="Josefin+Sans+Std+Light">Josefin Sans Std Light</option>
+                <option value="Lobster">Lobster</option>
+                <option value="Molengo">Molengo</option>
+                <option value="Nobile">Nobile</option>
+                <option value="OFL+Sorts+Mill+Goudy+TT">OFL Sorts Mill Goudy TT</option>
+                <option value="Old+Standard+TT">Old Standard TT</option>
+                <option value="Reenie+Beanie">Reenie Beanie</option>
+                <option value="Tangerine">Tangerine</option>
+                <option value="Vollkorn">Vollkorn</option>
+                <option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>
+            </param>
+            <param name="fontLibrary-google-Fonts-for" type="text" size="50"  default="h1,h3" label="Font User For" description="FONT USE FOR DESC" />
+            
+            <param name="fontLibrary-cufon-Fonts" type="list" default="Caviar" label="Cufon Fonts List" description="CUFON FONT LIST DESC">
+            <option value="Caviar">Caviar</option>
+            <option value="Liberation">Liberation</option>
+            <option value="Museo-500">Museo-500</option>
+            <option value="Museo-700">Museo-700</option>
+        </param>
+        
+        <param name="fontLibrary-cufon-Fonts-for" type="text" size="50"  default="h1,h3" label="Font User For" description="FONT USE FOR DESC" />
+        
+        <param name="fontLibrary-custom-Fonts" type="list" default="" label="Custm Fonts List" description="CUSTOM FONT LIST DESC">
+            <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+            <option value="Georgia, Times, serif">Georgia, Times, serif</option>
+            <option value="Verdana, Arial, Helvetica, sans-serif">Verdana, Arial, Helvetica, sans-serif</option>
+            <option value="Geneva, Arial, Helvetica, sans-serif">Geneva, Arial, Helvetica, sans-serif</option>
+        </param>
+        <param name="fontLibrary-custom-Fonts-for" type="text" size="50"  default="h1,h3" label="Font User For" description="FONT USE FOR DESC" />
+        
+        <param name="@title" class="green" type="txparamhelper" label="Even More" description="SOMETHING MORE DESC" />
+        
+        <param name="jquery" type="radio" default="1" label="Load Jquery" description="JQUERY LOAD DESC">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+        
+        <param name="showDate" type="radio" default="1" label="Show Date" description="SHOW DATE DESC">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+        <param name="showDate-1-formate" type="list" default="" label="Date Formate" description="DATE FORMATE DESC">
+            <option value="1">Friday, June 04, 2010</option>
+            <option value="2">June 04, 2010</option>
+            <option value="3">04 June, 2010</option>
+            <option value="4">June 04, Friday, 2010</option>
+        </param>
+        
+        <param name="analytics" type="radio" default="0" label="Add Google Analytics" description="ANALYTICS DESC">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+        <param name="analytics-1-id" type="text" default="" size="50" label="Analytics Id" description="ANALYTICS ID DESC"  />
+       
+        <!--<param name="copyright" type="radio" default="1" label="Show Copyright" description="SHOW COPYRIGHT DESC">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+        <param name="copyright-1-copyrightText" type="textarea" default="" rows="5" cols="50" label="Copyright Text" description="COPYRIGHT DESC"  />-->
+        
+        <param name="moduleOverlay" type="radio" default="0" label="Module Overlay" description="MODULE OVERLAY DESC">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+        
+        <param name="displayComponent" type="radio" default="0" label="Display Component" description="DISPLAY COMPONENT DESC">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+        <param name="login" type="radio" default="1" label="Show Login" description="SHOW LOGIN DESC">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+    </params>
+</install>

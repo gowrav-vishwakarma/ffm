@@ -1,0 +1,18 @@
+/*******************************************************************
+ * @file       style4.css 
+ * @package    ZOE ThemExpert Template framework.
+ * @version   1.5.5 June 01, 2010
+ * @author    YOOtheme http://www.yootheme.com & ThemExpert http://www.themexpert.com
+ * @copyright Copyright (C) 2007 - 2009 YOOtheme GmbH
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * 
+*******************************************************************/
+
+.tx-joomla .tx-headline {
+	zoom: 1;
+}
+
+.tx-joomla .tx-item,
+.tx-joomla .tx-item-bg {
+	zoom: 1;
+}

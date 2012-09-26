@@ -1,0 +1,191 @@
+/**
+ * @package   ZOE
+ * @version   2.5.0 June 01, 2010
+ * @author    YOOtheme http://www.yootheme.com & ThemExpert http://www.themexpert.com
+ * @copyright Copyright (C) 2007 - 2009 YOOtheme GmbH
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ *
+ * These template overrides are based on the fantastic GNU/GPLv2 overrides created by YOOtheme (http://www.yootheme.com)
+ *
+ */
+
+/* Headings */
+.tx-joomla h1 { 
+    margin-bottom: .03em;
+    padding-bottom: 8px;
+}
+.tx-joomla h2, .tx-joomla h3, .tx-joomla h4, .tx-joomla h5 {}
+.componentheading {font-weight: bold;display: block;margin-bottom: 15px;}
+.contentheading {font-size: 140%;font-weight: bold;margin-bottom: 15px;display: block;}
+
+/* Section Tables */
+.sectiontableheader {font-weight: bold;padding: 3px;line-height: 25px;text-align: left;}
+.sectiontablefooter {padding-bottom: 8px;}
+tr.sectiontableentry0 td, tr.sectiontableentry1 td, tr.sectiontableentry2 td, td.sectiontableentry0, td.sectiontableentry1, td.sectiontableentry2 {text-align: left;padding: 6px 5px;vertical-align: middle;}
+tr.sectiontableentry0 td, td.sectiontableentry0, tr.sectiontableentry1 td, td.sectiontableentry1, tr.sectiontableentry2 td, td.sectiontableentry2 {height: 30px;}
+.contentpane, .contentpaneopen {width: 100%;}
+
+/* Column Layout */
+.tx-joomla .float-left {float: left;}
+.tx-joomla .float-right {float: right;}
+.tx-joomla .width25 {width: 24.999%;}
+.tx-joomla .width33 {width: 33.333%;}
+.tx-joomla .width50 {width: 49.999%;}
+.tx-joomla .width100 {width: 100%;}
+
+/* Blog Layout */
+.tx-joomla .tx-blog .tx-description {  margin: 10px 0px 15px 0px;padding-bottom: 20px;border-bottom: 1px #c8c8c8 dotted;}
+.tx-joomla .tx-article {margin-bottom: 15px;}
+.tx-joomla .tx-headline {margin-bottom: 10px;}
+.tx-joomla .tx-article-bg {padding-bottom: 5px;}
+.tx-joomla .multicolumns .tx-article {margin: 0px 15px 15px 15px;}
+.tx-joomla .multicolumns .first .tx-article {margin-left: 0px;}
+.tx-joomla .multicolumns .last .tx-article {margin-right: 0px;}
+.tx-joomla .tx-article-links {margin: 10px 0px 10px 0px; padding: 10px;}
+
+/* article Layout */
+.tx-joomla h1.tx-article-title {width: auto;}
+.tx-joomla span.edit {margin-left: 10px;float: left;}
+.tx-joomla .tx-articleinfo {margin-bottom: 15px;}
+.tx-joomla .tx-articleinfo span.modified, .tx-joomla .tx-articleinfo span.author, .tx-joomla .tx-articleinfo span.created, .tx-joomla .tx-articleinfo span.url {display: block;font-size: 95%;}
+.tx-joomla .tx-articleinfo span.author {color: #969696;font-style: italic;}
+.tx-joomla .tx-articleinfo span.created {font-weight: bold;}
+.tx-joomla .tx-description {margin: 10px 0px 10px 0px;overflow: hidden;}
+.tx-description img.left {margin-right: 15px;float: left;}
+.tx-description img.right {margin-left: 15px;float: right;}
+.tx-joomla .filter {margin: 10px 0px;}
+.tx-joomla span.number {color: #969696;font-style: italic;}
+.tx-joomla .tx-article-icons {width: 65px;overflow: hidden;float: right;}
+.tx-joomla .icon {display:block;width:16px;height:16px;float: right;margin-left:3px;background-image: url(../images/typography.png);background-repeat: no-repeat;}
+.tx-joomla .printscreen {display: none;}
+.tx-joomla .print {background-position: 0 0;}
+.tx-joomla .email {background-position: -16px 0;}
+.tx-joomla .pdf {background-position: -32px 0;}
+.tx-joomla .edit {background-position: -48px 0;margin-left: 0 !important; margin-right:5px;}
+.tx-joomla .edit img {opacity: 0;}
+.tx-joomla .tx-article-cat {font-weight: bold;margin-top: 15px;margin-bottom: 0;}
+
+/* Pagination style*/
+.tx-pagination{text-align: center;}
+.tx-pagination p{margin-bottom: 0;}
+.pagination{padding: 5px;margin: 5px 0 0;list-style: none;}
+.pagination li{margin-right: 5px; display: inline;border: 1px solid #d5d5d5; padding: 3px 5px;}
+.pagination li a{text-decoration: none;}
+
+/* Editing */
+.tx-joomla .edit-article fieldset {margin-bottom: 30px;}
+.tx-joomla .edit-article fieldset div {overflow: hidden;margin-bottom: 5px;}
+.tx-joomla .edit-article label.label-left {display: block;width: 150px;float: left;}
+.tx-joomla .edit-article .save {margin: 0px;float: right;}
+.tx-joomla .edit-article #editor-xtd-buttons {margin-bottom: 0px;overflow: hidden;}
+.tx-joomla .edit-article #editor-xtd-buttons div {margin: 0px;}
+.tx-joomla .edit-article #editor-xtd-buttons .button2-left {margin-right: 5px;}
+.tx-joomla .edit-article #editor-xtd-buttons a:link, .tx-joomla .edit-article #editor-xtd-buttons a:visited, .tx-joomla .edit-article #editor-xtd-buttons a:hover {color: #323232;}
+.tx-joomla .edit-article .inputbox, .tx-joomla .edit-article textarea {border: 1px solid #ddd;}
+
+/* User */
+#form-login .inputbox, #com-form-login .inputbox, #josForm .inputbox {border: 1px solid #ddd;font-size: 1.2em;padding: 2px;margin: 0;}
+#com-form-login fieldset div, #josForm fieldset div {margin-bottom: 10px;}
+#form-login ul {margin-top: 10px;}
+#form-login p {margin-bottom: 10px;}
+#form-login .user-greeting {font-weight: bold;font-size: 120%;margin-bottom: 15px;}
+.tx-joomla .user label.label-left, .tx-joomla .user span.label-left {display: block;width: 130px;float: left;font-weight: bold;font-size: 120%;}
+/* Contact */
+.tx-joomla .contact h1 {margin-bottom: 0px;font-size: 250%;font-weight: normal;letter-spacing: -1px;}
+.tx-joomla .contact h2 {margin-bottom: 10px;font-size: 120%;font-weight: normal;text-transform: uppercase;letter-spacing: 0px;}
+.tx-joomla .contact .image {float: right;}
+.tx-joomla .contact table {margin-bottom: 10px;}
+.tx-joomla .contact label.label-top {display: block;}
+.contact .icon {float: left; width: 40px;}
+.contact .misc, .contact .webpage, .contact .mobile, .contact .email, .contact .telephone, .contact .fax, .contact .country, .contact .state, .contact .postcode, .contact .suburb, .contact .street-address {overflow: hidden;}
+.contact .other .surround {margin-top: 5px;}
+.contact .vcard {margin-top: 15px;}
+.tx-joomla .contact .inputbox {border: 1px solid #ddd;font-size: 1.2em;padding: 2px;margin: 0;}
+.tx-joomla .contact .label-top {display: block;font-weight: bold;font-size: 120%;}
+.tx-joomla .contact fieldset div {margin-bottom: 10px;}
+
+/* Weblinks */
+.tx-joomla .weblinks fieldset div {overflow: hidden;}
+.tx-joomla .weblinks label.label-left {display: block;width: 150px;float: left;}
+
+/* Search */
+.tx-joomla .search p.info {margin: 0px;color: #969696;font-style: italic;}
+.tx-joomla .search span.highlight {background: #ffffaa;}
+.tx-joomla .search_result {margin-top: 15px;}
+.tx-joomla .search_result .inputbox {border: 1px solid #ddd;font-size: 1.2em;padding: 2px;margin: 0;}
+.tx-joomla .search_result fieldset.word label {display: block;width: 130px;float: left;font-weight: bold;font-size: 120%;}
+.tx-joomla .search_result fieldset {margin-bottom: 15px;}
+.tx-joomla .search_result .phrase legend, .tx-joomla .search_result .only legend {line-height: 30px;font-weight: bold;}
+
+/* Polls */
+dl.poll dt {padding-top: 8px;text-transform: uppercase;font-size: 90%;}
+dl.poll dd {font-weight: bold;padding-bottom: 8px;border-bottom: 1px solid #eaeaea;font-size: 120%;}
+poll .polls_color_1,.poll .polls_color_2,.poll .polls_color_3,.poll .polls_color_4,.poll .polls_color_5 {border: solid 1px;position: relative;}
+.tx-poll h3 {border: solid 0;margin: 20px 0;}
+.tx-poll .td_2 {width: 100px;}
+.tx-poll .td_3 {width: 300px;}
+.tx-poll form {margin: 20px 0;}
+.tx-poll table {font-size: 1em;width: 100%;border: solid 0;position: relative;}
+.tx-poll table .td_1 {width: 30px;}
+.tx-poll table caption {color: #93246F;font-size: 1em;font-weight: bold;margin: 10px 0;text-align:left;}
+.tx-poll td {border: solid 1px #eaeaea;padding: 2px 5px;}
+.tx-poll td.line {width: 300px;}
+.tx-poll th {background: #eee;border: solid 1px #ddd;text-transform: uppercase;}
+.tx-poll .question {font-weight: bold;font-size: 110%;}
+.tx-poll .tx-pollrow {padding: 6px 0 8px 0;font-size: 110%;}
+.tx-poll .tx-pollbuttons {padding: 0;overflow: hidden;margin-top: 20px;}
+.tx-poll .readon {float: left;margin-right: 5px;}
+
+/* Newsflash */
+.module-newsflash {overflow: hidden;}
+.module-newsflash .tx-article {padding-bottom: 15px;overflow: hidden;}
+.module-newsflash .last {padding-bottom: 0px;}
+
+/* Accessibility */
+#tx-accessibility .tx-desc {float: left;padding-right: 5px;}
+#tx-accessibility #tx-buttons {float: left;}
+#tx-accessibility .button {display: block;width:14px;height:14px;float: left;background: url(../images/typography.png);margin: 2px;}
+#tx-accessibility .large .button {background-position: 0 -17px;}
+#tx-accessibility .small .button {background-position: -15px -17px;}
+
+/* Other */
+.tx-joomla .categorylist input {border: 1px solid #ddd;font-size: 1.2em;padding: 2px;margin: 0;}
+.tx-joomla th {padding: 5px;background: #ebebeb;border-bottom: 2px solid #ddd;font-weight : bold;}
+.tx-joomla tr.even td {padding: 5px;background: #f0f0f0;border-bottom: 1px solid #ddd;}
+.tx-joomla tr.odd td {padding: 5px;background: #fafafa;border-bottom: 1px solid #ddd;}
+.tx-breadcrumb-surround {margin: 0;display: block;position:relative;overflow: hidden;height: 20px;padding: 15px 25px;}
+
+/* Tooltips */
+.tool-tip {float: left;background: #ffc;border: 1px solid #D4D5AA;padding: 5px;max-width: 200px;color: #323232;}
+.tool-title {padding: 0;margin: 0;font-size: 100%;font-weight: bold;margin-top: -15px;padding-top: 15px;padding-bottom: 5px;background: url(../../system/images/selector-arrow.png) no-repeat;}
+.tool-text {font-size: 100%;margin: 0;}
+
+/* System Messages */
+/* OpenID icon style */
+input.system-openid, input.com-system-openid { background: url(http://openid.net/images/login-bg.gif) no-repeat;background-color: #fff;background-position: 0 50%;color: #000;padding-left: 18px;}
+
+
+/* Unpublished */
+.system-unpublished {background: #e8edf1;border-top: 4px solid #c4d3df;border-bottom: 4px solid #c4d3df;
+}
+
+/* System Messages */
+#system-message { margin-bottom: 10px; padding: 0;}
+#system-message dt { font-weight: bold; }
+#system-message dd { margin: 0; font-weight: bold; }
+#system-message dd ul { background: #BFD3E6; color: #0055BB; margin: 10px 0 10px 0; list-style: none; padding: 10px; border: 2px solid #84A7DB;}
+
+/* System Standard Messages */
+#system-message dt.message { display: none; }
+
+/* System Error Messages */
+#system-message dt.error { display: none; }
+#system-message dd.error ul { color: #c00; background-color: #EBC8C9; border: 2px solid #DE7A7B;}
+
+/* System Notice Messages */
+#system-message dt.notice { display: none; }
+#system-message dd.notice ul { color: #A08B4C; background: #F5ECC1; border: 2px solid #F0DC7E;}
+
+/* Debug */
+#system-debug { color: #ccc; background-color: #fff; padding: 10px; margin: 10px; }
+#system-debug div { font-size: 11px;}

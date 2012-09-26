@@ -1,0 +1,323 @@
+/* CSS Docuzt-ent */
+body {
+	font-size: 12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333;
+	margin:auto;
+	padding:0;
+}
+
+#zt-wrapper {
+	background-color:#FFFFFF;
+	margin:auto;
+	height:auto;
+}
+
+/*
+*	ZT Header
+*/
+#zt-header{
+     overflow: hidden;
+     width: 100%;
+	position: relative;
+	background: #000000 url("../images/header-1.jpg") repeat-x left top ;
+}
+#zt-header-inner{
+	background: url("../images/header-2.png") no-repeat scroll 70% 0 transparent;
+    padding: 0 5px
+}
+#zt-header .logo{
+	width: 136px;
+	height: 62px;
+	display: block;
+	font-size: 12px;
+}
+#zt-navigation {
+     overflow: hidden;
+     width: 100%;
+	border-top: 1px solid #5db4ea;
+	background: #1271ac ;
+}
+
+#zt-navigation-inner{
+	overflow: hidden;
+	padding: 20px 20px;
+}
+
+/*
+*	ZT Mainbody
+*/
+
+#zt-mainbody{
+	width: 100%;
+	overflow: hidden;
+	border-top: 1px solid #fff;
+	background: #f3f3f3 ;
+}
+#zt-mainbody-inner{
+	width: 100%;
+	display: inline-block;
+}
+#zt-content{
+	overflow: hidden;
+    padding: 10px 20px;
+}
+#page {
+	overflow: hidden;
+	width: 100%;
+}
+#zt-bottom {
+	overflow: hidden;
+     width: 100%;
+	position: relative;
+	border-top: 1px solid #4a5f6c;
+	background: url("../images/bottom-bg.jpg") repeat-x left top ;
+}
+
+#zt-bottom-inner{
+	padding: 10px 20px;
+	overflow: hidden;
+	background: url("../images/header-2.png") no-repeat scroll 0 0 ;
+}
+#zt-copyright {
+	margin: 10px 50px 10px 0;;
+	color: #6f6f6f;
+	overflow: hidden;
+}
+#zt-copyright  a{
+	color: #ddd;
+	text-decoration: none;
+}
+#pannel-top{
+	overflow: hidden;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 20px;
+	right: 10px;
+}
+#pannel-top a{
+	color: #fff;
+	text-decoration: none;
+}
+
+#zt-user6{
+	width: 100%;
+	overflow: hidden;
+}
+.moduletable,
+.moduletable_blank{
+	position: relative;
+	width: 100%;
+}
+
+.modulecontent{
+	padding: 10px 0;
+	overflow: hidden;
+}
+.moduletable_blank .modulecontent{
+	padding: 10px;
+}
+h3.moduletitle{
+	display: block;
+	margin: 10px 0;
+}
+h3.mtitle{
+	background-color: #E8E8E8;
+    height: 27px;
+	line-height: 27px;
+	font-size: 100%;
+	margin: 0;
+    padding: 0 10px;
+}
+#zt-user6 h3.moduletitle{
+	padding: 10px 20px;
+	margin: 0;
+	background: #ddd;
+	font-size: 130%;
+	font-style: italic;
+	border-top: 1px solid #bcbcbc;
+	border-bottom: 1px solid #bcbcbc;
+}
+h2.contentheading{
+	background: none;
+	text-shadow: none;
+	padding: 0;
+	color: #333;
+	font-size: 200%;
+	font-weight: normal;
+	text-transform: none;
+}
+h2.contentheading span{
+	background: none;
+}
+img.img_capleft{
+	float: none;
+	margin: 0;
+}
+a.readone{
+	width: 105px;
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	background: url(../images/mobile/readmore.png) no-repeat 0 0;
+}
+a.btmodile{
+	width: 140px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	text-indent: -999em;
+	background: url(../images/btmobile.png) no-repeat 0 0;
+}
+a.btmodile:hover{
+	background-position: 0 -30px;
+}
+.jvformcontact{
+	padding: 0 20px;
+	overflow: hidden;
+}
+/*
+* Form Sign
+*/
+#myForm .button{
+	width: 143px;
+	height: 32px;
+	border: none;
+	display: block;
+	text-indent: -999em;
+	background: url(../images/mobile/btsign.png) no-repeat 0 0;
+}
+#myForm input, #myForm textarea{
+	width: 230px;
+	height: 32px;
+	padding: 0 10px;
+	color: #888888;
+	border: none;
+	background: url(../images/mobile/input-bg.png) no-repeat 0 0;
+}
+/*
+* Latestnews
+*/
+div.latestnewsitems-inner{
+	overflow: hidden;
+	padding: 0px 20px 20px 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px dashed  #bcbcbc;
+}
+div.last-item div.latestnewsitems-inner{
+	border-bottom: none;
+}
+div.latestnewsitems h4{
+	margin: 0 0 10px 0;
+	font-size: 130%;
+}
+div.latestnewsitems h4 a {
+	color: #333;
+}
+div.latestnewsitems img {
+	padding: 3px;
+	background: #fff;
+	border: 1px solid #8b9eaa;
+}
+div.latestnewsitems a:hover img {
+	background: #8b9eaa;
+}
+
+
+.jv_aclickzt-enu_wrap .jv_zt-accordion li {
+	padding:5px 0;
+}
+div.jv_aclickzt-enu_wrap div.wrap_link a {
+	height:auto !important;
+	min-height:25px;
+	color:#1A93EC !important;
+	text-decoration:none;
+}
+.jv_azt-enu_itezt- a, .jv_aclickzt-enu_wrap a {
+	color:#1A93EC !important;
+	text-decoration:none;
+}
+
+/*
+* Toolbar
+*/
+#zt-toolbar-btn{
+	height: 30px;
+	width: 160px;
+	padding-top: 15px;
+	position: absolute;
+	right: 0px;
+	z-index: 10;
+}
+#shadowbox_container{
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+#zt-search,
+#zt-sign{
+    width: 250px;
+	top: 40px;
+	display: none;
+	margin: auto;
+    text-align: left;
+	background:#f8f8f8;
+    border: 4px solid #525252;
+
+}
+#mod_search_searchword{
+	float: left;
+}
+#zt-search-inner{
+	width: 100%;
+	overflow: hidden;
+}
+#zt-sign{
+	width: 260px;
+}
+#btn-search_close,
+#btn-login_close{
+	width: 18px;
+	height: 17px;
+	display: block;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	z-index: 90;
+	text-indent: 999em;
+	background: url(../images/mobile/btclose.png) no-repeat 0 0;
+}
+#zt-sign .inputbox{width: 90%;}
+#zt-sign .zt-user{margin-top: 5px;}
+#zt-sign .button{margin: 0;}
+#btn-search,
+#btn-login,
+#btn-destop,
+#btn-mobile{
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin-right: 10px;
+	float: left;
+	background: url(../images/mobile/ico-toolbar.png) no-repeat right top;
+}
+#btn-login{background-position: -78px top;}
+#btn-destop{background-position: -39px top;}
+#btn-mobile{background-position: 0px top;}
+
+#btn-search:hover{background-position: right -35px;}
+#btn-login:hover{background-position: -78px -35px;}
+#btn-destop:hover{background-position: -39px -35px;}
+#btn-mobile:hover{background-position: 0px -35px;}

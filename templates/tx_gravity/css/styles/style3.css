@@ -1,0 +1,233 @@
+/*******************************************************************
+ * @file       style3.css 
+ * @package    ZOE ThemExpert Template framework.
+ * @version   1.5.5 June 01, 2010
+ * @author    ThemeXpert http://www.themexpert.com
+ * @copyright Copyright (C) 2009 - 2010 ThemeXpert.com
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * 
+*******************************************************************/
+body{
+    background: url(../../images/bg/bg2.jpg) 60% 30% no-repeat fixed #000;
+    color: #8b8b8b;
+}
+a{
+    color: #4BB7D1;
+}
+a:hover{
+    color: #fff;
+}
+.tx-container{
+    
+}
+/* ALl Module position style
+----------------------------------------------------------------*/
+#tx-roof,#tx-header,#tx-feature,#tx-bottom,#tx-footer{
+     background: url(../../images/style1/module-m.png) 0 0 repeat-x #1e1e1e;
+}
+/* Navigation style
+----------------------------------------------------------------*/
+#tx-navigation{
+    background:url("../../images/style3/nav-bg.png") repeat scroll 0 0 ;
+}
+#tx-navigation ul li{
+
+
+}
+#tx-navigation li.active{
+    background: url(../../images/style3/nav-bg.png) 0 -43px ;
+}
+#tx-navigation li.active a { color: #fff;}
+#tx-navigation ul li a{
+    color: #153E48;
+    background: url(../../images/style3/nav-li-border.png) repeat-y 100% 0;
+}
+#tx-navigation ul li a:hover{
+    color: #fff;
+}
+#tx-navigation .tx-block{
+    background: none;
+}
+#tx-navigation ul ul >li { background: url(../../images/style3/nav-bg.png) 0 -43px ;}
+
+#tx-navigation ul ul >li a, 
+#tx-navigation ul ul >li a:active, 
+#tx-navigation ul ul >li a:link{
+    background: url(../../images/style3/nav-li-child-border.png) repeat-x 0 100%;
+}
+#tx-navigation ul.menu ul >li a, 
+#tx-navigation ul.menu ul >li a:active, 
+#tx-navigation ul.menu ul >li a:link{
+    color:#153E48;
+}
+#tx-navigation ul.menu li ul> li a:hover{
+    background: url(../../images/style3/nav-bg.png);
+    color:#fff;
+    border-bottom: 1px solid #333;
+}
+
+/* Top style
+----------------------------------------------------------------*/
+#tx-top{
+    background: #066C85;
+    color: #fff;
+}
+#tx-top .tx-block{
+    background: none;
+}
+
+#tx-top .module-encloser{
+    padding: 0;
+}
+/* Tools style
+----------------------------------------------------------------*/
+#tx-tools{
+    background: url(../../images/style1/tools_bg.png) 0 0 repeat;
+    color: #fff;
+    padding: 2px 14px 2px 10px;
+}
+div.login span#login_btn a{
+    color: #fff;
+}
+
+/* Main Encloser style
+----------------------------------------------------------------*/
+#tx-main-enclose{
+    background: url(../../images/style1/main-body-bg.png) 50% 0 repeat-x #242424;
+}
+#tx-main-inner{
+    background: url(../../images/style1/main-body-bottom-bg.png) 50% 100% repeat-x;
+}
+
+/* Article style/ Joomla Override style
+----------------------------------------------------------------*/
+.tx-headline{
+    border-bottom: 1px solid #3e3e3e;
+}
+.tx-headline h1{
+    border-bottom: 1px solid #000;
+}
+.tx-joomla h1{border-bottom: 1px solid #000;}
+.tx-joomla .tx-article{border-bottom: 1px solid #3e3e3e;}
+.tx-joomla .tx-article-bg {border-bottom: 1px solid #000;}
+.tx-pagination{
+}
+
+a.readon{
+    background: url(../../images/style1/readon-r.png) 100% 0 no-repeat;
+}
+a.readon span{
+    background: url(../../images/style1/readon-l.png) 0 0 no-repeat;
+    color: #999;
+}
+a.readon:hover{
+    background: url(../../images/style1/readon-r.png) 100% -30px no-repeat;
+}
+a.readon span:hover{
+    background: url(../../images/style1/readon-l.png) 0 -30px no-repeat;
+    color: #4BB7D1;
+}
+.tx-joomla th{
+    background: #404040;
+    border-bottom: 2px solid #242424;
+}
+.tx-joomla tr.even td {
+    background: #5e5e5e;
+    border-bottom: 1px solid #878787;
+}
+.tx-joomla tr.odd td {background: #a1a1a1;border-bottom: 1px solid #878787;}
+.tx-joomla th a, .tx-joomla td a,.tx-joomla td{color: #f3f3f3;}
+/* Left+Right style
+----------------------------------------------------------------*/
+#tx-left div.tx-block, #tx-right div.tx-block, #tx-mainBody,.tx-article-links{
+    background: url(../../images/style1/module-m.png) 0 0 repeat-x #1e1e1e;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    border-top: 1px solid #575757;
+}
+#tx-left ul li, #tx-right ul li{
+    border-bottom: 1px solid #3e3e3e;
+}
+#tx-left ul li a, #tx-right ul li a{
+    border-bottom: 1px solid #000;
+    color: #999;
+}
+#tx-left ul li a:hover, #tx-right ul li a:hover{
+    color: #4BB7D1;
+}
+
+/* Main Body style
+----------------------------------------------------------------*/
+#tx-mainBody{
+    padding: 10px;
+}
+
+
+/* Module style
+----------------------------------------------------------------*/
+div.tx-block{
+    background: url(../../images/style1/block-m.png) 0 0 repeat-x #404040 ;
+    color: #cfcfcf;
+}
+h3.title span.color{
+    color: #4BB7D1;
+}
+/* Bottom style + Toggle
+----------------------------------------------------------------*/
+div.toggle-enclose{
+    background: #242424;
+}
+a#toggle{
+    background: #f7f7f7;
+    color: #000;
+}
+a#toggle:hover{
+    background: #f7f7f7;
+}
+#tx-bottom{
+    background: url(../../images/style1/content-bg.png) 0 100% repeat-x #fff;
+    border-bottom: 2px solid #000;
+}
+#tx-bottom div.tx-block{
+    background: none;
+    border: none;
+}
+#tx-bottom .module-encloser{
+    border-right: 1px dotted #999;
+    color: #4b4b4b;
+}
+#tx-bottom .tx-omega .module-encloser{
+    border:none;
+}
+
+/* Footer Style
+----------------------------------------------------------------*/
+#tx-footer{
+    background: url(../../images/style1/main-body-bg.png) 50% 0 repeat-x #242424;
+}
+
+/* Copyright style
+----------------------------------------------------------------*/
+#tx-copyright{
+    background: #000;
+    color: #fff;
+}
+a.scroll{
+    color: #fff;
+}
+a.scroll:hover{
+    color: #fff;
+}
+
+.nivo-nextNav {
+    background: url(../../images/style3/arrow-next.png) no-repeat !important;
+    width: 60px !important;
+    height: 50px !important;
+    right: -21px !important;
+}
+.nivo-prevNav {
+    background: url(../../images/style3/arrow-prev.png) no-repeat !important;
+    width: 60px !important;
+    height: 50px !important;
+    left: -21px !important;
+}

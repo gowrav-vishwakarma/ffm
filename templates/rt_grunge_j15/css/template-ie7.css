@@ -1,0 +1,51 @@
+/**
+ * @version		1.5.2 January 10, 2011
+ * @author		RocketTheme, LLC http://www.rockettheme.com
+ * @copyright 	Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @license		http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+ */
+
+.readon {zoom:1;display:inline !important;}
+.readon span {zoom:1;}
+
+/* Modules */
+.module-surround {zoom: 1;display:inline-block;}
+
+/* Menu Fixes */
+ul, ul li {list-style-image: none !important;}
+ul li {margin-left: 0;}
+#rt-header {zoom:1;}
+#rt-header .menu li a {zoom:1;}
+#rt-header li li a, #rt-header li li.active a, #rt-header li li a:hover, #rt-header li li .separator, #rt-header li li.active .separator {zoom:1;}
+
+/* RokStories Fixes */
+.rokstories-tip {padding: 0px 10px 25px !important;padding-bottom: 35px;}
+#rt-showcase .feature-block ,#rt-showcase .feature-block .desc-container {overflow:visible !important;zoom:1;}
+
+/* Footer */
+#rt-copyright, .rt-block {zoom: 1;}
+#rocket {padding:0 5px;margin:0 5px;}
+#gantry-logo {zoom:1;display:inline-block;margin:0 5px;padding:0;}
+.rt-comment-count{padding:3px;}
+
+/* Joomla */
+#emailForm legend {color:#000;padding:5px 2px 10px 2px;}
+
+
+/* RTL */
+.rtl #rt-main-surround .rt-joomla ul {list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;border:0;padding:0;text-align:right;}
+.rtl #rt-main-surround .rt-joomla ul li {display:inline-block;background:url(../images/body/style1/arrow-off-rtl.png) no-repeat right;}
+.rtl #rt-top ul.menu  {margin-right:45px;}
+.rtl .pagination span{float:none;direction:rtl;}
+body.rtl .readon .button,body.rtl .readon span,body.rtl .readon a,body.rtl .readon1-m .readon1-r {float:left !important;}
+body.rtl #rt-showcase .feature-block ,body.rtl #rt-showcase .feature-block .desc-container {overflow:visible !important;zoom:1;}
+body.rtl #remember {float:none !important;}
+body.rtl #com-form-login-remember {direction:ltr;text-align:right;}
+body.rtl #rt-header .menu ul {left:0;}
+/* IE7 RTL Logo Kludge */
+body.rtl #rt-logo {left:-500px;zoom:1;}
+body.rtl #rt-header li ul {position:absolute;width:181px;top:-999em;left: 0;right:auto;}
+body.rtl #rt-header li ul ul {margin: 0;}
+body.rtl #rt-header li:hover ul ul, body.rtl #rt-header li:hover ul ul ul, body.rtl #rt-header li:hover ul ul ul ul {top:-999em;right:auto;}
+body.rtl #rt-header li li {margin: 0;padding: 0;height:auto;width:181px;}
+body.rtl #rt-header li:hover ul {top: 29px;margin-right:-1px;right:0;}
