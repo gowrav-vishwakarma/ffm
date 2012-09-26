@@ -11,10 +11,13 @@ class Model_Pin extends Model_Table {
     function init() {
         parent::init();
         $this->hasOne('Distributor','adcrd_id');
-        $this->addField('Pin');
-        $this->addField('Used')->type('boolean')->defaultValue(false);
+        $this->hasOne('Kit','kit_id');
 
-        
+        $this->addField('Pin');
+
+        $this->addField('Used')->type('boolean')->defaultValue(false);
+        $this->addField('published')->type('boolean')->defaultValue(false);
+
 
     }
 
