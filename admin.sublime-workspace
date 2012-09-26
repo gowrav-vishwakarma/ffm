@@ -556,6 +556,10 @@
 				"/var/www/ffm/ffm-user.sublime-project"
 			],
 			[
+				"ffmadmin",
+				"/var/www/ffm/admin.sublime-project"
+			],
+			[
 				"eindadmin",
 				"/var/www/e-indian/eindian-admin.sublime-project"
 			],

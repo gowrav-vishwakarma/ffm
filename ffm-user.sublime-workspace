@@ -50,14 +50,6 @@
 				"buffer_size": 1031,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "users/page/treeview.php",
-			"settings":
-			{
-				"buffer_size": 778,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -305,7 +297,6 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
 				{
@@ -328,34 +319,6 @@
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "users/page/treeview.php",
-					"settings":
-					{
-						"buffer_size": 778,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								762,
-								762
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 8,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -931,6 +894,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"ffmpos",
+				"/var/www/ffm/pos.sublime-project"
+			],
 			[
 				"bhoomi",
 				"/var/www/bhoomi/bhoomi.sublime-project"
