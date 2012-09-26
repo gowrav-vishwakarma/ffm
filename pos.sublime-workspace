@@ -820,6 +820,10 @@
 		"selected_items":
 		[
 			[
+				"ffmuse",
+				"/var/www/ffm/ffm-user.sublime-project"
+			],
+			[
 				"bhoo",
 				"/var/www/bhoomi/bhoomi.sublime-project"
 			],

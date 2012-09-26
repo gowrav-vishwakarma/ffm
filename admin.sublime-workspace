@@ -552,6 +552,10 @@
 		"selected_items":
 		[
 			[
+				"ffmpos",
+				"/var/www/ffm/pos.sublime-project"
+			],
+			[
 				"ffmuser",
 				"/var/www/ffm/ffm-user.sublime-project"
 			],

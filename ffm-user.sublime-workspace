@@ -932,6 +932,10 @@
 		"selected_items":
 		[
 			[
+				"ffmadmin",
+				"/var/www/ffm/admin.sublime-project"
+			],
+			[
 				"bhoomi",
 				"/var/www/bhoomi/bhoomi.sublime-project"
 			],
