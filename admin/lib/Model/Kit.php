@@ -11,6 +11,7 @@ class Model_Kit extends Model_Table {
     function init() {
         parent::init();
         $this->addField('name','Name');
+        
     }
 
 }
