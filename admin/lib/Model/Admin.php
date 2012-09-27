@@ -11,7 +11,7 @@ class Model_Admin extends Model_Table {
 	function init() {
 		parent::init();
 		$this->addField( "Command" )->mandatory( "Command is must to give" );
-		$this->addField( "Value" )->mandatory( "Command is must to give" );
+		$this->addField( "Values" )->mandatory( "Command is must to give" );
 
 	}
 

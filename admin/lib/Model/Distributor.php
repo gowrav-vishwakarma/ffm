@@ -63,5 +63,15 @@ class Model_Distributor extends Model_Table {
         });
         $this->addExpression('inLeg')->set('RIGHT(Path,1)');
         
+        $this->addHook('beforeSave',$this);
     }
+
+    function beforeSave(){
+
+        
+
+
+        throw $this->exception("You are not allowed to add any distributor at this stage");
+    }
+
 }
