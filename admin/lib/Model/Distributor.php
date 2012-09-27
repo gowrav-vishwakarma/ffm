@@ -12,9 +12,9 @@ class Model_Distributor extends Model_Table {
 
         parent::init();
 
-        $this->hasOne("Distributor", "sponsor_id");
+        $this->hasOne("Distributor", "sponsor_id")->display(array('form'=>'autocomplete/basic'));
         $this->hasOne("Kit", "kit_id");
-        $this->hasOne("Pin", "pin_id");
+        $this->hasOne("Pin", "pin_id")->system(true)->display(array('form'=>'autocomplete/basic'));
         
         $details=$this->join('jos_xpersonaldetails.distributor_id');
 
@@ -38,6 +38,7 @@ class Model_Distributor extends Model_Table {
         $details->addField('PinManagerPassword')->type('password');
 
         $this->addField('JoiningDate')->type('date')->defaultValue(date('Y-m-d'));
+
         $this->hasMany("SponsoredDistributors", "sponsor_id");
         $this->hasMany("Details", "distributor_id");
         $this->hasMany("Closing","distributor_id");
