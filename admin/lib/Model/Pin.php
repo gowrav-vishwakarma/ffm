@@ -47,8 +47,21 @@ class Model_Pin extends Model_Table {
     	$this['Pin']=$pin;
 
     	$this->saveAndUnload();
+    }
 
+    function usePin($pin=null){
+        if($pin==null and !$this->loaded()) return false;
+        if($this['Used']==true) return false;
 
+        if(!$this->loaded() and $pin != null){
+            $this->addCondition('Pin',$pin);
+            $this->tryLoadAny();
+            if(!$this->loaded()) return false;
+        }
+
+        $this['Used']=true;
+        $this['updated_at']=true;
+        $this->save();
 
     }
 
