@@ -6,13 +6,13 @@
  */
 class Model_Admin extends Model_Table {
 
-    var $table = 'jos_xadmin';
+	var $table = 'jos_xadmin';
 
-    function init() {
-        parent::init();
-        $this->addField("Command")->mandatory("Command is must to give");
-        $this->addField("Value")->mandatory("Command is must to give");
-        
-    }
+	function init() {
+		parent::init();
+		$this->addField( "Command" )->mandatory( "Command is must to give" );
+		$this->addField( "Value" )->mandatory( "Command is must to give" );
+
+	}
 
 }
