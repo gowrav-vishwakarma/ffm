@@ -12,9 +12,9 @@ class Model_Distributor extends Model_Table {
 
         parent::init();
 
-        $this->hasOne("Distributor", "sponsor_id");
+        // $this->hasOne("Distributor", "sponsor_id");
         $this->hasOne("Kit", "kit_id");
-        $this->hasOne("Pin", "pin_id");
+        // $this->hasOne("Pin", "pin_id");
         
         $details=$this->join('jos_xpersonaldetails.distributor_id');
 
@@ -61,6 +61,15 @@ class Model_Distributor extends Model_Table {
             return $m->refSQL('Leg')->addCondition('Leg','B')->dsql()->field('downline_id');
         });
         $this->addExpression('inLeg')->set('RIGHT(Path,1)');
+        
+
+
+        $this->addHook('beforeSave',$this);
+    }
+
+    function beforeSave(){
+
+        throw $this->exception("Your Request is Fail");
         
     }
 }
