@@ -32,14 +32,14 @@ class page_pin_search extends Page{
 															))->set('-1');	
 		$form->addField('dropdown','used_status')->setValueList(array(
 															"-1"=>"Any",
-															"0"=>"Used",
-															"1"=>"Un-Used"	
+															"1"=>"Used",
+															"0"=>"Un-Used"	
 															))->set('-1');
 		$form->addSubmit('Search');
 
 		if($form->isSubmitted()){
 			$grid->js()->reload(array(
-							'from_dist'=>$form->get('from_distributor'),
+							'from_dist'=>$form->get('from_disrtibutor'),
 							'to_dist'=>$form->get('to_distributor'),
 							'for_kit'=>$form->get('for_kit'),
 							'published_status'=>$form->get('published_status'),

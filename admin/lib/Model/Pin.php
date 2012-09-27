@@ -23,6 +23,8 @@ class Model_Pin extends Model_Table {
         $this->addField('created_at')->type('date')->defaultValue(date('Y-m-d'))->system(true);
         $this->addField('updated_at')->type('date')->defaultValue(date('Y-m-d'))->system(true);
 
+        $this->addExpression('distributor_id')->set('id');
+
     }
 
     function generateAndSave($kit_id,$bv,$pv,$rp,$adcrd_id){
