@@ -51,6 +51,7 @@ class Frontend extends ApiFrontend {
             ->addMenuItem('index','Welcome')
             ->addMenuItem('pos','Pos management')
             ->addMenuItem('kit_dashboard','Kits')
+            ->addMenuItem('pin_dashboard','Pins')
             ->addMenuItem('prd_dsh','Product Mng')
             ->addMenuItem('actemp','Accounts Top')
             ->addMenuItem('logout')
