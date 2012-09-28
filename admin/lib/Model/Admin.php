@@ -15,4 +15,16 @@ class Model_Admin extends Model_Table {
 
 	}
 
+	function getValue($command){
+		$this->addCondition('Command',$command);
+		$this->loadAny();
+		return $this['Value'];
+	}
+
+	function setValue($command,$value){
+		$this->addCondition('Command',$command);
+		$this->loadAny();
+		$this['Value']=$value;
+		$this->save();
+	}
 }
