@@ -6,7 +6,6 @@ class page_newregistration extends Page {
 		$form=$this->add('Form');
 		$form->setModel('Distributor',array(
 								'sponsor_id',
-								'pin',
 								'fullname',
 							'Father_HusbandName',
 							'Dob',
@@ -42,7 +41,7 @@ class page_newregistration extends Page {
 			if($form->get('leg')=='-1') $form->displayError('leg','Please select any valid leg');
 
 
-			// Sponsor checkings
+			// Sponsor checkings for already filled leg
 			$sponsor=$this->add('Model_Distributor');
 			$sponsor->load($form->get('sponsor_id'));
 
@@ -58,9 +57,21 @@ class page_newregistration extends Page {
 			if(!$pin->loaded() OR $pin['Pin'] != strtolower($form->get('pin')) OR $pin['Used']==true)
 				$form->displayError('pin','Pin Validation failed or This is a Used pin');
 
+			$form->model->memorize('leg',$form->get('leg'));
+			$form->model->memorize('new_entry',true);
+			$form->model['id'] =  $form->get('new_id');
+			$form->model['pin_id']=$form->get('new_id');
+			try{
+				$this->api->db->beginTransaction();
+					$form->update();
+			}catch(Exception $e){
+				$this->api->db->rollback();
+				$form->js()->univ()->errorMessage($e->getMessage())->execute();
+			}
 
+			$this->api->db->commit();
 
-			$form->js()->univ()->successMessage('Got it till last')->execute();
+			$form->js(null,$form->js()->reload())->univ()->successMessage('Member Registred SucessFully')->execute();
 
 		}
 	}

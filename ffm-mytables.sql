@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 26, 2012 at 09:55 AM
+-- Generation Time: Oct 01, 2012 at 12:55 PM
 -- Server version: 5.5.24
 -- PHP Version: 5.3.10-1ubuntu3.2
 
@@ -158,6 +158,27 @@ INSERT INTO `jos_xxitems` (`id`, `name`, `category_id`, `LastPurchasePrice`, `DP
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jos_xxkitledgers`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_xxkitledgers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kit_id` int(11) DEFAULT NULL,
+  `ledger_id` int(11) DEFAULT NULL,
+  `Amount` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `jos_xxkitledgers`
+--
+
+INSERT INTO `jos_xxkitledgers` (`id`, `kit_id`, `ledger_id`, `Amount`) VALUES
+(2, 1, 16, 700);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jos_xxledgers`
 --
 
@@ -177,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `jos_xxledgers` (
   KEY `fk_jos_xxledgers_jos_xxgroups1` (`group_id`),
   KEY `fk_jos_xxledgers_jos_xxpos1` (`pos_id`),
   KEY `fk_jos_xxledgers_jos_xxstaff1` (`staff_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `jos_xxledgers`
@@ -198,7 +219,8 @@ INSERT INTO `jos_xxledgers` (`id`, `name`, `created_at`, `updated_at`, `distribu
 (12, 'Sales Account', '2012-09-13 00:00:00', '2012-09-13 00:00:00', NULL, 25, 2, 2, 0, NULL, NULL),
 (13, 'Sales Account', '2012-09-13 00:00:00', '2012-09-13 00:00:00', NULL, 25, 3, 3, 0, NULL, NULL),
 (14, 'Ram la pos 3', '2012-09-13 00:00:00', '2012-09-13 00:00:00', NULL, 27, 3, 3, 0, NULL, NULL),
-(15, 'Cash', '2012-09-14 00:00:00', '2012-09-14 00:00:00', NULL, 28, NULL, NULL, 1, NULL, NULL);
+(15, 'Cash', '2012-09-14 00:00:00', '2012-09-14 00:00:00', NULL, 28, NULL, NULL, 1, NULL, NULL),
+(16, 'Holiday Voucher Purchase', '2012-09-30 00:00:00', '2012-09-30 00:00:00', NULL, 24, NULL, NULL, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -248,6 +270,94 @@ INSERT INTO `jos_xxstaff` (`id`, `name`, `username`, `password`, `pos_id`, `Acce
 (1, 'COMPANY POS_SUPER_STAFF', 'pos_1_admin', 'admin', 1, '1000'),
 (2, 'Udaipur Depot_SUPER_STAFF', 'pos_2_admin', 'admin', 2, '100'),
 (3, 'Kota Retailer Shoppe_SUPER_STAFF', 'pos_3_admin', 'admin', 3, '100');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_xxstocks`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_xxstocks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pos_id` int(11) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `Stock` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `jos_xxstocks`
+--
+
+INSERT INTO `jos_xxstocks` (`id`, `pos_id`, `item_id`, `Stock`) VALUES
+(1, 3, 3, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_xxvoucherdetails`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_xxvoucherdetails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `voucher_id` int(11) DEFAULT NULL,
+  `pos_id` int(11) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `Rate` float DEFAULT NULL,
+  `Qty` float DEFAULT NULL,
+  `Amount` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `jos_xxvoucherdetails`
+--
+
+INSERT INTO `jos_xxvoucherdetails` (`id`, `voucher_id`, `pos_id`, `item_id`, `Rate`, `Qty`, `Amount`) VALUES
+(1, 1, NULL, 3, 2, 1, 3),
+(2, 3, NULL, 3, 2, 1, 3),
+(3, 5, NULL, 3, 2, 1, 3),
+(4, 7, NULL, 3, 2, 1, 3),
+(5, 15, NULL, 3, 1, 1, 110);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_xxvouchers`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_xxvouchers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ledger_id` int(11) DEFAULT NULL,
+  `pos_id` int(11) DEFAULT NULL,
+  `AmountCR` float DEFAULT NULL,
+  `AmountDR` float DEFAULT NULL,
+  `ContraAmount` float DEFAULT NULL,
+  `VoucherNo` int(11) DEFAULT NULL,
+  `Narration` text,
+  `VoucherType` varchar(45) DEFAULT NULL,
+  `RefAccount` int(11) DEFAULT NULL,
+  `has_details` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+
+--
+-- Dumping data for table `jos_xxvouchers`
+--
+
+INSERT INTO `jos_xxvouchers` (`id`, `ledger_id`, `pos_id`, `AmountCR`, `AmountDR`, `ContraAmount`, `VoucherNo`, `Narration`, `VoucherType`, `RefAccount`, `has_details`) VALUES
+(9, 14, 3, NULL, 600, 600, 1, 'JV on date 2012-09-30', 'JV', NULL, 0),
+(10, 1, 3, 300, NULL, 300, 1, 'JV on date 2012-09-30', 'JV', NULL, 0),
+(11, 13, 3, 100, NULL, 100, 1, 'JV on date 2012-09-30', 'JV', NULL, 0),
+(12, 9, 3, 200, NULL, 200, 1, 'JV on date 2012-09-30', 'JV', NULL, 0),
+(13, 14, 3, NULL, 500, 500, 1, 'PAYMENT on date 2012-09-30', 'PAYMENT', NULL, 0),
+(14, 15, 3, 500, NULL, 500, 1, 'PAYMENT on date 2012-09-30', 'PAYMENT', NULL, 0),
+(15, 16, 3, NULL, 110, 110, 1, 'PURCHASED on date 2012-09-30', 'PURCHASE', NULL, 1),
+(16, 1, 3, 110, NULL, 110, 1, 'PURCHASED on date 2012-09-30', 'PURCHASE', NULL, 1),
+(17, 14, 3, NULL, 650, 650, 2, 'dsfsdfsdf', 'JV', NULL, 0),
+(18, 16, 3, 200, NULL, 200, 2, 'dsfsdfsdf', 'JV', NULL, 0),
+(19, 13, 3, 210, NULL, 210, 2, 'dsfsdfsdf', 'JV', NULL, 0),
+(20, 9, 3, 240, NULL, 240, 2, 'dsfsdfsdf', 'JV', NULL, 0);
 
 --
 -- Constraints for dumped tables

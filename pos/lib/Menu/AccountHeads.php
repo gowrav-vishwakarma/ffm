@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-class Menu_AccountHeads extends Menu{
+class Menu_AccountHeads extends Menu {
     function init(){
         parent::init();
         $this->addMenuItem('ledgers_my',"My Ledgers");

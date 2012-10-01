@@ -10,7 +10,7 @@ class Model_Stock extends Model_Table {
 
     function init() {
         parent::init();
-        $this->hasOne("Item","items_id");
+        $this->hasOne("Item","item_id");
         $this->hasOne("Pos","pos_id");
         $this->addField("Stock");
     }

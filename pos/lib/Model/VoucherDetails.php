@@ -12,6 +12,8 @@ class Model_VoucherDetails extends Model_Table {
     function init() {
         parent::init();
         $this->hasOne('VoucherAll','voucher_id');
+        $this->hasOne('Pos','pos_id');
+
         $this->hasOne('Item','item_id');
         $this->addField('Rate');
         $this->addField('Qty');

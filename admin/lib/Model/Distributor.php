@@ -15,6 +15,10 @@ class Model_Distributor extends Model_Table {
         $this->hasOne("Distributor", "sponsor_id")->display(array('form'=>'autocomplete/basic'));
         $this->hasOne("Kit", "kit_id");
         $this->hasOne("Pin", "pin_id")->system(true)->display(array('form'=>'autocomplete/basic'));
+
+        $this->addField('PV');
+        $this->addField('BV');
+        $this->addField('RP');
         
         $details=$this->join('jos_xpersonaldetails.distributor_id');
 
@@ -64,14 +68,148 @@ class Model_Distributor extends Model_Table {
         $this->addExpression('inLeg')->set('RIGHT(Path,1)');
         
         $this->addHook('beforeSave',$this);
+        $this->addHook('afterSave',$this);
     }
 
     function beforeSave(){
 
+        if(!$this->loaded()){
+            $this->recall('new_entry',false);
+            $sponsor=$this->add('Model_Distributor');
+            $sponsor->load($this['sponsor_id']);
+
+            $this['Path']=$sponsor['Path']. $this->recall('leg');
+
+            $leg=$this->add('Model_Leg');
+            $leg['distributor_id']=$sponsor->id;
+            $leg['Leg']=$this->recall('leg');
+            $leg['downline_id']=$this['id'];
+            $leg->save();
+            
+            $pin=$this->ref('pin_id');
+            $pin['Used']=true;
+            $pin->save();
+
+            $kit=$pin->ref('kit_id');
+
+            $this['kit_id']   = $pin['kit_id'];
+            $this['adcrd_id'] = $pin['adcrd_id'];
+            $this['PV']       = $pin['PV'];
+            $this['BV']       = $pin['BV'];
+            $this['RP']       = $pin['RP'];
+            
+            $this['GreenDate']= ($kit['DefaultGreen']==1 ? date('Y-m-d'): "0000-00-00");
+
+            $mr=$this->add('Model_MillionRewards');
+            $mr['distributor_id']=$this['id'];
+            $mr->save();
+
+            $br=$this->add('Model_BillionRewards');
+            $br['distributor_id']=$this['id'];
+            $br->save();
+
+        }
+
+        // throw $this->exception("You are not allowed to add any distributor at this stage");
+    }
+
+    function afterSave(){
+        if($this->recall('new_entry',false)){
+            
+                $this->updateAnsesstors();
+                $this->joiningVoucherEntry();
+
+            $this->forget('new_entry');
+        }
+    }
+
+    function updateAnsesstors(){
+        $Path = $this['Path'];
+        $kit = $this->ref('kit_id');
+        $PV = $kit['PV'];
+        $BV = $kit['BV'];
+        $RP = $kit['RP'];
+        // $IntroAmount = $kit['AmountToIntroducer'];
+        $Green = $kit['DefaultGreen'];
+
+
+        $query = "
+                UPDATE jos_xlegs l
+                        inner join
+                        (
+                                SELECT
+                                                        jos_xtreedetails.id AS id,
+                                                        jos_xlegs.Leg AS Leg,
+                                                        LEFT('$Path',LENGTH(path)) AS desired ,
+                                                        path,
+                                                        MID('$Path',LENGTH(path)+1,1) AS nextChar
+                                                FROM
+                                                        jos_xlegs
+                                                INNER JOIN
+                                                        jos_xtreedetails on jos_xtreedetails.id=jos_xlegs.distributor_id
+                                                HAVING
+                                                        desired=path and
+                                                        jos_xlegs.Leg=nextChar
+                        ) as Ansesstors
+                        on Ansesstors.id=l.distributor_id and Ansesstors.Leg=l.Leg
+                        inner join jos_xtreedetails t
+                            on Ansesstors.id=t.id
+                        SET
+                        l.SessionPV = l.SessionPV+$PV,
+                        l.MidSessionPV = l.MidSessionPV + $PV,
+                        l.ClosingPV = l.ClosingPV + $PV,
+
+                        l.SessionBV = l.SessionBV+$BV,
+                        l.MidSessionBV = l.MidSessionBV + $BV,
+                        l.ClosingBV = l.ClosingBV + $BV,
+
+                        l.SessionRP = l.SessionRP+$RP,
+                        l.MidSessionRP = l.MidSessionRP + $RP,
+                        l.ClosingRP = l.ClosingRP + $RP,
+
+                        l.SessionGreenCount = l.SessionGreenCount + $Green,
+                        l.MidSessionGreenCount = l.MidSessionGreenCount + $Green,
+                        l.ClosingGreenCount = l.ClosingGreenCount + $Green,
+                        l.TotalGreenCount = l.TotalGreenCount + $Green,
+
+                        l.SessionCount = l.SessionCount + 1,
+                        l.MidSessionCount = l.MidSessionCount+1,
+                        l.ClosingCount = l.ClosingCount + 1,
+                        l.TotalCount = l.TotalCount + 1,
+
+                        /*
+                        t.SessionPV = t.SessionPV+$PV,
+                        t.MidSessionPV = t.MidSessionPV + $PV,
+                        t.ClosingPV = t.ClosingPV + $PV,
+
+                        t.SessionBV = t.SessionBV+$BV,
+                        t.MidSessionBV = t.MidSessionBV + $BV,
+                        t.ClosingBV = t.ClosingBV + $BV,
+
+                        t.SessionRP = t.SessionRP+$RP,
+                        t.MidSessionRP = t.MidSessionRP + $RP,
+                        t.ClosingRP = t.ClosingRP + $RP,
+
+                        t.TotalPV = t.TotalPV + $PV,
+                        t.TotalBV = t.TotalBV + $BV,
+                        t.TotalRP = t.TotalRP + $RP,*/
+
+                        t.SessionGreenCount = t.SessionGreenCount + $Green,
+                        t.MidSessionGreenCount = t.MidSessionGreenCount + $Green,
+                        t.ClosingGreenCount = t.ClosingGreenCount + $Green,
+                        t.TotalGreenCount = t.TotalGreenCount + $Green,
+
+                        t.SessionCount = t.SessionCount + 1,
+                        t.MidSessionCount = t.MidSessionCount+1,
+                        t.ClosingCount = t.ClosingCount + 1,
+                        t.TotalCount = t.TotalCount + 1
+                ";
+
+        $this->api->db->dsql()->expr($query)->execute();
+    }
+
+    function joiningVoucherEntry(){
         
-
-
-        throw $this->exception("You are not allowed to add any distributor at this stage");
     }
 
 }

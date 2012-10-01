@@ -21,6 +21,7 @@ class Model_VoucherAll extends Model_Table {
         $this->hasMany('VoucherDetails','voucher_id');
         $this->addField('AmountCR');
         $this->addField('AmountDR');
+        $this->addField('ContraAmount');
         $this->addField('VoucherNo')->system(true);
         $this->addField('Narration')->type('text');
         $this->addField('VoucherType')->enum('SALES','PURCHASE','JV','CONTRA')->mandatory("Voucher Type is must");
@@ -78,6 +79,7 @@ class Model_VoucherAll extends Model_Table {
             
             $ve['ledger_id']=$key;
             $ve['AmountDR']=$val['Amount'];
+            $ve['ContraAmount']=(count($dr_accounts) > 1) ? $val['Amount'] : $crsum;
             $ve['VoucherNo']=$auto_voucher;
             $ve['Narration']=$narration;
             $ve['VoucherType']=$this->voucher_type;
@@ -93,6 +95,7 @@ class Model_VoucherAll extends Model_Table {
             if($val['Amount']=="" or $val['Amount']== null or $val['Amount']==0) continue;
             $ve['ledger_id']=$key;
             $ve['AmountCR']=$val['Amount'];
+            $ve['ContraAmount']=(count($cr_accounts) > 1) ? $val['Amount'] : $drsum;
             $ve['VoucherNo']=$auto_voucher;
             $ve['Narration']=$narration;
             $ve['VoucherType']=$this->voucher_type;

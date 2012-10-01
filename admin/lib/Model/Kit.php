@@ -10,6 +10,9 @@ class Model_Kit extends Model_Table {
 
     function init() {
         parent::init();
+
+        $this->hasMany('KitLedgers','kit_id');
+
         $this->addField('name','Name');
         $this->addField('MRP');
         $this->addField('DP');

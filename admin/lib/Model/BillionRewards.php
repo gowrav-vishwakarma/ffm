@@ -4,14 +4,14 @@ class Model_BillionRewards extends Model_table {
 	function init(){
 		parent::init();
 		$this->hasOne('Distributor','distributor_id');
-		$this->addField('reward1');
-		$this->addField('reward2');
-		$this->addField('reward3');
-		$this->addField('reward4');
-		$this->addField('reward5');
-		$this->addField('reward6');
-		$this->addField('reward7');
-		$this->addField('reward8');
+		$this->addField('reward1')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward2')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward3')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward4')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward5')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward6')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward7')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward8')->defaultValue('0000-00-00 00:00:00');
 
 		$this->addExpression("Pair_10")->set('
 				IF(

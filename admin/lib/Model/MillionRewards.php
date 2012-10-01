@@ -5,10 +5,10 @@ class Model_MillionRewards extends Model_Table {
 	function init(){
 		parent::init();
 		$this->hasOne('Distributor','distributor_id');
-		$this->addField('reward1');
-		$this->addField('reward2');
-		$this->addField('reward3');
-		$this->addField('reward4');
+		$this->addField('reward1')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward2')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward3')->defaultValue('0000-00-00 00:00:00');
+		$this->addField('reward4')->defaultValue('0000-00-00 00:00:00');
 
 		$joinintDate=$this->api->auth->model['JoiningDate'];
 
@@ -60,5 +60,14 @@ class Model_MillionRewards extends Model_Table {
 				)'
 			);
 
+		$this->addHook('beforeSave',$this);
+
 	}
+
+	function beforeSave(){
+		// throw $this->exception('I m evil all in here');
+		
+		
+	}
+
 }
