@@ -9,7 +9,6 @@ class Model_Distributor extends Model_Table {
     var $table='jos_xtreedetails';
     
     function init() {
-
         parent::init();
 
         $this->hasOne("Distributor", "sponsor_id")->display(array('form'=>'autocomplete/basic'));
@@ -123,7 +122,12 @@ class Model_Distributor extends Model_Table {
     }
 
     function createLedger(){
-        $l=$this->add('Model_LedgerAll');
+        // $l=$this->add('Model_LedgerAll');
+        // $l['name']=$this['name'];
+        // $l['distributor_id'] = $this->id;
+        // $l['group_id']= $this->add('Model_GroupAll')->getGroupID('Branches And Divisions');
+        // $l['default_account']=true;
+        // $l->saveAndUnload();
 
     }
 
