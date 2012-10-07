@@ -11,11 +11,13 @@ class Model_Pos extends Model_Table {
 
     function init() {
         parent::init();
+        $this->hasOne("PosOwner",'owner_id')->display(array('form'=>'autocomplete/basic'));
+        $this->hasOne('LedgerAll','ledger_id');
+        
         $this->addField('name');//->mandatory("Point of Sales Must have a Name");
         $this->addField("type")->enum(array("Retailer","Depot"))->defaultValue("Retailer")->mandatory("Type of POS is must to specify");
-        
+
         $this->hasMany("MyStocks","pos_id");
-        $this->hasOne("PosOwner",'owner_id')->type('line');
         $this->hasMany('Staff','pos_id');
         $this->hasMany('OnlyMyGroups','pos_id');
         $this->hasMany('OnlyMyLedgers','pos_id');
@@ -41,10 +43,11 @@ class Model_Pos extends Model_Table {
     
     function afterSave(){
         if($this->recall('isNew',false)){ //If Coming After saving New
+            $this->forget('isNew');
+
             $this->setupAccounting(); 
             $this->createDefaultStaff();
             
-            $this->forget('isNew');
         }
     }
     
@@ -62,6 +65,8 @@ class Model_Pos extends Model_Table {
         $l['default_account']=true;
         $l->save();
 
+        // $this['ledger_id']=$l->id;
+        // $this->save();
     }
     
     function createdefaultStaff(){

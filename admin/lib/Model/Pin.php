@@ -10,7 +10,7 @@ class Model_Pin extends Model_Table {
 
     function init() {
         parent::init();
-        $this->hasOne('Distributor','adcrd_id');
+        $this->hasOne('PosOwner','adcrd_id');
         $this->hasOne('Kit','kit_id');
         $this->addField('BV');
         $this->addField('PV');
@@ -65,6 +65,10 @@ class Model_Pin extends Model_Table {
         $this['updated_at']=true;
         $this->save();
 
+    }
+
+    function transfer($from,$to,$to_adcrdc_id){
+        
     }
 
 }

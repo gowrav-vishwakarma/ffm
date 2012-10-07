@@ -8,23 +8,23 @@ class page_resetall extends Page {
 
     function init() {
         parent::init();
-        
         $this->query("
                 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
                 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-                SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+                SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';");
         
+        $this->query("
                 truncate jos_xxcategory;
                 truncate jos_xxgroups;
                 truncate jos_xxheads;
                 truncate jos_xxitems;
                 truncate jos_xxledgers;
                 truncate jos_xxparties;
-                truncate jos_xxpos;
                 truncate jos_xxstaff;
                 truncate jos_xxstocks;
-                truncate jos_xxvouchers;");
-        
+                truncate jos_xxvouchers;
+                truncate jos_xxpos;");
+        $this->add('HelloWorld');
         
 //        @TODO@ -- Default heads and groups and ledgers
 
@@ -86,11 +86,11 @@ class page_resetall extends Page {
                 "In Direct Income"      =>13,
                 "Purchase Account"      =>14,
                 "Sales Account"         =>15,/*25*/
-                "Distributors"          =>8
+                "Distributors"          =>3
                 );
 
         foreach($groups_arr as $grp=>$head){
-            $ng=$this->add('Model_Groups    All');
+            $ng=$this->add('Model_GroupsAll');
             $ng['name']     =   $grp;
             $ng['head_id']  =   $head;
             $ng->saveAndUnload();
@@ -111,6 +111,9 @@ class page_resetall extends Page {
             $lam['group_id']=$group_head;
             $lam->saveAndUnload();
         }
+
+        // PIN TABLE ADD POS_ID
+        // $this->query("ALTER TABLE `ffm`.`jos_xpinmaster` ADD COLUMN `pos_id` INT NULL  AFTER `updated_at`;");
 
 
         $this->query("

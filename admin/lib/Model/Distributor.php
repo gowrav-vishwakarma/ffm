@@ -115,12 +115,16 @@ class Model_Distributor extends Model_Table {
 
     function afterSave(){
         if($this->recall('new_entry',false)){
-            
+            $this->forget('new_entry');
+                $this->createLedger();
                 $this->updateAnsesstors();
                 $this->joiningVoucherEntry();
-
-            $this->forget('new_entry');
         }
+    }
+
+    function createLedger(){
+        $l=$this->add('Model_LedgerAll');
+
     }
 
     function updateAnsesstors(){
@@ -209,7 +213,16 @@ class Model_Distributor extends Model_Table {
     }
 
     function joiningVoucherEntry(){
-        
+        $kit_ledgers=$this->ref('kit_id')->ref('KitLedgers');
+        $dr_array=array();
+        foreach($kit_ledgers as $junk){
+            $dr_array[$kit_ledgers->get('ledger_id')] = array('Amount'=>$kit_ledgers->get('Amount'));
+        }
+
+        $cr_array=array();
+        $pin_pos=$this->ref('pin_id')->ref('adcrd_id')->ref('PosOwner')->tryLoadAny();
+        $cr_array[$pin_pos->id];
+
     }
 
 }
