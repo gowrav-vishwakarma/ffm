@@ -24,6 +24,12 @@ class page_actemp extends Page {
         $ltab=$tabs->addTab("Ledgers");
         $lc=$ltab->add("CRUD");
         $lc->setModel('DefaultLedgers');
+        
+        if($lc->grid){
+            $lc->grid->addPaginator(50);
+            $lc->grid->addQuickSearch(array('name'));
+        }
+        
         if($lc->form){
             $lc->form->getElement('group_id')->setEmptyText("Root Group");
         }

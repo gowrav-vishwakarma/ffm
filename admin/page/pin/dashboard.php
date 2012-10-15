@@ -7,7 +7,7 @@ class page_pin_dashboard extends Page{
 		$tab->addTabUrl('pin_changestatus','Menage Pin Status');
 		$tab->addTabUrl('pin_search','Search');
 		$tab->addTabUrl('pin_generate','Ganrate New Pins');
-		$tab->addTabUrl('pin_transfer','Pin Transfer');
+		// $tab->addTabUrl('pin_transfer','Pin Transfer');
 
 	} 
 }

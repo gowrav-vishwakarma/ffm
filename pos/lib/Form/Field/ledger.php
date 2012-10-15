@@ -1,11 +1,18 @@
 <?php
 
-class Form_Field_Ledger extends Form_Field_DropDown {
+class Form_Field_Ledger extends autocomplete\Form_Field_basic {
 
     function init(){
         parent::init();
-        $this->setEmptyText(" ");
-        $this->js(true)->combobox();
+        // $this->setEmptyText(" ");
+        // $this->js(true)->combobox();
+        $this->mustMatch();
+        // $this->setOptions(array('mustMatch'=> 'true'));
+    }
+
+    function setEmptyText($msg){
+        $this->setNotNull($msg);
+        return $this;
     }
 
     function setGroup($group, $includeSubGroups=true){

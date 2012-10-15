@@ -53,6 +53,7 @@ class Frontend extends ApiFrontend {
             ->addMenuItem('index','DashBoard')
             ->addMenuItem('ledgers/my','A/C Heads')
             ->addMenuItem('vouchers/dashboard','A/C Vouchers')
+            ->addMenuItem("pins/sales","Pin Management")
             ->addMenuItem('stock/dashboard','Stocks')
             ->addMenuItem('reports/dashboard','Reports')
             ->addMenuItem('logout')

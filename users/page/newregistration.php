@@ -54,8 +54,10 @@ class page_newregistration extends Page {
 			// check pins
 			$pin=$this->add('Model_Pin');
 			$pin->tryLoad($form->get('new_id'));
-			if(!$pin->loaded() OR $pin['Pin'] != strtolower($form->get('pin')) OR $pin['Used']==true)
-				$form->displayError('pin','Pin Validation failed or This is a Used pin');
+			if(!$pin->loaded() OR $pin['Pin'] != strtolower($form->get('pin')) OR $pin['Used']==true OR $pin['published']==false)
+				$form->displayError('pin','Pin Validation failed or This is a Used pin or Not Activated Pin');
+
+			$this->api->auth->model['pos_id'] = $pin['pos_id'];
 
 			$form->model->memorize('leg',$form->get('leg'));
 			$form->model->memorize('new_entry',true);
@@ -66,6 +68,7 @@ class page_newregistration extends Page {
 					$form->update();
 			}catch(Exception $e){
 				$this->api->db->rollback();
+				throw $e;
 				$form->js()->univ()->errorMessage($e->getMessage())->execute();
 			}
 

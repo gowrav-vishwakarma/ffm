@@ -3,7 +3,7 @@
 class View_ReceiptVoucher extends View_PaymentReceiptVoucher{
 
 	protected $party_ledgers = array("Distributors","Sundry Creditors");
-	protected $payment_receipt_ledger = array("Cash Group","Bank Account");
+	protected $payment_receipt_ledger = array("Cash Group","Bank Accounts");
 	protected $voucher_model = "PaymentReceivedVoucher";
 	protected $has_details = false;
 	// protected $rate_field = "DP";

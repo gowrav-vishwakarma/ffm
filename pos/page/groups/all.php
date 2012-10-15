@@ -9,7 +9,7 @@ class page_groups_all extends page_group {
     function init() {
         parent::init();
         $grid=$this->add('Grid');
-        $grid->setModel('MyGroups');
+        $grid->setModel('MyGroups',array('id','name','head','group_id','pos') );
     }
 
 }

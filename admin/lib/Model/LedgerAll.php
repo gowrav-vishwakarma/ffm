@@ -18,11 +18,13 @@ class Model_LedgerAll extends Model_Table {
         $this->addField('updated_at')->defaultValue(date('Y-m-d'))->system(true);
         $this->addField('default_account')->type('boolean')->defaultValue(false)->system(true);
         
-        $this->hasOne('Group','group_id');
+        $this->hasOne('Groups','group_id');
         $this->hasOne('Distributor','distributor_id')->system(true);
         $this->hasOne('Pos','pos_id')->system(true);
         $this->hasOne('Staff','staff_id')->system(true);
         $this->hasMany('MyContraVouchers','ledger_id');
+        $this->hasMany('MyKitsToGive','from_ledger_id');
+        $this->hasMany('MyKitsToTake','to_ledger_id');
         
         // $this->addExpression("CurrentBalance")->set('OpBalCR - OpBalDR');
         
@@ -60,5 +62,13 @@ class Model_LedgerAll extends Model_Table {
             throw $this->exception("Could not get id for Ledger $ledger");
         }
     }    
+
+
+    function getDistributorLedger($distributor_id){
+        $this->addCondition('distributor_id',$distributor_id);
+        $this->addCondition('default_account',true);
+        $this->addCondition('pos_id','is',null);
+        $this->loadAny();
+    }
 
 }

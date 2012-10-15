@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-class Model_MyGroups extends Model_Group {
+class Model_MyGroups extends Model_Groups {
 
     function init() {
         parent::init();

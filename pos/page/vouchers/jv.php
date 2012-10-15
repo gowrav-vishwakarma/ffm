@@ -16,8 +16,9 @@ class page_vouchers_jv extends page_voucher {
         $form->add('H3')->set("Debit");
         $form->addSeparator('atk-row span5');
         for($i=1;$i<=3;$i++){
-            $dbt=$form->addField('dropdown','dbtlgr_'.$i,'Debit Account'.$i)->setEmptyText("-");
-            $dbt->js(true)->combobox();
+            $dbt=$form->addField('autocomplete/basic','dbtlgr_'.$i,'Debit Account'.$i);
+            // $dbt->setEmptyText("-");
+            // $dbt->js(true)->combobox();
             $dbt->setModel('MyLedgers');
             $form->addField('line','dbtamt_'.$i,'DbtAmt');
         }
@@ -26,8 +27,8 @@ class page_vouchers_jv extends page_voucher {
         $form->addSeparator('span5');       
         $form->add('H3')->set("Credit");
         for($i=1;$i<=3;$i++){
-            $crd=$form->addField('dropdown','crdlgr_'.$i,'Account'.$i)->setEmptyText(" ");
-            $crd->js(true)->combobox();
+            $crd=$form->addField('autocomplete/basic','crdlgr_'.$i,'Account'.$i);//->setEmptyText(" ");
+            // $crd->js(true)->combobox();
             $crd->setModel('MyLedgers');
             $form->addField('line','crdamt_'.$i,'Amt'.$i);
         }

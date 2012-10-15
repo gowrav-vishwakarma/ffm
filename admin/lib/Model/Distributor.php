@@ -54,8 +54,9 @@ class Model_Distributor extends Model_Table {
         $this->hasMany("Pin","adcrd_id");
         $this->hasMany("UsedPins","adcrd_id");
 
-        $this->addField('Path')->system(true);
+        $this->hasMany("LedgerAll","distributor_id");
 
+        $this->addField('Path')->system(true);
         
         $this->addExpression('name')->set('concat(distributor_id," - ", Name )');
         $this->addExpression('left_id')->set(function($m,$q){
@@ -122,12 +123,13 @@ class Model_Distributor extends Model_Table {
     }
 
     function createLedger(){
-        // $l=$this->add('Model_LedgerAll');
-        // $l['name']=$this['name'];
-        // $l['distributor_id'] = $this->id;
-        // $l['group_id']= $this->add('Model_GroupAll')->getGroupID('Branches And Divisions');
-        // $l['default_account']=true;
-        // $l->saveAndUnload();
+        $l=$this->add('Model_LedgerAll');
+        $l['name']=$this['name'];
+        $l['distributor_id'] = $this->id;
+        $l['group_id']= $this->add('Model_GroupsAll')->getGroupID('Branches And Divisions');
+        $l['default_account']=true;
+        $l->save();
+        $this->memorize('ledger_id',$l->id);
 
     }
 
@@ -217,16 +219,14 @@ class Model_Distributor extends Model_Table {
     }
 
     function joiningVoucherEntry(){
-        $kit_ledgers=$this->ref('kit_id')->ref('KitLedgers');
-        $dr_array=array();
-        foreach($kit_ledgers as $junk){
-            $dr_array[$kit_ledgers->get('ledger_id')] = array('Amount'=>$kit_ledgers->get('Amount'));
+        if($this->ref('pin_id')->get('under_pos')){
+            // PIN WAS PURCHASED FROM POS
+            $this->ref('pin_id')->singleSaleToDIST($this->id);
+            
+        }else{
+            // PIN WAS PURCHASED FROM ANOTHER DISTRIBUTOR
+            $this->ref('pin_id')->saleFromDistToDist(null,$this->id);
         }
-
-        $cr_array=array();
-        $pin_pos=$this->ref('pin_id')->ref('adcrd_id')->ref('PosOwner')->tryLoadAny();
-        $cr_array[$pin_pos->id];
-
     }
 
 }

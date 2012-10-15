@@ -55,7 +55,7 @@ class Frontend extends ApiFrontend {
             ->addMenuItem('downlineview','Downline View')
             ->addMenuItem('sessionview','Sessions')
             ->addMenuItem('statements','Closings')
-            ->addMenuItem('pinmanager','Pins Management')
+            ->addMenuItem('pinmanager','Pins/Kits Management')
             ->addMenuItem('newregistration','New Registration')
             ->addMenuItem('logout')
             ;

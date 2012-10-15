@@ -2,8 +2,8 @@
 
 class View_ContraVoucher extends View_PaymentReceiptVoucher{
 
-	protected $party_ledgers = array("Cash Group","Bank Account");
-	protected $payment_receipt_ledger = array("Cash Group","Bank Account");
+	protected $party_ledgers = array("Cash Group","Bank Accounts");
+	protected $payment_receipt_ledger = array("Cash Group","Bank Accounts");
 	protected $voucher_model = "PaymentVoucher";
 	protected $has_details = false;
 	// protected $rate_field = "DP";

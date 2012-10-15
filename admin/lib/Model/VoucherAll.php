@@ -41,6 +41,7 @@ class Model_VoucherAll extends Model_Table {
     
     
     function addVoucher($dr_accounts, $cr_accounts, $auto_voucher,$details=false,$refAccount=null,$narration=""){
+        // pos_id set in init so always fro self pos entry
         $drsum=0;
         $crsum=0;
         foreach($dr_accounts as $key=>$val){

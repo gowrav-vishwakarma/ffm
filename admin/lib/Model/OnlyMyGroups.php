@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-class Model_OnlyMyGroups extends Model_MyGroups{
+class Model_OnlyMyGroups extends Model_MyGroups {
     function init() {
         parent::init();
         
@@ -14,6 +14,7 @@ class Model_OnlyMyGroups extends Model_MyGroups{
         $this->addCondition('lft','<>', 0);
         
         $this->addHook("beforeSave", $this);
+        // $this->debug();
     }
     
     function beforeSave() {

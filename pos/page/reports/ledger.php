@@ -14,8 +14,8 @@ class page_reports_ledger extends page_reports {
 			$grid=$this->add('Grid');
 			$m->load($_GET['ledger_id']);
 			$md=$m->ref('MyContraVouchers');
-			$md->debug();
-			$grid->setModel($md,array('ledger_contra_id','ledger','pos','ContraAmount','Narration','VoucherTpe'));
+			// $md->debug();
+			$grid->setModel($md,array('ledger_contra_id','ledger','pos','AmountCR','AmountDR','Narration','VoucherTpe'));
 		}
 
 		if($form->isSubmitted()){

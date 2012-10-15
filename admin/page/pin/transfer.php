@@ -1,5 +1,5 @@
 <?php
-class page_pin_transfer extends Page {
+class page_pin_transfer_1 extends Page {
 	function init(){
 		parent::init();
 		$form = $this->add('Form');

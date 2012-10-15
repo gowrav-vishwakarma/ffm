@@ -31,6 +31,10 @@ class Model_Kit extends Model_Table {
         $this->addExpression('joined_dist')->set(function($m,$q){
         	return $m->refSQL('Distributor')->count();
         });
+
+        $this->addExpression('ledgers_count')->set(function($m,$q){
+            return $m->refSQL('KitLedgers')->count();
+        });
     
         $this->addHook('beforeSave',$this);
         $this->addHook('beforeDelete',$this);
@@ -52,6 +56,35 @@ class Model_Kit extends Model_Table {
     function beforeDelete(){
     	if($this['joined_dist']>0) throw $this->exception("This Kit has joined members, can not delete");
     	$this->ref('Pin')->dsql()->delete();
+
+    }
+
+    function doSales($no_of_kit,$to_ledger,$from_ledger=null){
+        if($from_ledger==null) $from_ledger = $this->api->auth->model->ref('pos_id')->get('ledger_id');
+        $KitLedgers = $this->ref('KitLedgers');
+        $cr_array=array();
+        $dr_array=array();
+        $totalAmount=0;
+
+        foreach($KitLedgers as $junk){
+            $cr_array[$junk['ledger_id']]=array('Amount'=>($KitLedgers['Amount'] * $no_of_kit));
+            $totalAmount = $totalAmount + ($KitLedgers['Amount'] * $no_of_kit);
+        }
+
+        $dr_array[$to_ledger]=array('Amount'=>$totalAmount);
+
+        $sv=$this->add('Model_SalesVoucher');
+        $sv->addVoucher($dr_array,$cr_array,true);
+
+        $kittransfer=$this->add('Model_MyKitTransfers');
+        $kittransfer['kit_id']=$this->id;
+        $kittransfer['from_ledger_id']=$from_ledger;
+        $kittransfer['to_ledger_id']=$to_ledger;
+        $kittransfer['no_of_kits']=$no_of_kit;
+        $kittransfer['order_date']=date('Y-m-d');
+        $kittransfer['is_completed']=false;
+        $kittransfer['Transfered']=0;
+        $kittransfer->save();
 
     }
 

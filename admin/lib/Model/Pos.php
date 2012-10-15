@@ -12,9 +12,9 @@ class Model_Pos extends Model_Table {
     function init() {
         parent::init();
         $this->hasOne("PosOwner",'owner_id')->display(array('form'=>'autocomplete/basic'));
-        $this->hasOne('LedgerAll','ledger_id');
+        $this->hasOne('LedgerAll','ledger_id')->system(true);
         
-        $this->addField('name');//->mandatory("Point of Sales Must have a Name");
+        $this->addField('name')->mandatory("Point of Sales Must have a Name");
         $this->addField("type")->enum(array("Retailer","Depot"))->defaultValue("Retailer")->mandatory("Type of POS is must to specify");
 
         $this->hasMany("MyStocks","pos_id");
@@ -36,8 +36,8 @@ class Model_Pos extends Model_Table {
             $this->memorize("isNew", true);
         }else{
 //            DISABLE MAIN POS EDITING
-            if($this->id == 1)
-                throw $this->exception("You cannot Modify Company POS made default ".$this['type']);
+            // if($this->id == 1 or $this->recall('reset_mode',false))
+            //     throw $this->exception("You cannot Modify Company POS made default ".$this['type']);
         }
     }
     
@@ -59,14 +59,14 @@ class Model_Pos extends Model_Table {
     function setupAccounting(){
         
         $l=$this->add('Model_Ledger');
-        $l['name']="pos_".$this->id;
+        $l['name']="pos_".$this['name'];
         $l['group_id']= 12 ;    /*Branches And Division*/ //@TODO@ -- in which group it has to be
         $l['distributor_id']=$this['owner_id'];
         $l['default_account']=true;
         $l->save();
 
-        // $this['ledger_id']=$l->id;
-        // $this->save();
+        $this['ledger_id']=$l->id;
+        $this->save();
     }
     
     function createdefaultStaff(){
@@ -91,7 +91,7 @@ class Model_Pos extends Model_Table {
     }
     
     function getCurrent(){
-        $this->load($this->api->auth->model->id);
+        $this->load($this->api->auth->model['pos_id']);
     }
 
     function addStock($item,$qty){

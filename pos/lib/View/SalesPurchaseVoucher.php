@@ -11,7 +11,7 @@ class View_SalesPurchaseVoucher extends View_Voucher{
 		parent::init();
 
 		$this->form->addField('ledger','party',"Party")->setGroup($this->party_ledgers)->setEmptyText("Select party")->validateNotNull();
-		$this->form->addField('ledger','account')->setGroup($this->sales_purchase_ledger);
+		$this->form->addField('ledger','account')->setGroup($this->sales_purchase_ledger)->setNotNull("Select Account");
 		$this->form->addSeparator();
 
 		if($this->has_details){

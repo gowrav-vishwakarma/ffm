@@ -8,6 +8,7 @@ class page_kit_dashboard extends Page{
 		$crud->setModel('Kit');
 		if($crud->grid){
 			$crud->grid->addColumn('expander','ledgers');
+			$crud->grid->addTotals(array('joined_dist'));
 		}
 	}
 

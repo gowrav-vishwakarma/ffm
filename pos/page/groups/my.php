@@ -9,12 +9,13 @@ class page_groups_my extends page_group {
 
     function init() {
         parent::init();
-//        try {
+       try {
             $crud = $this->add('CRUD');
-            $crud->setModel('OnlyMyGroups');
-//        } catch (Exception $e) {
-//            $this->js()->univ()->errorMessage($e->getMessage())->execute();
-//        }
+            $crud->setModel('OnlyMyGroups',null,array('id','name','head','group_id','pos'));
+       } catch (Exception $e) {
+       		throw $e;
+           $this->js()->univ()->errorMessage($e->getMessage())->execute();
+       }
     }
 
 }
