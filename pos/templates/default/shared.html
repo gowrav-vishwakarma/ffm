@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title><?page_title?>Family Future Distributor Panal<?/?></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="<?template?>images/favicon.ico<?/?>" type="image/x-icon"  />
+		<link rel="shortcut icon" href="<?template?>images/favicon.ico<?/?>" />
+		<link rel="stylesheet" type="text/css" href="<?template?>css/jquery-ui.css<?/?>" />
+		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-main.css<?/?>" />
+		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-custom.css<?/?>" />
+		<?$js_include?>
+		<!--[if IE 8]>
+			<link rel="stylesheet" type="text/css" href="<?template?>css/ie8.css<?/?>"/>
+			<script type="text/javascript" src="<?template?>css/ie8.js<?/?>"/>
+		<![endif]-->
+		<script type="text/javascript">
+			$(function(){
+				<?$document_ready?>
+			});
+		</script>
+	</head>
+	<body>
+		<div class="ui-widget-header" !style="Height:50px; background:#aaaaaa; color: #87D6F5" align="center"><h1>Family Future Business Distributor Panel</h1></div>
+		<div id="atk-layout" class="atk-wrapper">
+			<div id="header">
+				<?logo?><div id="atk-logo" class="ui-widget-header1 float-left"><a 
+                                    href="<?page?>index<?/?>"><img src="<?template?>images/logo.png<?/?>" /></a></div><?/logo?>
+				<div id="header-right">
+					<?Menu?>
+                            <div class="atk-menu atk-menu-horizontal ui-widget">
+                                <ul>
+								    <li class="ui-state-default"><a href="javascript:void(0)">Menu is not defined</a></li>
+                                </ul>
+							</div>
+					<?/?>
+					<div id="atk-version"><a href="../">Back to Website</a><br/><b><?name?>Family Panel™<?/?></b><br/><i><?$version_?></i></div>
+				</div>
+			</div>
+			<?$Content?>
+			<div id="atk-footer-guard"></div>
+		</div>
+		<?Footer?>
+		<div id="footer" class="atk-wrapper">
+			<?footer_text?>
+		Copy Rights : Family Future Business <a href="http://agiletoolkit.org/"></a>. &copy; 1999–2012. Daveloped by <a href="http://xavoc.com">Xavoc International</a>
+			<?/?>
+		</div>
+		<?/?>
+		<div id="atk-growl-holder" class="atk-growl"></div>
+	</body>
+</html>
