@@ -56,11 +56,13 @@ class Frontend extends ApiFrontend {
             ->addMenuItem("pins/sales","Pin Management")
             ->addMenuItem('stock/dashboard','Stocks')
             ->addMenuItem('reports/dashboard','Reports')
+            ->addMenuItem('utility/dashboard','utilities')
             ->addMenuItem('logout')
             ;
 
         $this->addLayout('UserMenu');
         $this->add('H1',null,'logo')->set('Welcome ' . $this->auth->model['name'] . " [" . $this->auth->model->ref('pos_id')->get('name') . " ]");
+        $this->add('H3',null,'date')->set($this->api->recall('setdate',date('Y-m-d')));
     }
     function layout_UserMenu(){
         if($this->auth->isLoggedIn()){

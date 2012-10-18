@@ -10,7 +10,7 @@ class Model_JournalVoucher extends Model_Voucher {
     function init() {
         parent::init();
         $this->voucher_type="JV";
-        $this->default_narration="JV on date " .date('Y-m-d');
+        $this->default_narration="JV on date " .$this->api->recall('setdate',date('Y-m-d'));
     }
 
 }

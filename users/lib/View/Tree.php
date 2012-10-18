@@ -11,7 +11,8 @@ class View_Tree extends View{
 
 		$m=$this->add('Model_Distributor');
 		$m->load($id);
-		$this->js(true,"addNode($id,$parent_id,'".$m['name']." [".$m['inLeg']."]')");
+		$clr=($m['TotalUpgradationDeduction'] + $m['ClosingUpgradationDeduction'] >= 8000) ? "folder_green.gif" : "folder_blue.gif";
+		$this->js(true,"addNode($id,$parent_id,'".$m['name']." [".$m['inLeg']."]', '$clr')");
 		if($m['left_id'] <> null)
 			$this->drawNode($id,$m['left_id'],$depth-1);
 		else if($depth-1 > 0)

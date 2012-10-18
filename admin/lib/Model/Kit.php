@@ -81,7 +81,7 @@ class Model_Kit extends Model_Table {
         $kittransfer['from_ledger_id']=$from_ledger;
         $kittransfer['to_ledger_id']=$to_ledger;
         $kittransfer['no_of_kits']=$no_of_kit;
-        $kittransfer['order_date']=date('Y-m-d');
+        $kittransfer['order_date']=$this->api->recall('setdate',date('Y-m-d'));
         $kittransfer['is_completed']=false;
         $kittransfer['Transfered']=0;
         $kittransfer->save();

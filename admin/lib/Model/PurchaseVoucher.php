@@ -10,7 +10,7 @@ class Model_PurchaseVoucher extends Model_Voucher {
     function init() {
         parent::init();
         $this->voucher_type="PURCHASE";
-        $this->default_narration="PURCHASED on date " .date('Y-m-d');
+        $this->default_narration="PURCHASED on date " .$this->api->recall('setdate',date('Y-m-d'));
     }
 
 }

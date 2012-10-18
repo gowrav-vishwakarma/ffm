@@ -10,8 +10,8 @@
 <script type="text/javascript"  language=javascript>
     mytree = new dTree('mytree','images/treeimg/');
 
-    function addNode(id,parent_id,text){
-        mytree.add(id, parent_id, text, 'javascript:treeModify('+id+')', 'detailes of true', '', 'images/treeimg/folder_red.gif','images/treeimg/folder_red.gif','','details name');
+    function addNode(id,parent_id,text,color){
+        mytree.add(id, parent_id, text, 'javascript:treeModify('+id+')', 'detailes of true', '', 'images/treeimg/'+color,'images/treeimg/'+color,'','details name');
     }
 
     function displayTree(){

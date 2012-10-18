@@ -33,9 +33,9 @@ class Frontend extends ApiFrontend {
 
         // If you wish to restrict actess to your pages, use BasicAuth class
         $this->add('BasicAuth')
-            ->allow('demo','demo')
+            ->allow('ffmadmin','ffmadmin')
             // use check() and allowPage for white-list based auth checking
-            //->check()
+            ->check()
             ;
 
         // This method is executed for ALL the peages you are going to add,

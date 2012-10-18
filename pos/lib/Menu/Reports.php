@@ -12,5 +12,10 @@ class Menu_Reports extends Menu{
         $this->addMenuItem('reports/kits',"Kits Reports");
         $this->addMenuItem('reports/pins',"Pins Reports");
         $this->addMenuItem('reports/accounts/ledger',"Ledger");
+        $this->addMenuItem('reports/accounts/statement',"Account Statement");
+        $this->addMenuItem('reports/accounts/pandl',"P & L");
+        $this->addMenuItem('reports/accounts/balancesheet',"Balance Sheet");
+        $this->addMenuItem('reports/accounts/daybook',"Day Book");
+        $this->addMenuItem('reports/accounts/cashbook',"Cash Book");
     }
 }

@@ -41,6 +41,9 @@ class Model_Distributor extends Model_Table {
         $details->addField('PinManagerPassword')->type('password');
 
         $this->addField('JoiningDate')->type('date')->defaultValue(date('Y-m-d'));
+        $this->addField('Path')->system(true);
+        $this->addField('TotalUpgradationDeduction')->system(true);
+        $this->addField('ClosingUpgradationDeduction')->system(true);
 
         $this->hasMany("SponsoredDistributors", "sponsor_id");
         $this->hasMany("Details", "distributor_id");
@@ -56,7 +59,6 @@ class Model_Distributor extends Model_Table {
 
         $this->hasMany("LedgerAll","distributor_id");
 
-        $this->addField('Path')->system(true);
         
         $this->addExpression('name')->set('concat(distributor_id," - ", Name )');
         $this->addExpression('left_id')->set(function($m,$q){

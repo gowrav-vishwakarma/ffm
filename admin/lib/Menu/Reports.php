@@ -11,6 +11,6 @@ class Menu_Reports extends Menu{
         $this->addMenuItem('reports/mlm',"MLM Reports");
         $this->addMenuItem('reports/kits',"Kits Reports");
         $this->addMenuItem('reports/pins',"Pins Reports");
-        $this->addMenuItem('reports/ledger',"Ledger");
+        // $this->addMenuItem('reports/ledger',"Ledger");
     }
 }
