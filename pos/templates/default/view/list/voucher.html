@@ -1,0 +1,18 @@
+<div id="<?$_name?>">
+	<b>Voucher on date <?$created_at?></b><br/>
+	<table width="100%" class="ui-widget">
+		<tr>
+			<th>Ledger</th><th>Amount CR</th><th>Amount DR</th>
+		</tr>
+<?rows?>
+<?row?>
+	<tr>
+	<td class="ui-widget-content"><?$ledger?></td>
+	<td class="ui-widget-content"><?AmountDR?>0<?/?></td>
+	<td class="ui-widget-content"><?AmountCR?>0<?/?></td>
+	</tr>
+<?/row?>
+<?/rows?>
+</table>
+<div class="atk-paginator"><?paginator?><?/?></div>
+</div>

@@ -25,9 +25,12 @@ class Model_VoucherAll extends Model_Table {
         $this->addField('Narration')->type('text');
         $this->addField('VoucherType')->enum('SALES','PURCHASE','JV','CONTRA')->mandatory("Voucher Type is must");
         $this->addField('RefAccount');
+        $this->addField('created_at')->type('date')->defaultValue($this->api->recall('setdate',date('Y-m-d')));
+        $this->addField('entry_side');
         // $this->addField('Rate');
         // $this->addField('Qty');
         $this->addField('has_details')->type('boolean')->system(true);
+
         
         $this->addCondition('pos_id',$this->api->auth->model['pos_id']);
 
@@ -86,6 +89,7 @@ class Model_VoucherAll extends Model_Table {
             // $ve['Rate']=(isset($val['Rate'])? $val['Rate']: "");
             // $ve['Qty']=(isset($val['Qty'])? $val['Qty']: "");
             $ve['has_details']=$has_details;
+            $ve['entry_side']="DR";
             $ve->save();
             if($details_fk === null) $details_fk=$ve->id;
             $ve->unload();
@@ -101,6 +105,7 @@ class Model_VoucherAll extends Model_Table {
             // $ve['Rate']=(isset($val['Rate'])? $val['Rate']: "");
             // $ve['Qty']=(isset($val['Qty'])? $val['Qty']: "");
             $ve['has_details']=$has_details;
+            $ve['entry_side']="CR";
             $ve->saveAndUnload();
         }
         if($has_details){
