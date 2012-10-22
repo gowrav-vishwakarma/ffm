@@ -1,8 +1,9 @@
 <div id="<?$_name?>">
+	<h5><?$voucher_type?> Voucher  - <?$voucher_number?></h5>
 	<b>Voucher on date <?$created_at?></b><br/>
 	<table width="100%" class="ui-widget">
 		<tr>
-			<th>Ledger</th><th>Amount CR</th><th>Amount DR</th>
+			<th>Ledger</th><th>Amount DR</th><th>Amount CR</th>
 		</tr>
 <?rows?>
 <?row?>
@@ -13,6 +14,8 @@
 	</tr>
 <?/row?>
 <?/rows?>
-</table>
+</table><br/>
+<p><b>Narration:</b> <?$voucher_narration?></p>
+<?$Content?>
 <div class="atk-paginator"><?paginator?><?/?></div>
 </div>

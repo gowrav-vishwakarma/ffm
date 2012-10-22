@@ -12,5 +12,5 @@ $config['url_prefix']='?page=';
 #
 #  http://www.atk4.com/doc/config
 
-define ('DISOUNT_GIVEN','Discount Given');
-define ('DISOUNT_TAKEN','Discount Taken');
+define ('DISCOUNT_GIVEN','Discount Allowed');
+define ('DISCOUNT_TAKEN','Discount Received');

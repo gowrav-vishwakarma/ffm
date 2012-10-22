@@ -16,7 +16,7 @@ class page_actemp extends Page {
         
         $gtab=$tabs->addTab("Groups");
         $gc=$gtab->add("CRUD");
-        $gc->setModel('GroupsAll');
+        $gc->setModel('GroupsAll',array('id','name','head','group_id'));
         if($gc->form){
             $gc->form->getElement('group_id')->setEmptyText("Root Group");
         }
@@ -26,7 +26,7 @@ class page_actemp extends Page {
         $lc->setModel('DefaultLedgers');
         
         if($lc->grid){
-            $lc->grid->addPaginator(50);
+            $lc->grid->addPaginator(10);
             $lc->grid->addQuickSearch(array('name'));
         }
         

@@ -2,7 +2,7 @@
 
 class View_PurchaseVoucher extends View_SalesPurchaseVoucher{
 
-	protected $party_ledgers = "Branches And Divisions";
+	protected $party_ledgers = array('Sundry Creditors','Sundry Debtors','Bank Accounts','Cash Group');
 	protected $sales_purchase_ledger = "Purchase Account";
 	protected $has_details = 3;
 	protected $rate_field = "MRP";

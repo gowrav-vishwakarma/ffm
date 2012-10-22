@@ -95,11 +95,11 @@ class Model_Pos extends Model_Table {
     }
 
     function addStock($item,$qty){
-        $stockmodel=$this->ref('MyStocks')->addCondition('items_id',$item);
+        $stockmodel=$this->ref('MyStocks')->addCondition('item_id',$item);
         $stockmodel->tryloadAny();
         if(!$stockmodel->loaded()) { //No entry for this pos and otem yet
             $stockmodel=$this->add('Model_MyStocks');
-            $stockmodel['items_id']=$item;
+            $stockmodel['item_id']=$item;
             $stockmodel['Stock']=0;
         }
         $stockmodel['Stock'] += $qty;

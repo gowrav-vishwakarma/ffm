@@ -14,16 +14,17 @@ class page_resetall extends Page {
         //         SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';");
         
         $this->query("
-                truncate jos_xxvouchers;
+                truncate jos_xxstaff;
                 truncate jos_xxpos;
+                truncate jos_xxvouchers;
                 truncate jos_xxcategory;
                 truncate jos_xxgroups;
                 truncate jos_xxheads;
                 truncate jos_xxitems;
                 truncate jos_xxledgers;
                 truncate jos_xxparties;
-                truncate jos_xxstaff;
                 truncate jos_xxstocks;
+                truncate jos_xxkittransfers;
                 ");
         $this->add('HelloWorld');
         
@@ -42,21 +43,21 @@ class page_resetall extends Page {
         
 //        Add all heads and default groups
         $q="
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Capital Account', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Loans (Liability)', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Current Liabilities', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Suspance Account', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Branch And Division', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Fixed Assets', 'Asset', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Investements', 'Asset', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Current Assets', 'Asset', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Loans And Advances (Assets)', 'Asset', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Direct Expenses', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'InDirect Expenses', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Direct Income', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'InDirect Income', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Purchase Account', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (0, 'Sales Account', 'P&L', 1);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (1, 'Capital Account', 'Liability', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (2, 'Loans (Liability)', 'Liability', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (3, 'Current Liabilities', 'Liability', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (4, 'Suspance Account', 'Liability', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (5, 'Branch And Division', 'Liability', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (6, 'Fixed Assets', 'Asset', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (7, 'Investements', 'Asset', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (8, 'Current Assets', 'Asset', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (9, 'Loans And Advances (Assets)', 'Asset', 0);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (10, 'Direct Expenses', 'P&L', 1);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (11, 'InDirect Expenses', 'P&L', 1);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (12, 'Direct Income', 'P&L', 1);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (13, 'InDirect Income', 'P&L', 1);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (14, 'Purchase Account', 'P&L', 1);
+            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (15, 'Sales Account', 'P&L', 1);
 
             ";
         $this->query($q);
@@ -113,9 +114,9 @@ class page_resetall extends Page {
 
         // @TODO@ -- Create Default Ledgers
         $ledger_array=array(
-            "Cash" => 27 /*Group ID*/,
-            DISCOUNT_GIVEN =>11,
-            DISCOUNT_TAKEN =>13,
+            "Cash" => 27 /*Group/SubGroup ID*/,
+            DISCOUNT_GIVEN =>21,
+            DISCOUNT_TAKEN =>23,
             "Purchase Account"=>24,
             "Sales Account"=>25
         );

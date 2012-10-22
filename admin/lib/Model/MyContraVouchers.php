@@ -14,13 +14,22 @@ class Model_MyContraVouchers extends Model_MyVouchers {
 
 		// Currently working Expression for Amount
 		// $this->addExpression('Amount')->set('IF(v2.AmountDR is null, IF(v2.AmountCR is null, cv.AmountCR,v2.AmountCR), cv.AmountCR)');
+		$this->addExpression('Side')->set('cv.entry_side');
+		// $this->addExpression('Amount')
+		// ->set('IF(cv.AmountDR = 0, 
+		// 			IF(v2.AmountCR = 0, 
+		// 				v2.AmountDR,
+		// 				v2.AmountCR), 
+		// 			cv.AmountDR)');
 		$this->addExpression('Amount')
-		->set('IF(v2.AmountDR is null, 
-					IF(v2.AmountCR is null, 
-						cv.AmountCR,
+		->set('IF(cv.entry_count_in_side = 1, 
+					IF(v2.AmountCR = 0, 
+						v2.AmountDR,
 						v2.AmountCR), 
-					cv.AmountCR)');
-		$this->addExpression('Side')->set('v2.entry_side');
+					IF(cv.AmountCR = 0, 
+						cv.AmountDR,
+						cv.AmountCR)
+				)');
 		$this->addExpression('FullVoucherNo')->set('concat(v2.VoucherType,"-",v2.VoucherNo)');
 	}
 }

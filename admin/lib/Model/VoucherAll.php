@@ -19,14 +19,15 @@ class Model_VoucherAll extends Model_Table {
         $this->hasOne('MyLedgers','ledger_id');
         $this->hasOne('Pos','pos_id')->system(true);
         $this->hasMany('VoucherDetails','voucher_id');
-        $this->addField('AmountCR');
-        $this->addField('AmountDR');
+        $this->addField('AmountCR')->defaultValue(0);
+        $this->addField('AmountDR')->defaultValue(0);
         $this->addField('VoucherNo')->system(true);
         $this->addField('Narration')->type('text');
         $this->addField('VoucherType')->enum('SALES','PURCHASE','JV','CONTRA')->mandatory("Voucher Type is must");
         $this->addField('RefAccount');
         $this->addField('created_at')->type('date')->defaultValue($this->api->recall('setdate',date('Y-m-d')));
         $this->addField('entry_side');
+        $this->addField('entry_count_in_side');
         // $this->addField('Rate');
         // $this->addField('Qty');
         $this->addField('has_details')->type('boolean')->system(true);
@@ -48,18 +49,24 @@ class Model_VoucherAll extends Model_Table {
         $drsum=0;
         $crsum=0;
         foreach($dr_accounts as $key=>$val){
-            if($val['Amount']=="" or $val['Amount']== null or $val['Amount']==0) continue;
+            if($val['Amount']=="" or $val['Amount']== null or $val['Amount']==0) {
+                unset($dr_accounts[$key]);
+                continue;
+            }
             $drsum += $val['Amount'];
         }
         
         foreach($cr_accounts as $key=>$val){
-            if($val['Amount']=="" or $val['Amount']== null or $val['Amount']==0) continue;
+            if($val['Amount']=="" or $val['Amount']== null or $val['Amount']==0) {
+                unset($cr_accounts[$key]);
+                continue;
+            }
             $crsum += $val['Amount'];
         }
         
 
         if($crsum != $drsum OR $crsum == 0) throw $this->exception ("Debit Amount is not equal to Credit Amount or its Zero");
-        
+        if(count($dr_accounts) >= 1 AND count($cr_accounts) >= 1) throw $this->exception("Many To Many voucher is not supported here, make two entries insted");
         // throw $this->exception(" $crsum :: $drsum ");
 
         if($auto_voucher === true){
@@ -90,6 +97,7 @@ class Model_VoucherAll extends Model_Table {
             // $ve['Qty']=(isset($val['Qty'])? $val['Qty']: "");
             $ve['has_details']=$has_details;
             $ve['entry_side']="DR";
+            $ve['entry_count_in_side'] = count($dr_accounts);
             $ve->save();
             if($details_fk === null) $details_fk=$ve->id;
             $ve->unload();
@@ -106,6 +114,7 @@ class Model_VoucherAll extends Model_Table {
             // $ve['Qty']=(isset($val['Qty'])? $val['Qty']: "");
             $ve['has_details']=$has_details;
             $ve['entry_side']="CR";
+            $ve['entry_count_in_side'] = count($cr_accounts);
             $ve->saveAndUnload();
         }
         if($has_details){

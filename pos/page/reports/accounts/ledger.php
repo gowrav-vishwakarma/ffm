@@ -5,9 +5,13 @@ class page_reports_accounts_ledger extends page_reports {
 		parent::init();
 
 		$form=$this->add('Form');
-		$form->addField('ledger','ledger_id')->setModel($this->add('Model_MyLedgers'));
-		$form->addField('DatePicker','from_date');
-		$form->addField('DatePicker','to_date');
+		$form->addClass('stacked atk-row');
+		$form->template->trySet('fieldset','span12');
+		$ledfield=$form->addField('ledger','ledger_id');
+		$ledfield->setModel($this->add('Model_MyLedgers'));
+		$ledfield->template->trySet('row_class','span3');
+		$form->addField('DatePicker','from_date')->template->trySet('row_class','span3');
+		$form->addField('DatePicker','to_date')->template->trySet('row_class','span3');
 		$form->addSubmit("Show");
 
 		$m= $this->add('Model_MyLedgers');
