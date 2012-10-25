@@ -49,13 +49,13 @@ class Frontend extends ApiFrontend {
         // it and place in a separate class
         $this->add('Menu',null,'Menu')
             ->addMenuItem('index','Welcome')
-            ->addMenuItem('profile','Profile')
-            ->addMenuItem('rewards','Rewards')
-            ->addMenuItem('treeview','Tree View')
-            ->addMenuItem('downlineview','Downline View')
             ->addMenuItem('sessionview','Sessions')
             ->addMenuItem('statements','Closings')
+            ->addMenuItem('rewards','Rewards')
+            ->addMenuItem('downlineview','Downline View')
+            ->addMenuItem('treeview','Tree View')
             ->addMenuItem('pinmanager','Pins/Kits Management')
+            ->addMenuItem('profile','Profile')
             ->addMenuItem('newregistration','New Registration')
             ->addMenuItem('logout')
             ;

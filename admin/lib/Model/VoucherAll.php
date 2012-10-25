@@ -66,7 +66,7 @@ class Model_VoucherAll extends Model_Table {
         
 
         if($crsum != $drsum OR $crsum == 0) throw $this->exception ("Debit Amount is not equal to Credit Amount or its Zero");
-        if(count($dr_accounts) >= 1 AND count($cr_accounts) >= 1) throw $this->exception("Many To Many voucher is not supported here, make two entries insted");
+        if(count($dr_accounts) > 1 AND count($cr_accounts) > 1) throw $this->exception("Many To Many voucher is not supported here, make two entries insted");
         // throw $this->exception(" $crsum :: $drsum ");
 
         if($auto_voucher === true){
