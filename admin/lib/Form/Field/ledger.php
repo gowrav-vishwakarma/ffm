@@ -1,11 +1,9 @@
 <?php
 
-class Form_Field_Ledger extends Form_Field_DropDown {
+class Form_Field_Ledger extends autocomplete\Form_Field_plus {
 
     function init(){
         parent::init();
-        $this->setEmptyText(" ");
-        $this->js(true)->combobox();
     }
 
     function setGroup($group, $includeSubGroups=true){

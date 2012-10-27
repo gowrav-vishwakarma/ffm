@@ -21,13 +21,19 @@ class Model_Pin extends Model_Table {
 
         $this->addField('Used')->type('boolean')->defaultValue(false);
         $this->addField('published')->type('boolean')->defaultValue(false);
-        $this->addField('created_at')->type('date')->defaultValue(date('Y-m-d'))->system(true);
-        $this->addField('updated_at')->type('date')->defaultValue(date('Y-m-d'))->system(true);
+        $this->addField('created_at')->type('date')->defaultValue(date('Y-m-d H:i:s'))->system(true);
+        $this->addField('updated_at')->type('date')->defaultValue(date('Y-m-d H:i:s'))->system(true);
 
         $this->addField('under_pos')->type('boolean')->defaultValue(true);
 
         $this->addExpression('distributor_id')->set('id');
 
+        $this->addHook('beforeSave',$this);
+
+    }
+
+    function beforeSave(){
+        $this['updated_at']=date('Y-m-d H:i:s');
     }
 
     function generateAndSave($kit_id,$bv,$pv,$rp,$adcrd_id){
@@ -82,12 +88,20 @@ class Model_Pin extends Model_Table {
         if($pin->count()->do_getOne() < $noofpins)
             throw $this->exception("There are not sufficient unused pins to transfer");
 
-        $pin=$this->add('Model_Pin');
-        $pin->addCondition('kit_id',$kit);
-        $pin->addCondition('Used',false);
-        $pin->addCondition('pos_id',$from_pos);
+        // $pin=$this->add('Model_Pin');
+        // $pin->addCondition('kit_id',$kit);
+        // $pin->addCondition('Used',false);
+        // $pin->addCondition('pos_id',$from_pos);
 
-        $pin->_dsql()->set('pos_id',$to_pos)->update();
+        $q="UPDATE jos_xpinmaster SET pos_id=$to_pos 
+            WHERE 
+                kit_id= $kit and Used= 0 AND pos_id = $from_pos
+            LIMIT $noofpins
+                ";
+        $this->api->db->dsql()->expr($q)->execute();
+        
+        // $pin->_dsql()->set('pos_id',$to_pos)->limit($noofpins)->update();
+        // $pin->debug();
         // @TODO@ -- add entry in pin transfer table
         // @TODO@ -- Kit transfer entry to manage kits transfered or not.
         $kt=$this->add('Model_KitTransfers');
@@ -96,10 +110,6 @@ class Model_Pin extends Model_Table {
         $kt['to_pos_id']=$to_pos;
         $kt['no_of_kits']=$noofpins;
         $kt->save();
-
-        $pinkit=$this->add('Model_Kit');
-        $pinkit->addCondition('id',$kit);
-        $pinkit->loadAny();
 
     }
 
@@ -185,7 +195,7 @@ class Model_Pin extends Model_Table {
 
     }
 
-    function singleSaleToDIST($to_dist){
+    function singleSaleToDIST($to_dist,$narration=null){
         $this['adcrd_id'] = $to_dist;
         $this['under_pos']=0;
         $this->save();
@@ -200,11 +210,11 @@ class Model_Pin extends Model_Table {
         // $dist_ledger->debug();
         $dist_ledger->loadAny();
 
-        $pinkit->doSales(1,$dist_ledger->id,$this->ref('pos_id')->get('ledger_id'));
+        $pinkit->doSales(1,$dist_ledger->id,$this->ref('pos_id')->get('ledger_id'),$narration);
 
     }
 
-    function saleFromDistToDist($from_dist=null,$to_dist,$noofpins=1){
+    function saleFromDistToDist($from_dist=null,$to_dist,$noofpins=1,$narration,$on_date){
         
         if($from_dist == null) $from_dist = $this['adcrd_id'];
 
@@ -218,12 +228,12 @@ class Model_Pin extends Model_Table {
         if($pin->count()->do_getOne() < $noofpins)
             throw $this->exception("There are not sufficient unused pins to transfer");
 
-        $pin=$this->add('Model_Pin');
-        $pin->addCondition('kit_id',$this->ref('kit_id')->id);
-        $pin->addCondition('Used',false);
-        $pin->addCondition('adcrd_id',$from_dist);
+        // $pin=$this->add('Model_Pin');
+        // $pin->addCondition('kit_id',$this->ref('kit_id')->id);
+        // $pin->addCondition('Used',false);
+        // $pin->addCondition('adcrd_id',$from_dist);
         // $pin->addCondition('pos_id',$this->api->auth->model['pos_id']);
-        $pin->addCondition('under_pos',false);
+        // $pin->addCondition('under_pos',false);
 
         // $i=1;
         // foreach($pin as $junk){
@@ -241,7 +251,48 @@ class Model_Pin extends Model_Table {
         $l_from->getDistributorLedger($from_dist);
         $l_to->getDistributorLedger($to_dist);
 
-        $this->ref('kit_id')->doSales($noofpins,$l_to->id,$l_from->id);
+        $this->ref('kit_id')->doSales($noofpins,$l_to->id,$l_from->id,$narration,$on_date);
+
+    }
+
+    function oldPinSalesEntry($from_dist=null,$to_dist,$noofpins=1,$narration,$on_date){
+        
+        if($from_dist == null) $from_dist = $this['adcrd_id'];
+
+        // $pin=$this->add('Model_Pin');
+        // $pin->addCondition('kit_id',$this->ref('kit_id')->id);
+        // $pin->addCondition('Used',false);
+        // $pin->addCondition('adcrd_id',$from_dist);
+        // $pin->addCondition('pos_id',$this->api->auth->model['pos_id']);
+        // $pin->addCondition('under_pos',false);
+
+        // if($pin->count()->do_getOne() < $noofpins)
+        //     throw $this->exception("There are not sufficient unused pins to transfer");
+
+        // $pin=$this->add('Model_Pin');
+        // $pin->addCondition('kit_id',$this->ref('kit_id')->id);
+        // $pin->addCondition('Used',false);
+        // $pin->addCondition('adcrd_id',$from_dist);
+        // $pin->addCondition('pos_id',$this->api->auth->model['pos_id']);
+        // $pin->addCondition('under_pos',false);
+
+        // $i=1;
+        // foreach($pin as $junk){
+            // $pin['adcrd_id']=$to_dist;
+            // $pin['under_pos']=0;
+            // $pin->saveAndUnload();
+        //     $i++;
+        //     if($i>$noofpins) break;
+        // }
+        // throw $this->exception($pin->_dsql()->set('adcrd_id',$to_dist)->set('under_pos',0)->limit($noofpins)->render());//->update();
+
+        $l_from=$this->add('Model_LedgerAll');
+        $l_to=$this->add('Model_LedgerAll');
+
+        $l_from->getDistributorLedger($from_dist);
+        $l_to->getDistributorLedger($to_dist);
+
+        $this->ref('kit_id')->doSales($noofpins,$l_to->id,$l_from->id,$narration,$on_date);
 
     }
 

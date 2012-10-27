@@ -29,7 +29,7 @@ class View_PurchaseVoucher extends View_SalesPurchaseVoucher{
 			$pos->addStock($item['item_id'],$item['Qty']);
 		}
 
-		$this->js()->univ()->successMessage("Updating now items stock" .count($this->item_details))->execute();
+		$form->js(null,$form->js()->reload())->univ()->successMessage("Updating now items stock" .count($this->item_details))->execute();
 		
 	}
 

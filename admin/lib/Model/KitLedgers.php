@@ -4,7 +4,7 @@ class Model_KitLedgers extends Model_Table {
 	function init(){
 		parent::init();
 		$this->hasOne('Kit','kit_id');
-		$this->hasOne('LedgerAll','ledger_id');//->display(array('form'=>'ledger'));
+		$this->hasOne('LedgerAll','ledger_id')->display(array('form'=>'ledger'));
 		$this->addField('Amount');
 	}
 }

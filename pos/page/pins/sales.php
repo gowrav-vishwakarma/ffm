@@ -8,6 +8,7 @@ class page_pins_sales extends Page {
 		$dispintab=$tabs->addTabURL("pins_changestatus","Pin Status Change");
 		$dispintab=$tabs->addTabURL("pins_distributorsales","Distributor Pin Sale");
 		$dispintab=$tabs->addTabURL("pins_possales","POS Pin Sale");
+		$dispintab=$tabs->addTabURL("pins_transfer","Depot Pin Transfer");
 
 	}
 }

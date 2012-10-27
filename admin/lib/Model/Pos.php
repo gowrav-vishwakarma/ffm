@@ -91,7 +91,8 @@ class Model_Pos extends Model_Table {
     }
     
     function getCurrent(){
-        $this->load($this->api->auth->model['pos_id']);
+        $loggedin_pos=$this->api->auth->model['pos_id'];
+        $this->load(($loggedin_pos==0)?1:$loggedin_pos);
     }
 
     function addStock($item,$qty){

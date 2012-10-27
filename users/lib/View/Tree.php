@@ -16,12 +16,12 @@ class View_Tree extends View{
 		if($m['left_id'] <> null)
 			$this->drawNode($id,$m['left_id'],$depth-1);
 		else if($depth-1 > 0)
-			$this->js(true,"addNode(-${id}0001,$id,'A')");
+			$this->js(true,"addNode(-${id}0001,$id,'A','question.gif')");
 
 		if($m['right_id'] <> null)
 			$this->drawNode($id,$m['right_id'],$depth-1);
 		else if($depth-1 > 0)
-			$this->js(true,"addNode(-${id}0002,$id,'B')");
+			$this->js(true,"addNode(-${id}0002,$id,'B','question.gif')");
 
 		$m->unload();
 		$m->destroy();

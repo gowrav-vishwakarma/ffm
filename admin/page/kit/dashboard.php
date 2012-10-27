@@ -19,8 +19,8 @@ class page_kit_dashboard extends Page{
 		$m->load($_GET['id']);
 
 		$crud->setModel($m->ref('KitLedgers'));
-		if($curd->form){
-			$crud->form->getElement('ledger_id')->setGroup('Branches And Division');
+		if($crud->form){
+			$crud->form->getElement('ledger_id')->setGroup('Branches And Divisions');
 		}
 	}
 

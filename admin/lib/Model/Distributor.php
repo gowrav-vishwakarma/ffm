@@ -223,11 +223,11 @@ class Model_Distributor extends Model_Table {
     function joiningVoucherEntry(){
         if($this->ref('pin_id')->get('under_pos')){
             // PIN WAS PURCHASED FROM POS
-            $this->ref('pin_id')->singleSaleToDIST($this->id);
+            $this->ref('pin_id')->singleSaleToDIST($this->id,"Joining of " . $this->id);
             
         }else{
             // PIN WAS PURCHASED FROM ANOTHER DISTRIBUTOR
-            $this->ref('pin_id')->saleFromDistToDist(null,$this->id);
+            $this->ref('pin_id')->saleFromDistToDist(null,$this->id,1,"Joining of ". $this->id);
         }
     }
 

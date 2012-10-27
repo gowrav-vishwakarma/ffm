@@ -44,7 +44,7 @@ class Model_VoucherAll extends Model_Table {
     }
     
     
-    function addVoucher($dr_accounts, $cr_accounts, $auto_voucher,$details=false,$refAccount=null,$narration=""){
+    function addVoucher($dr_accounts, $cr_accounts, $auto_voucher,$details=false,$refAccount=null,$narration=null,$on_date=null){
         // pos_id set in init so always fro self pos entry
         $drsum=0;
         $crsum=0;
@@ -75,7 +75,7 @@ class Model_VoucherAll extends Model_Table {
             $auto_voucher = $cur_pos->getNextVoucherNumber($this->voucher_type);
         }
         
-        if($narration=="") $narration = $this->default_narration;
+        if($narration===null) $narration = $this->default_narration;
         
         $details_fk=null;
         $has_details=(is_array($details)? true: false);
@@ -98,6 +98,7 @@ class Model_VoucherAll extends Model_Table {
             $ve['has_details']=$has_details;
             $ve['entry_side']="DR";
             $ve['entry_count_in_side'] = count($dr_accounts);
+            if($on_date != null ) $ve['created_at']=$on_date;
             $ve->save();
             if($details_fk === null) $details_fk=$ve->id;
             $ve->unload();
@@ -115,6 +116,7 @@ class Model_VoucherAll extends Model_Table {
             $ve['has_details']=$has_details;
             $ve['entry_side']="CR";
             $ve['entry_count_in_side'] = count($cr_accounts);
+            if($on_date != null ) $ve['created_at']=$on_date;
             $ve->saveAndUnload();
         }
         if($has_details){

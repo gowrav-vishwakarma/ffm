@@ -59,7 +59,7 @@ class Model_Kit extends Model_Table {
 
     }
 
-    function doSales($no_of_kit,$to_ledger,$from_ledger=null){
+    function doSales($no_of_kit,$to_ledger,$from_ledger=null,$narration=null,$on_date=null){
         if($from_ledger==null) $from_ledger = $this->api->auth->model->ref('pos_id')->get('ledger_id');
         $KitLedgers = $this->ref('KitLedgers');
         $cr_array=array();
@@ -67,21 +67,23 @@ class Model_Kit extends Model_Table {
         $totalAmount=0;
 
         foreach($KitLedgers as $junk){
-            $cr_array[$junk['ledger_id']]=array('Amount'=>($KitLedgers['Amount'] * $no_of_kit));
+            $cr_array[$KitLedgers['ledger_id']]=array('Amount'=>($KitLedgers['Amount'] * $no_of_kit));
             $totalAmount = $totalAmount + ($KitLedgers['Amount'] * $no_of_kit);
         }
+        // if($to_ledger != 138 )
+        //     throw $this->exception(print_r($cr_array));
 
         $dr_array[$to_ledger]=array('Amount'=>$totalAmount);
 
         $sv=$this->add('Model_SalesVoucher');
-        $sv->addVoucher($dr_array,$cr_array,true);
+        $sv->addVoucher($dr_array,$cr_array,true,false,$to_ledger,$narration,$on_date);
 
         $kittransfer=$this->add('Model_MyKitTransfers');
         $kittransfer['kit_id']=$this->id;
         $kittransfer['from_ledger_id']=$from_ledger;
         $kittransfer['to_ledger_id']=$to_ledger;
         $kittransfer['no_of_kits']=$no_of_kit;
-        $kittransfer['order_date']=$this->api->recall('setdate',date('Y-m-d'));
+        $kittransfer['order_date']=($on_date == null )? $this->api->recall('setdate',date('Y-m-d')) : $on_date;
         $kittransfer['is_completed']=false;
         $kittransfer['Transfered']=0;
         $kittransfer->save();

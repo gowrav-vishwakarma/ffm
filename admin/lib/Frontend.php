@@ -29,14 +29,15 @@ class Frontend extends ApiFrontend {
         $this->js()
             ->_load('atk4_univ')
             ->_load('ui.atk4_notify')
+            ->_load('ui.combobox')
             ;
 
         // If you wish to restrict actess to your pages, use BasicAuth class
-        $this->add('BasicAuth')
-            ->allow('ffmadmin','ffmadmin')
+        $auth=$this->add('BasicAuth');
+            // ->allow('ffmadmin','ffmadmin')
             // use check() and allowPage for white-list based auth checking
-            ->check()
-            ;
+            $auth->setModel('SuperAdmin','username','password');
+            $auth->check();
 
         // This method is executed for ALL the peages you are going to add,
         // before the page class is loaded. You can put additional checks
@@ -54,6 +55,7 @@ class Frontend extends ApiFrontend {
             ->addMenuItem('pin_dashboard','Pins')
             ->addMenuItem('prd_dsh','Product Mng')
             ->addMenuItem('actemp','Accounts Top')
+            // ->addMenuItem('distributors/manage','Distributors')
             ->addMenuItem('reports/dashboard','Reports')
             ->addMenuItem('logout')
             ;

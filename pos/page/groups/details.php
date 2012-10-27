@@ -18,10 +18,10 @@ class page_groups_details extends Page {
 		$voucher->addCondition('group_id',$group->id);
 		$voucher->addCondition('created_at','>=',$this->api->recall('from_date'));
 		$voucher->addCondition('created_at','<=',$this->api->recall('to_date'));
-		$voucher->_dsql()->order('created_at');
+		$voucher->_dsql()->order('created_at, cv.id');
 
 		$grid=$this->add('Grid');
-		$grid->setModel($voucher,array('ledger_contra_id','contra_ledger','Amount','Side','FullVoucherNo','created_at'));
+		$grid->setModel($voucher,array('ledger_contra_id','contra_ledger','Amount','Side','FullVoucherNo','created_at','Narration'));
 		$grid->addPaginator();
 		$grid->addColumn('Button','voucher_id','Voucher Details');
 		if($_GET['voucher_id']){
