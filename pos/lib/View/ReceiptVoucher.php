@@ -12,8 +12,8 @@ class View_ReceiptVoucher extends View_PaymentReceiptVoucher{
 	function init(){
 		parent::init();
 
-		$this->cr_details = array('party'=>'total_amount');
-		$this->dr_details = array('account'=>'total_amount');
+		$this->cr_details = array('account'=>'total_amount');
+		$this->dr_details = array('party'=>'total_amount');
 
 		if($this->form->isSubmitted()){
 			$this->handleForm($this->form);

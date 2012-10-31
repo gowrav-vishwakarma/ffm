@@ -39,7 +39,7 @@ class page_reports_accounts_ledger extends page_reports {
 				$md->addCondition('created_at','>=',$_GET['from_date']);
 			if($_GET['to_date'])
 				$md->addCondition('created_at','<=',$_GET['to_date']);
-			$md->_dsql()->order('cv.created_at');
+			$md->_dsql()->order('cv.created_at desc');
 			// $md->debug();
 			$grid->setModel($md,array('contra_ledger','pos','Amount','Side','Narration','created_at','FullVoucherNo'));
 			$grid->addPaginator();

@@ -35,7 +35,7 @@ class Model_MyContraVouchers extends Model_MyVouchers {
 		$this->addExpression('contra_ledger')
 		->set('IF(cv.entry_count_in_side = 1, 
 					l2.name, 
-					cl.name
+					l2.name
 				)');
 
 

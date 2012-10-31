@@ -29,7 +29,7 @@ class Frontend extends ApiFrontend {
         $this->js()
             ->_load('atk4_univ')
             ->_load('ui.atk4_notify')
-            ->_load('ui.combobox')
+            // ->_load('ui.combobox')
             ;
 
         // If you wish to restrict actess to your pages, use BasicAuth class

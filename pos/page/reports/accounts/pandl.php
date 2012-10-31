@@ -38,8 +38,9 @@ class page_reports_accounts_pandl extends page_reports {
 				->where('h.id',$ex_head->id)
 				->where('jos_xxvouchers.created_at','>=', $from_date)
 				->where('jos_xxvouchers.created_at','<=', $to_date)
+				->where('jos_xxvouchers.pos_id',$this->api->auth->model['pos_id'])
 				->group('g.id')
-				->having('Amount' ,'>',0)
+				// ->having('Amount' ,'>',0)
 				;
 
 			foreach($q as $junk){
@@ -65,6 +66,7 @@ class page_reports_accounts_pandl extends page_reports {
 				->where('h.id',$in_head->id)
 				->where('jos_xxvouchers.created_at','>=', $from_date)
 				->where('jos_xxvouchers.created_at','<=', $to_date)
+				->where('jos_xxvouchers.pos_id',$this->api->auth->model['pos_id'])
 				->group('g.id')
 				// ->having('Amount' ,'>=',0)
 				;
@@ -88,16 +90,18 @@ class page_reports_accounts_pandl extends page_reports {
 		$in_sum->template->trySetHTML('Amount', "<b><i>".$income_sum."</i></b>");
 		$in_sum->template->del('group_link');
 
-		if($income_sum > $expense_sum){
+		if($income_sum < $expense_sum){
 			$profit=$income_col->add('View',null,null,array('view/list/bookline'));
 			$profit->template->trySetHTML('name','<h2>Net Profit</h2>');
-			$profit->template->trySetHTML('Amount', "<h2><b><i>".($income_sum - $expense_sum)."</i></b></h2>");
+			$profit->template->trySetHTML('Amount', "<h2><b><i>".($expense_sum - $income_sum)."</i></b></h2>");
 			$profit->template->trySet('Class','ui-widget-header');
+			$profit->template->del('group_link');
 		}else{
 			$loss=$expense_col->add('View',null,null,array('view/list/bookline'));
 			$loss->template->trySetHTML('name','<h2>Net Loss</h2>');
-			$loss->template->trySetHTML('Amount', "<h2><b><i>".($expense_sum - $income_sum)."</i></b></h2>");
+			$loss->template->trySetHTML('Amount', "<h2><b><i>".($income_sum - $expense_sum)."</i></b></h2>");
 			$loss->template->trySet('Class','ui-widget-header');
+			$loss->template->del('group_link');
 		}
 
 

@@ -14,7 +14,7 @@ class Menu_Reports extends Menu{
         $this->addMenuItem('reports/accounts/ledger',"Ledger");
         // $this->addMenuItem('reports/accounts/statement',"Account Statement");
         $this->addMenuItem('reports/accounts/pandlform',"P & L");
-        $this->addMenuItem('reports/accounts/balancesheet',"Balance Sheet");
+        $this->addMenuItem('reports/accounts/balancesheetform',"Balance Sheet");
         $this->addMenuItem('reports/accounts/daybook',"Day Book");
         // $this->addMenuItem('reports/accounts/cashbook',"Cash Book");
     }

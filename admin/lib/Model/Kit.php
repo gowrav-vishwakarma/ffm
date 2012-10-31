@@ -12,6 +12,7 @@ class Model_Kit extends Model_Table {
         parent::init();
 
         $this->hasMany('KitLedgers','kit_id');
+        $this->hasMany('KitItems','kit_id');
 
         $this->addField('name','Name');
         $this->addField('MRP');
@@ -51,6 +52,8 @@ class Model_Kit extends Model_Table {
 
     	$m->tryLoadAny();
     	if($m->loaded()) throw $this->exception("Kit name already exists");
+
+        if($this['joined_dist'] > 0 ) throw $this->exception("Kit has joined members and cannot be edited now");
     }
 
     function beforeDelete(){
@@ -59,7 +62,7 @@ class Model_Kit extends Model_Table {
 
     }
 
-    function doSales($no_of_kit,$to_ledger,$from_ledger=null,$narration=null,$on_date=null){
+    function doSales($no_of_kit,$to_ledger,$from_ledger=null,$narration=null,$on_date=null,$voucher_no=true){
         if($from_ledger==null) $from_ledger = $this->api->auth->model->ref('pos_id')->get('ledger_id');
         $KitLedgers = $this->ref('KitLedgers');
         $cr_array=array();
@@ -76,7 +79,7 @@ class Model_Kit extends Model_Table {
         $dr_array[$to_ledger]=array('Amount'=>$totalAmount);
 
         $sv=$this->add('Model_SalesVoucher');
-        $sv->addVoucher($dr_array,$cr_array,true,false,$to_ledger,$narration,$on_date);
+        $sv->addVoucher($dr_array,$cr_array,$voucher_no,false,$to_ledger,$narration,$on_date);
 
         $kittransfer=$this->add('Model_MyKitTransfers');
         $kittransfer['kit_id']=$this->id;

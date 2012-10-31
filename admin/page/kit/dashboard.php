@@ -8,6 +8,7 @@ class page_kit_dashboard extends Page{
 		$crud->setModel('Kit');
 		if($crud->grid){
 			$crud->grid->addColumn('expander','ledgers');
+			$crud->grid->addColumn('expander','items');
 			$crud->grid->addTotals(array('joined_dist'));
 		}
 	}
@@ -22,6 +23,18 @@ class page_kit_dashboard extends Page{
 		if($crud->form){
 			$crud->form->getElement('ledger_id')->setGroup('Branches And Divisions');
 		}
+	}
+
+	function page_items(){
+		$this->api->stickyGET('id');
+		$crud=$this->add('CRUD');
+		$m=$this->add('Model_Kit');
+		$m->load($_GET['id']);
+
+		$crud->setModel($m->ref('KitItems'));
+		// if($crud->form){
+		// 	$crud->form->getElement('ledger_id')->setGroup('Branches And Divisions');
+		// }
 	}
 
 }
