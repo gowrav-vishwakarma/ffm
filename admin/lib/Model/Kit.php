@@ -78,8 +78,10 @@ class Model_Kit extends Model_Table {
 
         $dr_array[$to_ledger]=array('Amount'=>$totalAmount);
 
-        $sv=$this->add('Model_SalesVoucher');
-        $sv->addVoucher($dr_array,$cr_array,$voucher_no,false,$to_ledger,$narration,$on_date);
+        if(count($cr_array) != 0){
+            $sv=$this->add('Model_SalesVoucher');
+            $sv->addVoucher($dr_array,$cr_array,$voucher_no,false,$to_ledger,$narration,$on_date);
+        }
 
         $kittransfer=$this->add('Model_MyKitTransfers');
         $kittransfer['kit_id']=$this->id;

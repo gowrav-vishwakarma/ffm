@@ -15,8 +15,8 @@ class page_resetall extends Page {
         $reset->js('click',$v->js(null,$reset->js(null,$v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createDistributorLedgers')));
 
         $distscount=$this->add('Model_Distributor')->count()->getOne();
-        $pages = $distscount / 500;
-        if($distscount % 500 > 0) $pages++;
+        $pages = $distscount / 100;
+        if($distscount % 100 > 0) $pages++;
         for($i=0; $i<$pages ;$i++){
             $reset=$this->add('Button')->set("(3 . $i) Create Distributor Sales Vouchers")->setStyle('border','2px solid green');
             $reset->js('click',$v->js(null,$reset->js(null,$v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createOldSaleVouchers')->setArguments(array('dist_page'=>$i))));
@@ -29,8 +29,8 @@ class page_resetall extends Page {
 
         $clossings=$this->add('Model_Closing');
         $clossings->addCondition('ClosingAmountNet','>',0);
-        $closing_pages=($clossings->count()->getOne() / 500);
-        if($closing_pages % 500 > 0) $closing_pages++;
+        $closing_pages=($clossings->count()->getOne() / 100);
+        if($closing_pages % 100 > 0) $closing_pages++;
         for($i=0; $i<$closing_pages ;$i++){
             $reset=$this->add('Button')->set("(5. $i) Create Distributor Commission Vouchers")->setStyle('border','2px solid red');
             $reset->js('click',
@@ -108,27 +108,33 @@ class page_resetall extends Page {
 
         
 //        Add all heads and default groups
-        $q="
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (1, 'Capital Account', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (2, 'Loans (Liability)', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (3, 'Current Liabilities', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (4, 'Suspance Account', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (5, 'Branch And Division', 'Liability', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (6, 'Fixed Assets', 'Asset', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (7, 'Investements', 'Asset', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (8, 'Current Assets', 'Asset', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (9, 'Loans And Advances (Assets)', 'Asset', 0);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (10, 'Direct Expenses', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (11, 'InDirect Expenses', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (12, 'Direct Income', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (13, 'InDirect Income', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (14, 'Purchase Account', 'P&L', 1);
-            INSERT INTO `ffm`.`jos_xxheads` (`id`, `name`, `type`, `isPANDL`) VALUES (15, 'Sales Account', 'P&L', 1);
+        $head_array=array(
+                 array(1, 'Capital Account', 'Liability', 0),
+                 array(2, 'Loans (Liability)', 'Liability', 0),
+                 array(3, 'Current Liabilities', 'Liability', 0),
+                 array(4, 'Suspance Account', 'Liability', 0),
+                 array(5, 'Branch And Division', 'Liability', 0),
+                 array(6, 'Fixed Assets', 'Asset', 0),
+                 array(7, 'Investements', 'Asset', 0),
+                 array(8, 'Current Assets', 'Asset', 0),
+                 array(9, 'Loans And Advances (Assets)', 'Asset', 0),
+                 array(10, 'Direct Expenses', 'P&L', 1),
+                 array(11, 'InDirect Expenses', 'P&L', 1),
+                 array(12, 'Direct Income', 'P&L', 1),
+                 array(13, 'InDirect Income', 'P&L', 1),
+                 array(14, 'Purchase Account', 'P&L', 1),
+                 array(15, 'Sales Account', 'P&L', 1)
+             );
 
-            ";
-        $this->query($q);
+        foreach($head_array as $hd){
+            $t=$this->add('Model_Head');
+            $t['name']=$hd[1];
+            $t['type']=$hd[2];
+            $t['isPANDL']=$hd[3];
+            $t->saveAndUnload();
+        }
 //        @TODO@ -- root group for tree management in jos_xxgroups to add
-        $this->query("INSERT INTO `ffm`.`jos_xxgroups` (`name`, `lft`,`rgt`) VALUES ('root', 0,1);");
+        $this->query("INSERT INTO `jos_xxgroups` (`name`, `lft`,`rgt`) VALUES ('root', 0,1);");
 
         $groups_arr=array(
                 /*2*/"Capital Account"       =>1,/*2*/
@@ -155,7 +161,8 @@ class page_resetall extends Page {
                 "In Direct Income"      =>13,
                 "Purchase Account"      =>14,
                 /*25*/"Sales Account"         =>15,/*25*/
-                "Distributors"          =>3
+                "Distributors"          =>3,
+                "Loans (Liability)"     => 2,
                 );
 
         foreach($groups_arr as $grp=>$head){
@@ -201,6 +208,10 @@ class page_resetall extends Page {
             /* 20*/"Best Paint Shirt Sales" => 25, /* Sales Account */
             /* 21*/"Executive Paint Shirt Sales" => 25, /* Sales Account */
             /* 22*/"XYZ Bank Account" => 19, /* Bank Account */
+            /* 23*/"Service Charge" => 23, /* In Direct Income */
+            /* 24*/"Other Deductions" => 23, /* In Direct Income */
+            /* 25*/"First Payout Deduction" => 27, /* Loans (Liability) */
+            /* 26*/"Upgradation Deduction" => 27 /* Loans (Liability)*/
 
         );
 
@@ -215,9 +226,9 @@ class page_resetall extends Page {
         }
 
         // PIN TABLE ADD POS_ID
-        // $this->query("ALTER TABLE `ffm`.`jos_xpinmaster` ADD COLUMN `pos_id` INT NULL  AFTER `updated_at`;");
-        // $this->query("ALTER TABLE `ffm`.`jos_xpinmaster` ADD COLUMN `under_pos` TINYINT(1) NULL  AFTER `pos_id` ;");
-        $this->query("DELETE FROM ffm.jos_xpinmaster WHERE Used=0;");
+        // $this->query("ALTER TABLE `jos_xpinmaster` ADD COLUMN `pos_id` INT NULL  AFTER `updated_at`;");
+        // $this->query("ALTER TABLE `jos_xpinmaster` ADD COLUMN `under_pos` TINYINT(1) NULL  AFTER `pos_id` ;");
+        $this->query("DELETE FROM jos_xpinmaster WHERE Used=0;");
 
         // Create Kit Ledgers
 
@@ -387,8 +398,8 @@ class page_resetall extends Page {
 
     function page_createOldSaleVouchers(){
         $dist=$this->add('Model_Distributor');
-        $dist->_dsql()->limit(500,$_GET['dist_page']*500);
-        $vn=$_GET['dist_page']*500  + 1;
+        $dist->_dsql()->limit(100,$_GET['dist_page']*100);
+        $vn=$_GET['dist_page']*100  + 1;
         foreach($dist as $junk){
             $k=$this->add('Model_Kit')->load($dist['kit_id']);
             $p=$this->add('Model_Pin')->load($dist['pin_id']);
@@ -412,8 +423,8 @@ class page_resetall extends Page {
 
     function page_createJoiningPaymentVouchers(){
         $dist=$this->add('Model_Distributor');
-        $dist->_dsql()->limit(500,$_GET['dist_page']*500);
-        $vn=$_GET['dist_page']*500  + 1;
+        $dist->_dsql()->limit(100,$_GET['dist_page']*100);
+        $vn=$_GET['dist_page']*100  + 1;
         $mv=$this->add('Model_PaymentReceivedVoucher');
         foreach($dist as $junk){
             
@@ -429,8 +440,8 @@ class page_resetall extends Page {
             $cr_accounts=array(
                     $l_from->id => array("Amount"=>$mrp)
                 );
-
-            $mv->addVoucher($dr_accounts, $cr_accounts, $vn++,false,$dist->id,null,$dist['JoiningDate']);
+            if($mrp != 0)
+                $mv->addVoucher($dr_accounts, $cr_accounts, $vn++,false,$dist->id,null,$dist['JoiningDate']);
         }
         $this->query("UPDATE jos_xxvouchers SET pos_id=1");
         $this->add('Text')->set('Joining Payement Receipt Vouchers Creation Done for page' . $_GET['dist_page']);
@@ -439,22 +450,26 @@ class page_resetall extends Page {
     function page_createCommissionVouchers(){
         $clossings=$this->add('Model_Closing');
         $clossings->addCondition('ClosingAmountNet','>',0);
-        $clossings->_dsql()->limit(500,$_GET['closing_page']*500);
+        $clossings->_dsql()->limit(100,$_GET['closing_page']*100);
         // throw $this->exception($_GET['closing_page']);
         $comm=$this->add('Model_CommissionVoucher');
-        $vn=$_GET['closing_page']*500  + 1;
+        $vn=$_GET['closing_page']*100  + 1;
         foreach($clossings as $c){
             $on_date=date("Y-m-d",strtotime(str_replace("_", "-", $c['closing'])));
             $dr_accounts=array(
                     7 => array("Amount"=>$c['ClosingTDSAmount']),
-                    8 => array("Amount"=>$c['ClosingAmountNet'])
+                    8 => array("Amount"=>$c['ClosingAmountNet']),
+                    23 => array("Amount"=>$c['ClosingServiceCharge']),
+                    24 => array('Amount' => $c['OtherDeductions']),
+                    25 => array('Amount'=>$c['FirstPayoutDeduction']),
+                    26 => array('Amount'=>$c['ClosingUpgradationDeduction'])
                 );
 
             $l_from=$this->add('Model_LedgerAll');
             $l_from->getDistributorLedger($c['distributor_id']);
             
             $cr_accounts=array(
-                    $l_from->id => array("Amount"=>$c['ClosingTDSAmount'] + $c['ClosingAmountNet'])
+                    $l_from->id => array("Amount"=>$c['ClosingAmount'])
                 );
 
 
@@ -469,10 +484,10 @@ class page_resetall extends Page {
     function page_createPayoutVouchers(){
         $clossings=$this->add('Model_Closing');
         $clossings->addCondition('ClosingAmountNet','>',0);
-        $clossings->_dsql()->limit(500,$_GET['closing_page']*500);
+        $clossings->_dsql()->limit(100,$_GET['closing_page']*100);
         // throw $this->exception($_GET['closing_page']);
         $comm=$this->add('Model_PaymentVoucher');
-        $vn=$_GET['closing_page']*500  + 1;
+        $vn=$_GET['closing_page']*100  + 1;
         foreach($clossings as $c){
             $on_date=date("Y-m-d",strtotime(str_replace("_", "-", $c['closing'])));
             $cr_accounts=array(

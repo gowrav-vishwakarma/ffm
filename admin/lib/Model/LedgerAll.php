@@ -22,7 +22,8 @@ class Model_LedgerAll extends Model_Table {
         $this->hasOne('Distributor','distributor_id')->system(true);
         $this->hasOne('Pos','pos_id')->system(true);
         $this->hasOne('Staff','staff_id')->system(true);
-        $this->hasMany('MyContraVouchers','ledger_contra_id');
+        $this->hasMany('MyContraVouchers','ledger_id');
+        $this->hasMany('MyVouchers','ledger_id');
         $this->hasMany('MyKitsToGive','from_ledger_id');
         $this->hasMany('MyKitsToTake','to_ledger_id');
         

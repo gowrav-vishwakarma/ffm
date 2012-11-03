@@ -23,7 +23,7 @@ class Model_VoucherAll extends Model_Table {
         $this->addField('AmountDR')->defaultValue(0);
         $this->addField('VoucherNo')->system(true);
         $this->addField('Narration')->type('text');
-        $this->addField('VoucherType')->enum('SALES','PURCHASE','JV','CONTRA')->mandatory("Voucher Type is must");
+        $this->addField('VoucherType')->enum(array('SALES','PURCHASE','JV','CONTRA'))->mandatory("Voucher Type is must");
         $this->addField('RefAccount');
         $this->addField('created_at')->type('date')->defaultValue($this->api->recall('setdate',date('Y-m-d')));
         $this->addField('entry_side');
