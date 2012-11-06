@@ -23,14 +23,14 @@ class Model_Distributor extends Model_Table {
 
         $details->addField('fullname', 'Name')->mandatory("Name is must to give");
         $details->addField('Father_HusbandName')->caption('Father/Husband Name');
-        $details->addField('Password')->type('password'); //->system(true);
+        $details->addField('Password')->display(array("form"=>"password")); //->system(true);
         $details->addField('Dob')->type('date');
         $details->addField('Address')->type('text');
         $details->addField('District');
         $details->addField('City');
         $details->addField('PanNo');
         $details->addField('State');
-        $details->addField('Gender')->type('radio')->setValueList(array("M"=>"Male","F"=>"Female"));
+        $details->addField('Gender')->type('radio')->display(array("grid"=>"text"))->setValueList(array("M"=>"Male","F"=>"Female"));
         $details->addField('Country');
         $details->addField('Nominee');
         $details->addField('RelationWithNominee','RelainWithNominee');
@@ -38,7 +38,7 @@ class Model_Distributor extends Model_Table {
         $details->addField('Bank');
         $details->addField('IFSC')->caption("IFSC Code");
         $details->addField('AccountNumber');
-        $details->addField('PinManagerPassword')->type('password');
+        $details->addField('PinManagerPassword')->display(array("form"=>"password"));
 
         $this->addField('JoiningDate')->type('date')->defaultValue(date('Y-m-d'));
         $this->addField('Path')->system(true);

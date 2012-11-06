@@ -106,6 +106,8 @@ class page_resetall extends Page {
         $s['name']="ffmadmin";
         $s->save();
 
+        $this->query("UPDATE jos_xxstaff SET pos_id=0 WHERE pos_id is null");
+
         
 //        Add all heads and default groups
         $head_array=array(
@@ -228,7 +230,7 @@ class page_resetall extends Page {
         // PIN TABLE ADD POS_ID
         // $this->query("ALTER TABLE `jos_xpinmaster` ADD COLUMN `pos_id` INT NULL  AFTER `updated_at`;");
         // $this->query("ALTER TABLE `jos_xpinmaster` ADD COLUMN `under_pos` TINYINT(1) NULL  AFTER `pos_id` ;");
-        $this->query("DELETE FROM jos_xpinmaster WHERE Used=0;");
+        // $this->query("DELETE FROM jos_xpinmaster WHERE Used=0;");
 
         // Create Kit Ledgers
 

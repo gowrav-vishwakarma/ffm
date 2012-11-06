@@ -55,7 +55,7 @@ class Frontend extends ApiFrontend {
             ->addMenuItem('pin_dashboard','Pins')
             ->addMenuItem('prd_dsh','Product Mng')
             ->addMenuItem('actemp','Accounts Top')
-            // ->addMenuItem('distributors/manage','Distributors')
+            ->addMenuItem('distributor','Distributors')
             ->addMenuItem('reports/dashboard','Reports')
             ->addMenuItem('logout')
             ;

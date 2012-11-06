@@ -34,7 +34,7 @@ class Form_Field_basic extends \Form_Field_Line {
 	}
 
 	function addCondition($q){
-		$this->model->addCondition($this->model->title_field,'like','%'.$q.'%');
+		$this->model->addCondition($this->model->title_field,'like','%'.strtolower($q).'%');
 		/*
 		$this->model->addCondition(
 			$this->model->dsql()->orExpr()
@@ -44,6 +44,7 @@ class Form_Field_basic extends \Form_Field_Line {
 				)->debug();
 
 		*/
+		// $this->model->debug();
 	}
 
 	function setOptions($options=array()){

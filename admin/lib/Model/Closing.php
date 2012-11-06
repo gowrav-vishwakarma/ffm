@@ -25,7 +25,7 @@ class Model_Closing extends Model_Table {
         $this->addField("ClosingAmount");
         $this->addField("ClosingTDSAmount");
         $this->addField("ClosingServiceCharge");
-        $this->addField("OtherDeductions");
+        $this->addField("OtherDeductions")->caption('Social Deduction');
         $this->addField("OtherDeductionRemarks");
         $this->addField("ClosingUpgradationDeduction");
         $this->addField("FirstPayoutDeduction");
@@ -33,6 +33,8 @@ class Model_Closing extends Model_Table {
         $this->addField("ClosingCarriedAmount");
         $this->addField("ChequeNo");
         $this->addField("CuriorNo");
+    
+        $this->addExpression("name")->set('Closing');
     }
 
 }

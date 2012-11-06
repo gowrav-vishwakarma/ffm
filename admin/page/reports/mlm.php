@@ -4,6 +4,7 @@ class page_reports_mlm extends page_reports {
 		parent::init();
 
 		$tabs=$this->add('Tabs');
+		$tabs->addTabURL('reports_mlm_closing','Closing Report');
 		$tabs->addTabURL('reports_mlm_total','OverAll Report');
 	}
 }
