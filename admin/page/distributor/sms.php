@@ -13,7 +13,7 @@ class page_distributor_sms extends Page{
        $form->addField('text','message');
        $form->addSubmit("Send");
        if($form->isSubmitted()){
-           $form->js()->univ()->successMessage("Message Successfully Send By Distributor ID ")->execute();
+           $form->js()->univ()->errorMessage("This functionalty Not Implemented Yet ")->execute();
        }
        
        
@@ -23,7 +23,7 @@ class page_distributor_sms extends Page{
        $form1->addSubmit('Send');
        
         if($form1->isSubmitted()){
-           $form1->js()->univ()->successMessage("Message Successfully Send By Distributor ID ")->execute();
+           $form1->js()->univ()->errorMessage("This functionalty Not Implemented Yet ")->execute();
        }
        }
 }

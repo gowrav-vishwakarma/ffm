@@ -9,7 +9,7 @@ class page_distributor_idshift extends Page{
         $form->addSubmit('Shift');
         
         if($form->isSubmitted()){
-            $form->js()->univ()->successMessage("ID Shifted Successfully")->execute();
+            $form->js()->univ()->errorMessage("This functionalty Not Implemented Yet ")->execute();
         }
     }
 }
