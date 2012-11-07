@@ -18,6 +18,7 @@ class page_closing_newclosing extends Page{
         $admin->setValue('NewJoinings','Stop');
         
         $Closing=$this->add('Model_Closing');
+        
         $Closing->updatePVBinaryAndFinalize();
         $Closing->updateRPBinaryAndFinalize();
         $Closing->updateRoyaltyIncome($closing_name);
