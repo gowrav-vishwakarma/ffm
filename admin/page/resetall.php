@@ -8,56 +8,56 @@
 class page_resetall extends Page {
 
     function page_index() {
+
+        $this->page_reset();
+        $this->page_createDistributorLedgers();        
+        $this->page_createOldSaleVouchers();
+        $this->page_createJoiningPaymentVouchers();
+        $this->page_createCommissionVouchers();
+        $this->page_createPayoutVouchers();
+
+
         $v = $this->add('View');
-        $reset = $this->add('Button')->set('(1) Reset');
-        $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Resetting...'))->hide())->atk4_load($this->api->url('./reset')));
+        // $reset = $this->add('Button')->set('(1) Reset');
+        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Resetting...'))->hide())->atk4_load($this->api->url('./reset')));
 
-        $reset = $this->add('Button')->set("(2) Create Distributor Ledgers");
-        $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createDistributorLedgers')));
+        // $reset = $this->add('Button')->set("(2) Create Distributor Ledgers");
+        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createDistributorLedgers')));
 
-        $distscount = $this->add('Model_Distributor')->count()->getOne();
-        $pages = $distscount / 100;
-        if ($distscount % 100 > 0)
-            $pages++;
-        for ($i = 0; $i < $pages; $i++) {
-            $reset = $this->add('Button')->set("(3 . $i) Create Distributor Sales Vouchers")->setStyle('border', '2px solid green');
-            $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createOldSaleVouchers')->setArguments(array('dist_page' => $i))));
-        }
+        // $distscount = $this->add('Model_Distributor')->count()->getOne();
+        // $pages = $distscount / 100;
+        // if ($distscount % 100 > 0)
+        //     $pages++;
+        
+        // Distributor sales voucher 
+        // $reset = $this->add('Button')->set("Create Distributor Sales Vouchers")->setStyle('border', '2px solid green');
+        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createOldSaleVouchers')));
 
-        for ($i = 0; $i < $pages; $i++) {
-            $reset = $this->add('Button')->set("(4 . $i) Create Distributor Payment Receipt Vouchers")->setStyle('border', '2px solid orange');
-            $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createJoiningPaymentVouchers')->setArguments(array('dist_page' => $i))));
-        }
+        // Disributor Payment receipt voucher
+        // $reset = $this->add('Button')->set("Create Distributor Payment Receipt Vouchers")->setStyle('border', '2px solid orange');
+        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createJoiningPaymentVouchers')));
 
-        $clossings = $this->add('Model_Closing');
-        $clossings->addCondition('ClosingAmountNet', '>', 0);
-        $closing_pages = ($clossings->count()->getOne() / 100);
-        if ($closing_pages % 100 > 0)
-            $closing_pages++;
-        for ($i = 0; $i < $closing_pages; $i++) {
-            $reset = $this->add('Button')->set("(5. $i) Create Distributor Commission Vouchers")->setStyle('border', '2px solid red');
-            $reset->js('click', $v->js(
-                            null, $reset->js(
-                                    null, $v->js()->text('Creating...')
-                            )->hide()
-                    )->atk4_load($this->api->url('./createCommissionVouchers')->setArguments(array('closing_page' => $i))));
-        }
+        // Distributor Commission vouchers Entry
+        // $reset = $this->add('Button')->set("Create Distributor Commission Vouchers")->setStyle('border', '2px solid red');
+        // $reset->js('click', $v->js(
+        //                 null, $reset->js(
+        //                         null, $v->js()->text('Creating...')
+        //                 )->hide()
+        //         )->atk4_load($this->api->url('./createCommissionVouchers')));
 
-
-        for ($i = 0; $i < $closing_pages; $i++) {
-            $reset = $this->add('Button')->set("(5. $i) Create Distributor Payout Vouchers")->setStyle('border', '2px solid blue');
-            $reset->js('click', $v->js(
-                            null, $reset->js(
-                                    null, $v->js()->text('Creating...')
-                            )->hide()
-                    )->atk4_load($this->api->url('./createPayoutVouchers')->setArguments(array('closing_page' => $i))));
-        }
+        // Distributor Payout Voucher Entry
+        // $reset = $this->add('Button')->set("Create Distributor Payout Vouchers")->setStyle('border', '2px solid blue');
+        // $reset->js('click', $v->js(
+        //                     null, $reset->js(
+        //                             null, $v->js()->text('Creating...')
+        //                     )->hide()
+        //             )->atk4_load($this->api->url('./createPayoutVouchers')));
 
         $reset = $this->add('Button')->set('(5) kit Send Marked');
         $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Sending Kits...'))->hide())->atk4_load($this->api->url('./sendKitsMarked')));
         
-        $reset = $this->add('Button')->set('Closing Name to Date');
-        $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Correcting closing name...'))->hide())->atk4_load($this->api->url('./correctClosingNames')));
+        // $reset = $this->add('Button')->set('Closing Name to Date');
+        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Correcting closing name...'))->hide())->atk4_load($this->api->url('./correctClosingNames')));
     }
 
     function page_reset() {
@@ -201,13 +201,13 @@ class page_resetall extends Page {
             /* 11 */"P and C Paint Shirt Sales" => 25, /* Sales Account */
             /* 12 */"My Choice Paint Shirt Sales" => 25, /* Sales Account */
             /* 13 */"BSL Paint Shirt Sales" => 25, /* Sales Account */
-            /* 14 */"Combo Paint Shirt Sales" => 25, /* Sales Account */
-            /* 15 */"Economy Paint Shirt Sales" => 25, /* Sales Account */
+            /* 14 */"Easy Pack Sales" => 25, /* Sales Account */
+            /* 15 */"High Choice Paint Shirt Sales" => 25, /* Sales Account */
             /* 16 */"Diamond Paint Shirt Sales" => 25, /* Sales Account */
             /* 17 */"Electro Paint Shirt Sales" => 25, /* Sales Account */
             /* 18 */"Executive Suit Length Sales" => 25, /* Sales Account */
-            /* 19 */"International Paint Shirt Sales" => 25, /* Sales Account */
-            /* 20 */"Best Paint Shirt Sales" => 25, /* Sales Account */
+            /* 19 */"Family Pack Paint Shirt Sales" => 25, /* Sales Account */
+            /* 20 */"Economy Paint Shirt Sales" => 25, /* Sales Account */
             /* 21 */"Executive Paint Shirt Sales" => 25, /* Sales Account */
             /* 22 */"XYZ Bank Account" => 19, /* Bank Account */
             /* 23 */"Service Charge" => 23, /* In Direct Income */
@@ -236,7 +236,7 @@ class page_resetall extends Page {
             /* Kit ID Easy kit */1 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                11 => 400
+                14 => 400
             ),
             /* Kit ID FFM Pack yfoc 2=>array(
               10 =>691.45,
@@ -246,7 +246,7 @@ class page_resetall extends Page {
             /* Kit ID Kit no 3 */11 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                13 => 1100
+                20 => 1100
             ),
             /* Kit ID kit no 4 */12 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
@@ -256,22 +256,22 @@ class page_resetall extends Page {
             /* Kit ID Kit NO 2 */13 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                14 => 900
+                19 => 900
             ),
             /* Kit ID Kit No 6 */14 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                14 => 234
+                17 => 234
             ),
             /* Kit ID Kit nO 7 */15 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                18 => 5300
+                21 => 5300
             ),
             /* Kit ID Kit No 8 */16 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                19 => 6300
+                15 => 6300
             ),
             /* Kit ID Kit No 9 */17 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
@@ -301,7 +301,7 @@ class page_resetall extends Page {
             /* Kit ID Safety Pack */22 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                15 => 2300
+                13 => 2300
             ),
             /* Kit ID Diamond Pack */23 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
@@ -311,17 +311,17 @@ class page_resetall extends Page {
             /* Kit ID Electro Pack */24 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                17 => 3800
+                21 => 3800
             ),
             /* Kit ID Combo Pack */25 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                18 => 5300
+                21 => 5300
             ),
             /* Kit ID Secure Pack 1 */26 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                19 => 6300
+                15 => 6300
             ),
             /* Kit ID Secure Pack 2 */27 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
@@ -346,17 +346,17 @@ class page_resetall extends Page {
             /* Kit ID Family Pack 1 */31 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                21 => 900
+                19 => 900
             ),
             /* Kit ID Family Pack 2 */32 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                20 => 1300
+                12 => 1300
             ),
             /* Kit ID Family Pack 3 */33 => array(
                 /* Ledger ID */10 => /* Amount */ 691.45,
                 9 => 8.55,
-                14 => 3300
+                17 => 3300
             ),
         );
 
@@ -396,114 +396,444 @@ class page_resetall extends Page {
     }
 
     function page_createOldSaleVouchers() {
-        $dist = $this->add('Model_Distributor');
-        $dist->_dsql()->limit(100, $_GET['dist_page'] * 100);
-        $vn = $_GET['dist_page'] * 100 + 1;
-        foreach ($dist as $junk) {
-            $k = $this->add('Model_Kit')->load($dist['kit_id']);
-            $p = $this->add('Model_Pin')->load($dist['pin_id']);
+        $this->query(
+                '
+                SET @rows = 0;
+                SET @vn = 0;
+                SET @ref = 1;
+                SET @rows2 = 1;
 
-            $l_from = $this->add('Model_LedgerAll');
-            $l_to = $this->add('Model_LedgerAll');
+                INSERT INTO jos_xxvouchers
+                    (
+                        SELECT
+                            0,
+                            ledger_id,
+                            pos_id,
+                            AmountCR,
+                            AmountDR,
+                            VoucherNo,
+                            Narration,
+                            VoucherType,
+                            refAccount,
+                            has_details,
+                            created_at,
+                            entry_side,
+                            entry_count_in_side
+                        FROM
+                            (
+                                    SELECT
+                                        0 aid,
+                                        kl.ledger_id ledger_id,
+                                        1 pos_id,
+                                        kl.Amount AmountCR,
+                                        0 AmountDR,
 
-            $l_from->getDistributorLedger($p['adcrd_id']);
-            $l_to->getDistributorLedger($dist->id);
+                                    IF (
+                                        MOD (@rows, 3) = 0,
+                                        @vn :=@vn + 1 ,@vn
+                                    ) VoucherNo,
+                                    Concat("Joining of ", dist.id) Narration,
+                                    "SALES" VoucherType,
+                                    dl.id refAccount,
+                                    0 has_details,
+                                    dist.JoiningDate created_at,
+                                    "CR" entry_side,
+                                    3 entry_count_in_side,
+                                    dist.kit_id,
+                                    k2.id,
 
-            $k->doSales(1, $l_to->id, $l_from->id, "Joining of " . $dist->id, $dist['JoiningDate'], $vn++);
-            $k->destroy();
-            $l_from->destroy();
-            $l_to->destroy();
-            unset($k);
-        }
-
-        $this->query("UPDATE jos_xxvouchers SET pos_id=1");
-        $this->add('Text')->set('Commission Vouchers Creation Done for page' . $_GET['dist_page']);
+                                IF (
+                                    MOD (@rows, 3) = 0 ,@ref := dl.id,
+                                    FALSE
+                                ) RefIncrement,
+                                @rows :=@rows + 1
+                            FROM
+                                jos_xtreedetails dist
+                            JOIN jos_xxledgers dl ON dist.id = dl.distributor_id
+                            AND dl.default_account = 1,
+                            jos_xxkitledgers kl
+                        JOIN jos_xkitmaster k2 ON k2.id = kl.kit_id
+                        HAVING
+                            dist.kit_id = k2.id
+                                 /* Distributor ledger Debit entry*/
+                                UNION
+                                    
+                                        SELECT
+                                            0 aid,
+                                            dl.id ledger_id,
+                                            1 pos_id,
+                                            0 AmountCR,
+                                            k.MRP AmountDR,
+                                            @rows2 VoucherNo,
+                                            CONCAT("Joining of ", d.id) Narration,
+                                            "SALES" VoucherType,
+                                            dl.id RefAccount,
+                                            0 has_details,
+                                            d.JoiningDate created_at,
+                                            "DR" entry_side,
+                                            1 entry_count_in_side,
+                                            @rows2 :=@rows2 + 1,
+                                            0 A,
+                                            0 B,
+                                            0 C
+                                        FROM
+                                            jos_xtreedetails d
+                                        JOIN jos_xkitmaster k ON d.kit_id = k.id
+                                        JOIN jos_xxledgers dl ON d.id = dl.distributor_id
+                            ) tmp
+                        ORDER BY
+                            tmp.VoucherNo,
+                            entry_count_in_side
+                    )
+                                '
+            );
+        $this->add('Text')->set(' Sales Vouchers Creation Done for page');
     }
 
     function page_createJoiningPaymentVouchers() {
-        $dist = $this->add('Model_Distributor');
-        $dist->_dsql()->limit(100, $_GET['dist_page'] * 100);
-        $vn = $_GET['dist_page'] * 100 + 1;
-        $mv = $this->add('Model_PaymentReceivedVoucher');
-        foreach ($dist as $junk) {
+        $this->query('
+            SET @vn = 0;
+            SET @vn2 = 0;
 
-            $mrp = $dist->ref('kit_id')->get('MRP');
-
-            $l_from = $this->add('Model_LedgerAll');
-            $l_from->getDistributorLedger($dist->id);
-
-            $dr_accounts = array(
-                22 => array("Amount" => $mrp)
-            );
-
-            $cr_accounts = array(
-                $l_from->id => array("Amount" => $mrp)
-            );
-            if ($mrp != 0)
-                $mv->addVoucher($dr_accounts, $cr_accounts, $vn++, false, $dist->id, null, $dist['JoiningDate']);
-        }
-        $this->query("UPDATE jos_xxvouchers SET pos_id=1");
-        $this->add('Text')->set('Joining Payement Receipt Vouchers Creation Done for page' . $_GET['dist_page']);
+            INSERT INTO jos_xxvouchers (
+                SELECT
+                    *
+                FROM
+                    (
+                        SELECT
+                            0,
+                            dl.id ledger_id,
+                            1 pos_id,
+                            k.MRP AmountCR,
+                            0 AmountDR,
+                            @vn :=@vn + 1 VoucherNo,
+                            CONCAT(
+                                "Received on ",
+                                d.JoiningDate
+                            ) Narration,
+                            "RECEIPT" VoucherType,
+                            dl.id RefAccount,
+                            0 has_details,
+                            d.JoiningDate created_at,
+                            "CR" entry_side,
+                            1 entry_count_in_side
+                        FROM
+                            jos_xtreedetails d
+                        JOIN jos_xxledgers dl ON dl.distributor_id = d.id
+                        JOIN jos_xkitmaster k ON k.id = d.kit_id
+                        UNION
+                            SELECT
+                                0,
+                                22 ledger_id,
+                                1 pos_id,
+                                0 AmountCR,
+                                k.MRP AmountDR,
+                                @vn2 :=@vn2 + 1 VoucherNo,
+                                CONCAT(
+                                    "Received on ",
+                                    d.JoiningDate
+                                ) Narration,
+                                "RECEIPT" VoucherType,
+                                dl.id RefAccount,
+                                0 has_details,
+                                d.JoiningDate created_at,
+                                "DR" entry_side,
+                                1 entry_count_in_side
+                            FROM
+                                jos_xtreedetails d
+                            JOIN jos_xxledgers dl ON dl.distributor_id = d.id
+                            JOIN jos_xkitmaster k ON k.id = d.kit_id
+                    ) tmp
+                ORDER BY
+                    VoucherNo
+            )
+            ');
+        $this->add('Text')->set('Joining Payement Receipt Vouchers Creation Done');
     }
 
     function page_createCommissionVouchers() {
-        $clossings = $this->add('Model_Closing');
-        $clossings->addCondition('ClosingAmountNet', '>', 0);
-        $clossings->_dsql()->limit(100, $_GET['closing_page'] * 100);
-        // throw $this->exception($_GET['closing_page']);
-        $comm = $this->add('Model_CommissionVoucher');
-        $vn = $_GET['closing_page'] * 100 + 1;
-        foreach ($clossings as $c) {
-            $on_date = date("Y-m-d", strtotime(str_replace("_", "-", $c['closing'])));
-            $dr_accounts = array(
-                7 => array("Amount" => $c['ClosingTDSAmount']),
-                8 => array("Amount" => $c['ClosingAmountNet']),
-                23 => array("Amount" => $c['ClosingServiceCharge']),
-                24 => array('Amount' => $c['OtherDeductions']),
-                25 => array('Amount' => $c['FirstPayoutDeduction']),
-                26 => array('Amount' => $c['ClosingUpgradationDeduction'])
-            );
 
-            $l_from = $this->add('Model_LedgerAll');
-            $l_from->getDistributorLedger($c['distributor_id']);
+        $this->page_correctClosingNames();
+        $this->query("
+            SET @vn1=0;
+            SET @vn2=0;
+            SET @vn3=0;
+            SET @vn4=0;
+            SET @vn5=0;
+            SET @vn6=0;
+            SET @vn7=0;
 
-            $cr_accounts = array(
-                $l_from->id => array("Amount" => $c['ClosingAmount'])
-            );
+            INSERT INTO jos_xxvouchers 
+            (SELECT * FROM
+            (
+            /*Total Amount CR Entry*/
+            SELECT 
+            0 aid,
+            dl.id ledger_id,
+            1 pos_id,
+            cl.ClosingAmount  AmountCR,
+            0 AmountDR,
+            @vn1:=@vn1+1 VoucherNumber,
+            concat('COMMISSION DUE ON DATE ', cl.closing) Narration,
+            'COMMISSION' VoucherType,
+            dl.id RefAccount,
+            0 has_details,
+            cl.closing created_at,
+            'CR' entry_side,
+            1 entry_count_in_side
+            FROM
+                        jos_xclosingmain cl
+            JOIN 
+                        jos_xtreedetails d on d.id=cl.distributor_id
+            JOIN
+                        jos_xxledgers dl on dl.distributor_id=d.id
+
+            WHERE
+
+            cl.ClosingAmount > 0
+
+            union
+
+            /* TDS Entry*/
+
+            SELECT 
+            0 aid,
+            7 ledger_id,
+            1 pos_id,
+            0  AmountCR,
+            cl.ClosingTDSAmount AmountDR,
+            @vn2:=@vn2+1 VoucherNumber,
+            concat('COMMISSION DUE ON DATE ', cl.closing) Narration,
+            'COMMISSION' VoucherType,
+            dl.id RefAccount,
+            0 has_details,
+            cl.closing created_at,
+            'DR' entry_side,
+            6 entry_count_in_side
+            FROM
+                        jos_xclosingmain cl
+            JOIN 
+                        jos_xtreedetails d on d.id=cl.distributor_id
+            JOIN
+                        jos_xxledgers dl on dl.distributor_id=d.id
+
+            WHERE
+
+            cl.ClosingAmount > 0
+
+            union
+
+            /*Closing Amount Net Entry*/
+            SELECT 
+            0 aid,
+            8 ledger_id,
+            1 pos_id,
+            0  AmountCR,
+            cl.ClosingAmountNet AmountDR,
+            @vn3:=@vn3+1 VoucherNumber,
+            concat('COMMISSION DUE ON DATE ', cl.closing) Narration,
+            'COMMISSION' VoucherType,
+            dl.id RefAccount,
+            0 has_details,
+            cl.closing created_at,
+            'DR' entry_side,
+            6 entry_count_in_side
+            FROM
+                        jos_xclosingmain cl
+            JOIN 
+                        jos_xtreedetails d on d.id=cl.distributor_id
+            JOIN
+                        jos_xxledgers dl on dl.distributor_id=d.id
+
+            WHERE
+
+            cl.ClosingAmount > 0
 
 
-            $comm->addVoucher($dr_accounts, $cr_accounts, $vn++, false, $c['distributor_id'], null, $on_date);
-            $l_from->destroy();
-        }
-        $this->query("UPDATE jos_xxvouchers SET pos_id=1");
-        $this->add('Text')->set('Comission Vouchers Creation Done for page ' . $_GET['closing_page']);
+            union
+
+            /*Closing Service charge Entry*/
+            SELECT 
+            0 aid,
+            23 ledger_id,
+            1 pos_id,
+            0  AmountCR,
+            cl.ClosingServiceCharge AmountDR,
+            @vn4:=@vn4+1 VoucherNumber,
+            concat('COMMISSION DUE ON DATE ', cl.closing) Narration,
+            'COMMISSION' VoucherType,
+            dl.id RefAccount,
+            0 has_details,
+            cl.closing created_at,
+            'DR' entry_side,
+            6 entry_count_in_side
+            FROM
+                        jos_xclosingmain cl
+            JOIN 
+                        jos_xtreedetails d on d.id=cl.distributor_id
+            JOIN
+                        jos_xxledgers dl on dl.distributor_id=d.id
+
+            WHERE
+
+            cl.ClosingAmount > 0
+
+
+            union
+
+            /*Other deduction , social fund Entry*/
+            SELECT 
+            0 aid,
+            24 ledger_id,
+            1 pos_id,
+            0  AmountCR,
+            cl.OtherDeductions AmountDR,
+            @vn5:=@vn5+1 VoucherNumber,
+            concat('COMMISSION DUE ON DATE ', cl.closing) Narration,
+            'COMMISSION' VoucherType,
+            dl.id RefAccount,
+            0 has_details,
+            cl.closing created_at,
+            'DR' entry_side,
+            6 entry_count_in_side
+            FROM
+                        jos_xclosingmain cl
+            JOIN 
+                        jos_xtreedetails d on d.id=cl.distributor_id
+            JOIN
+                        jos_xxledgers dl on dl.distributor_id=d.id
+
+            WHERE
+
+            cl.ClosingAmount > 0
+
+            union
+
+            /*First Payout Deduction Entry*/
+            SELECT 
+            0 aid,
+            25 ledger_id,
+            1 pos_id,
+            0  AmountCR,
+            cl.FirstPayoutDeduction AmountDR,
+            @vn6:=@vn6+1 VoucherNumber,
+            concat('COMMISSION DUE ON DATE ', cl.closing) Narration,
+            'COMMISSION' VoucherType,
+            dl.id RefAccount,
+            0 has_details,
+            cl.closing created_at,
+            'DR' entry_side,
+            6 entry_count_in_side
+            FROM
+                        jos_xclosingmain cl
+            JOIN 
+                        jos_xtreedetails d on d.id=cl.distributor_id
+            JOIN
+                        jos_xxledgers dl on dl.distributor_id=d.id
+
+            WHERE
+
+            cl.ClosingAmount > 0
+
+
+            union
+
+            /*Closing Upgradation Deduction Entry*/
+            SELECT 
+            0 aid,
+            26 ledger_id,
+            1 pos_id,
+            0  AmountCR,
+            cl.ClosingUpgradationDeduction AmountDR,
+            @vn7:=@vn7+1 VoucherNumber,
+            concat('COMMISSION DUE ON DATE ', cl.closing) Narration,
+            'COMMISSION' VoucherType,
+            dl.id RefAccount,
+            0 has_details,
+            cl.closing created_at,
+            'DR' entry_side,
+            6 entry_count_in_side
+            FROM
+                        jos_xclosingmain cl
+            JOIN 
+                        jos_xtreedetails d on d.id=cl.distributor_id
+            JOIN
+                        jos_xxledgers dl on dl.distributor_id=d.id
+
+            WHERE
+
+            cl.ClosingAmount > 0
+
+            ) tmp ORDER BY VoucherNumber, AmountDR
+            )
+            ");
+        $this->add('Text')->set('Comission Vouchers Creation Done for page ');
     }
 
     function page_createPayoutVouchers() {
-        $clossings = $this->add('Model_Closing');
-        $clossings->addCondition('ClosingAmountNet', '>', 0);
-        $clossings->_dsql()->limit(100, $_GET['closing_page'] * 100);
-        // throw $this->exception($_GET['closing_page']);
-        $comm = $this->add('Model_PaymentVoucher');
-        $vn = $_GET['closing_page'] * 100 + 1;
-        foreach ($clossings as $c) {
-            $on_date = date("Y-m-d", strtotime(str_replace("_", "-", $c['closing'])));
-            $cr_accounts = array(
-                22 => array("Amount" => $c['ClosingAmountNet'])
-            );
+        $this->query("SET @vn1=0;
+                        SET @vn2=0;
 
-            $l_from = $this->add('Model_LedgerAll');
-            $l_from->getDistributorLedger($c['distributor_id']);
+                        INSERT INTO jos_xxvouchers 
+                        (SELECT * FROM
+                        (
+                        /* NET  Amount CR Entry*/
+                        SELECT 
+                        0 aid,
+                        dl.id ledger_id,
+                        1 pos_id,
+                        0  AmountCR,
+                        cl.ClosingAmountNet AmountDR,
+                        @vn1:=@vn1+1 VoucherNumber,
+                        concat('PAYMENT ON DATE  ', cl.closing) Narration,
+                        'PAYMENT' VoucherType,
+                        dl.id RefAccount,
+                        0 has_details,
+                        cl.closing created_at,
+                        'DR' entry_side,
+                        1 entry_count_in_side
+                        FROM
+                                    jos_xclosingmain cl
+                        JOIN 
+                                    jos_xtreedetails d on d.id=cl.distributor_id
+                        JOIN
+                                    jos_xxledgers dl on dl.distributor_id=d.id
 
-            $dr_accounts = array(
-                $l_from->id => array("Amount" => $c['ClosingAmountNet'])
-            );
+                        WHERE
 
+                        cl.ClosingAmount > 0
 
-            $comm->addVoucher($dr_accounts, $cr_accounts, $vn++, false, $c['distributor_id'], null, $on_date);
-            $l_from->destroy();
-        }
-        $this->query("UPDATE jos_xxvouchers SET pos_id=1");
+                        union
+
+                        /* Bank Entry*/
+
+                        SELECT 
+                        0 aid,
+                        22 ledger_id,
+                        1 pos_id,
+                        cl.ClosingAmountNet  AmountCR,
+                        0 AmountDR,
+                        @vn2:=@vn2+1 VoucherNumber,
+                        concat('PAYMENT ON DATE ', cl.closing) Narration,
+                        'PAYMENT' VoucherType,
+                        dl.id RefAccount,
+                        0 has_details,
+                        cl.closing created_at,
+                        'CR' entry_side,
+                        1 entry_count_in_side
+                        FROM
+                                    jos_xclosingmain cl
+                        JOIN 
+                                    jos_xtreedetails d on d.id=cl.distributor_id
+                        JOIN
+                                    jos_xxledgers dl on dl.distributor_id=d.id
+
+                        WHERE
+
+                        cl.ClosingAmount > 0
+                        ) tmp ORDER BY VoucherNumber, AmountDR
+                        )
+");
         $this->add('Text')->set('Payment Vouchers Creation Done for page ' . $_GET['closing_page']);
     }
 
