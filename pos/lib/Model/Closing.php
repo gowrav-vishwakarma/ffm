@@ -107,6 +107,7 @@ class Model_Closing extends Model_Table {
     }
     
     function  updateRoyaltyIncome($closing_date){
+        throw $this->exception("Royalty called");
 //        $cr = new xConfig("royalty_income");
 //
 //        $closingDistributors = $this->add('Model_Distributor');
@@ -140,6 +141,10 @@ class Model_Closing extends Model_Table {
 //            $q = "UPDATE jos_xtreedetails SET RoyaltyIncome=($TotalClosingCount * $r3f )/ $rcdCount WHERE TotalPairPV >= $r3p";
 //            $this->query($q);
 //        }
+    }
+    
+    function updateRepurchaseIncome($closing_name){
+        throw $this->exception("Repurcahse caled");
     }
     
     function calculateTotalIncome($closing_name){

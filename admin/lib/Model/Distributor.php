@@ -135,12 +135,12 @@ class Model_Distributor extends Model_Table {
 
     }
 
-    function updateAnsesstors(){
+    function updateAnsesstors($PV=null,$BV=null,$RP=null){
         $Path = $this['Path'];
         $kit = $this->ref('kit_id');
-        $PV = $kit['PV'];
-        $BV = $kit['BV'];
-        $RP = $kit['RP'];
+        $PV = ($PV == null ) ? $kit['PV'] : $PV;
+        $BV = ($BV == null ) ? $kit['BV'] : $BV;
+        $RP = ($RP == null ) ? $kit['RP'] : $RP;
         // $IntroAmount = $kit['AmountToIntroducer'];
         $Green = $kit['DefaultGreen'];
 

@@ -18,46 +18,18 @@ class page_resetall extends Page {
 
 
         $v = $this->add('View');
-        // $reset = $this->add('Button')->set('(1) Reset');
-        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Resetting...'))->hide())->atk4_load($this->api->url('./reset')));
-
-        // $reset = $this->add('Button')->set("(2) Create Distributor Ledgers");
-        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createDistributorLedgers')));
-
-        // $distscount = $this->add('Model_Distributor')->count()->getOne();
-        // $pages = $distscount / 100;
-        // if ($distscount % 100 > 0)
-        //     $pages++;
-        
-        // Distributor sales voucher 
-        // $reset = $this->add('Button')->set("Create Distributor Sales Vouchers")->setStyle('border', '2px solid green');
-        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createOldSaleVouchers')));
-
-        // Disributor Payment receipt voucher
-        // $reset = $this->add('Button')->set("Create Distributor Payment Receipt Vouchers")->setStyle('border', '2px solid orange');
-        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Creating...'))->hide())->atk4_load($this->api->url('./createJoiningPaymentVouchers')));
-
-        // Distributor Commission vouchers Entry
-        // $reset = $this->add('Button')->set("Create Distributor Commission Vouchers")->setStyle('border', '2px solid red');
-        // $reset->js('click', $v->js(
-        //                 null, $reset->js(
-        //                         null, $v->js()->text('Creating...')
-        //                 )->hide()
-        //         )->atk4_load($this->api->url('./createCommissionVouchers')));
-
-        // Distributor Payout Voucher Entry
-        // $reset = $this->add('Button')->set("Create Distributor Payout Vouchers")->setStyle('border', '2px solid blue');
-        // $reset->js('click', $v->js(
-        //                     null, $reset->js(
-        //                             null, $v->js()->text('Creating...')
-        //                     )->hide()
-        //             )->atk4_load($this->api->url('./createPayoutVouchers')));
-
         $reset = $this->add('Button')->set('(5) kit Send Marked');
         $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Sending Kits...'))->hide())->atk4_load($this->api->url('./sendKitsMarked')));
         
-        // $reset = $this->add('Button')->set('Closing Name to Date');
-        // $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Correcting closing name...'))->hide())->atk4_load($this->api->url('./correctClosingNames')));
+        $this->query("
+                    CREATE TABLE `jos_xxbvslab` (
+                    `id` int( 11 ) NOT NULL AUTO_INCREMENT ,
+                    `name` int( 11 ) NOT NULL ,
+                    PRIMARY KEY ( `id` )
+                    ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
+            ");
+
+        
     }
 
     function page_reset() {

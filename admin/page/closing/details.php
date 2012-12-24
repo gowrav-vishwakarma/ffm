@@ -10,7 +10,7 @@ class page_closing_details extends Page {
 
         $c = $this->add('Model_Closing');
         $c_q = $c->dsql();
-        $c_q->del('field')->field($c->dsql()->expr('DISTINCT(closing) as name'));
+        $c_q->del('field')->field($c->dsql()->expr('DISTINCT(closing) as name'))->order('id','desc');
         $c_a = array("Select Any Closing");
         foreach ($c_q as $c_name) {
             $c_a[] = $c_name['name'];
@@ -32,8 +32,10 @@ class page_closing_details extends Page {
                 $m->addCondition('ClosingAmount', '>', 0);
             }
 
-            if ($_GET['closing'] != 0)
+            if ($_GET['closing'] != 0){
                 $m->addCondition('closing', $c_a[$_GET['closing']]);
+                $m->addCondition('ClosingAmountNet','>',0);
+            }
 
             $m->_dsql()->order('id');
             // $m->debug();

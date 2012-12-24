@@ -270,7 +270,7 @@ class Model_Closing extends Model_Table {
         $this->query("UPDATE jos_xtreedetails SET ClosingTDSAmount=0");
 
         $sq = "0";
-        if (true /*$c->getkey('TDSon') == 'AfterAllDeductions'*/) {
+        if (false /*$c->getkey('TDSon') == 'AfterAllDeductions'*/) {
             $sq = "t.ClosingServiceCharge + t.OtherDeductions +  t.ClosingUpgradationDeduction";
         }
 

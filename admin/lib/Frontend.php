@@ -58,6 +58,7 @@ class Frontend extends ApiFrontend {
             ->addMenuItem('distributor','Distributors')
             ->addMenuItem('closing','closing')
             ->addMenuItem('reports/dashboard','Reports')
+            ->addMenuItem('repurchase','Generation')
             ->addMenuItem('logout')
             ;
 

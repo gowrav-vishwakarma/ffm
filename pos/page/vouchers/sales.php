@@ -13,8 +13,8 @@ class page_vouchers_sales extends page_voucher {
         $ds=$tabs->addTab("Distributor Sales");
         $cs=$tabs->addTab("Cash Sales");
 
-        $dv=$ds->add("View_DistributorSalesVoucher");
-        $gv=$cs->add("View_GuestSalesVoucher");
+        $dv=$ds->add("View_DistributorSalesVoucher","dsv");
+        $gv=$cs->add("View_GuestSalesVoucher","gsp");
     }
 
 

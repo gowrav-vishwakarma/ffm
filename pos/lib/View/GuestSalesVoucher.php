@@ -5,7 +5,7 @@ class View_GuestSalesVoucher extends View_SalesPurchaseVoucher{
 	protected $party_ledgers = array("Cash Group","Bank Accounts");
 	protected $sales_purchase_ledger = "Sales Account";
 	protected $has_details = 1;
-	protected $rate_field = "MRP";
+	protected $rate_field = "DP";
 	protected $voucher_model = "SalesVoucher";
 
 

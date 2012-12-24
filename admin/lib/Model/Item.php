@@ -21,7 +21,9 @@ class Model_Item extends Model_Table {
 //        $this->addField("LastPurchasePrice");
         $this->addField("DealerPrice");
         $this->addField("RetailerPrice");
+        // $this->addField("PV");
         $this->addField("BV");
+        // $this->addField("RP");
         $this->addField("DP");
         $this->addField("MRP");
         $this->addField("Unit");

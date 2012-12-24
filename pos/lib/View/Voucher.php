@@ -10,11 +10,11 @@ class View_Voucher extends View {
 
 	function init(){
 		parent::init();		
-		$this->form = $this->add('Form');
+		$this->form = $this->add('Form',null,null,array('form_horizontal'));
 
 	}
 
 	function handleForm($form){
-
 	}
+
 }

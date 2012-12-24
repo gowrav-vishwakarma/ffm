@@ -12,18 +12,28 @@ class View_SalesPurchaseVoucher extends View_Voucher{
 
 		$this->form->addField('ledger','party',"Party")->setGroup($this->party_ledgers)->setEmptyText("Select party")->validateNotNull();
 		$this->form->addField('ledger','account')->setGroup($this->sales_purchase_ledger)->setNotNull("Select Account");
-		$this->form->addSeparator();
+		$this->form->addSeparator('atk-row');
 
 		if($this->has_details){
 			for($i=1; $i<= $this->has_details; $i++){
 				$item_field = $this->form->addField('dropdown','item'.$i)->setEmptyText("Select Item");
+				$item_field->template->trySet('row_class','span3');
 				$item_field->setModel('Item');
-				$this->form->addField('line','qty'.$i);
+				$this->form->addField('line','qty'.$i)->template->trySet('row_class','span3');
 				$rate = $this->form->addField('line','rate'.$i);
-				
-				$item_field->js(true)->univ()->bindFillInFields(array($this->rate_field=>$rate));
+				// $item_field->includeDictionary(array($this->rate_field));
+				// $item_field->js(true)->univ()->bindFillInFields(array($this->rate_field => $rate));
+				if($_GET['item'.$i]){
+					$itm=$this->add('Model_Item');
+					$itm->load($_GET['item'.$i]);
+					$rate->set($itm[$this->rate_field]);
+				}else{
+					$rate->template->trySet('row_class','span3');
+				}
+				$item_field->js('change',$this->form->js()->atk4_form('reloadField','rate'.$i,array($this->api->url(),"item".$i=>$item_field->js()->val())));
 
-				$this->form->addField('line','amount'.$i);
+				$this->form->addField('line','amount'.$i)->template->trySet('row_class','span3');
+				$this->form->addSeparator('atk-row');
 			}
 		}
 

@@ -8,8 +8,10 @@ class page_closing_newclosing extends Page{
         $form->addField('DatePicker','new_closing')->validateNotNull();
         $form->addField('checkbox','perform_royalty_closing');
         $form->addField('checkbox','perform_repurchase_closing');
-        $form->addSubmit('Confirm');
+        $btn=$form->addSubmit('Confirm');
         
+        $btn->js('click')->hide();
+
         if($form->isSubmitted()){
             
             $this->do_closing($form->get('new_closing'), $form->get('perform_royalty_closing'),$form->get('perform_repurchase_closing'));
