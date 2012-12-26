@@ -29,6 +29,7 @@ class page_resetall extends Page {
                     ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
             ");
 
+        $this->query("ALTER TABLE `jos_xtreedetails` CHANGE `ClosingBV` `ClosingBV` FLOAT( 20, 2 ) NOT NULL DEFAULT '0'");
         
     }
 
@@ -148,7 +149,7 @@ class page_resetall extends Page {
 
         // Create a few SUB Groups
         $sub_groups_arr = array(
-            "Cash Group" => array("ParentGroupID" => 16, "ParentGroupHeadID" => 8) /* 27 */
+            /* 28 */ "Cash Group" => array("ParentGroupID" => 16, "ParentGroupHeadID" => 8) /* 28 */
         );
 
         foreach ($sub_groups_arr as $grp => $grd_details) {
@@ -161,7 +162,7 @@ class page_resetall extends Page {
 
         // @TODO@ -- Create Default Ledgers
         $ledger_array = array(
-            /* 2 */"Cash" => 27 /* Group/SubGroup ID */,
+            /* 2 */"Cash" => 28 /* Group/SubGroup ID */,
             /* 3 */DISCOUNT_GIVEN => 21,
             /* 4 */DISCOUNT_TAKEN => 23,
             /* 5 */"Purchase Account" => 24,

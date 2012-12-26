@@ -130,6 +130,8 @@ class Model_VoucherAll extends Model_Table {
                 $vd->saveAndUnload();
             }
         }
+
+        return $auto_voucher;
         
     }
     
