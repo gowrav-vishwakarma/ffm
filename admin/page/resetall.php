@@ -21,13 +21,13 @@ class page_resetall extends Page {
         $reset = $this->add('Button')->set('(5) kit Send Marked');
         $reset->js('click', $v->js(null, $reset->js(null, $v->js()->text('Sending Kits...'))->hide())->atk4_load($this->api->url('./sendKitsMarked')));
         
-        $this->query("
-                    CREATE TABLE `jos_xxbvslab` (
-                    `id` int( 11 ) NOT NULL AUTO_INCREMENT ,
-                    `name` int( 11 ) NOT NULL ,
-                    PRIMARY KEY ( `id` )
-                    ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-            ");
+        // $this->query("
+        //             CREATE TABLE `jos_xxbvslab` (
+        //             `id` int( 11 ) NOT NULL AUTO_INCREMENT ,
+        //             `name` int( 11 ) NOT NULL ,
+        //             PRIMARY KEY ( `id` )
+        //             ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
+        //     ");
 
         $this->query("ALTER TABLE `jos_xtreedetails` CHANGE `ClosingBV` `ClosingBV` FLOAT( 20, 2 ) NOT NULL DEFAULT '0'");
         
