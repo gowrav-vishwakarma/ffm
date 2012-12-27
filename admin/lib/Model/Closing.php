@@ -144,7 +144,9 @@ class Model_Closing extends Model_Table {
     }
     
     function updateRepurchaseIncome($closing_name){
-        throw $this->exception("Repurcahse caled");
+        // actually nothing to do in calculations but making Closing BV zero
+        $this->query("UPDATE jos_xtreedetails SET ClosingBV=0");
+        $this->memorize('repurchase_closing','ClosingBV');
     }
     
     function calculateTotalIncome($closing_name){
@@ -162,6 +164,9 @@ class Model_Closing extends Model_Table {
             $q .="ClosingPairRP +";
         }
         
+        if($this->recall('$ClosingBvField',false) !== false){
+            $q .="ClosingBV +";
+        }
 
 //        if ($com_params->get('PlanHasRoyaltyIncome')) {
 //            $q .="RoyaltyIncome +";
@@ -335,7 +340,7 @@ class Model_Closing extends Model_Table {
         $q = "UPDATE jos_xtreedetails
                 SET
                     ClosingPairPV=0,
-                    ClosingBV=0,";
+                    "; //ClosingBV is maintained in repurchase income to be zero
         if (!true) {
             $q.="   ClosingPairRP=0,";
         }
@@ -350,7 +355,7 @@ class Model_Closing extends Model_Table {
         $q = "UPDATE jos_xlegs
             SET
                 ClosingPV=0,
-                ClosingBV=0,";
+                "; //ClosingBV is maintained in repurchase income to be zero
 //        $q .= " ClosingRP=0,";
         $q .= "ClosingIntros=0,
                 ClosingGreenCount=0,
@@ -364,17 +369,17 @@ class Model_Closing extends Model_Table {
 
     function saveclosing($closing) {
 //        SAVE IN jos_xbusinessclsongs
+        $ClosingBvField=$this->recall('repurchase_closing','0');
+
         $query = "INSERT INTO jos_xclosingmain " .
                 "(" .
                 "SELECT
                                     0,
                                     id,
-                                    '" .
-                $closing
-                . "',
+                                    '" . $closing. "',
                                      LastClosingCarryAmount,
                                      IntroductionIncome,
-                                     RMB,
+                                     $ClosingBvField, /* Going in RMB Field if repurchase is closing*/
                                      BinaryIncomeFromIntrosShare,
                                      LevelIncome1,
                                      LevelIncome2,

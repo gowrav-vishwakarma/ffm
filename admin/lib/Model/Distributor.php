@@ -44,6 +44,7 @@ class Model_Distributor extends Model_Table {
         $this->addField('Path')->system(true);
         $this->addField('TotalUpgradationDeduction')->system(true);
         $this->addField('ClosingUpgradationDeduction')->system(true);
+        $this->addField('ClosingBV')->system(true);
 
         $this->hasMany("SponsoredDistributors", "sponsor_id");
         $this->hasMany("Details", "distributor_id");

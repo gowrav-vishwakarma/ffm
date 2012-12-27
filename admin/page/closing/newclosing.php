@@ -6,15 +6,15 @@ class page_closing_newclosing extends Page{
         
         $form=$this->add('Form');
         $form->addField('DatePicker','new_closing')->validateNotNull();
-        $form->addField('checkbox','perform_royalty_closing');
-        $form->addField('checkbox','perform_repurchase_closing');
+        $form->addField('checkbox','do_royalty');
+        $form->addField('checkbox','do_repurchase');
         $btn=$form->addSubmit('Confirm');
         
         $btn->js('click')->hide();
 
         if($form->isSubmitted()){
             
-            $this->do_closing($form->get('new_closing'), $form->get('perform_royalty_closing'),$form->get('perform_repurchase_closing'));
+            $this->do_closing($form->get('new_closing'), $form->get('do_royalty'),$form->get('do_repurchase'));
             
             $form->js(null,$form->js()->univ()->successMessage("Closing Done"))->reload()->execute();
         }

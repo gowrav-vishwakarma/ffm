@@ -51,6 +51,8 @@ class View_Distributordetails extends View {
 
 		}
 
+		$this->template->trySet('ClosingBV',$model['ClosingBV']);
+
 		parent::setModel($model);
 	}
 
