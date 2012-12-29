@@ -8,7 +8,7 @@ class page_statements extends Page {
 		$grid=$this->add('Grid');
 		$grid->setModel(
 			$this->api->auth->model->ref('Closing'),
-			array('closing','LastClosingCarryAmount','BinaryIncome','FutureBinary','ClosingAmount','ClosingTDSAmount',
+			array('closing','LastClosingCarryAmount','BinaryIncome','FutureBinary','RMB', 'ClosingAmount','ClosingTDSAmount',
 				'ClosingServiceCharge','ClosingUpgradeDeduction','OtherDeduction','FirstPayoutDeduction','ClosingAmountNet'
 				)
 			);

@@ -16,7 +16,7 @@ class Model_Closing extends Model_Table {
         $this->addField("closing");
         $this->addField("LastClosingCarryAmount");
         $this->addField("IntroductionAmount");
-        $this->addField("RMB");
+        $this->addField("RMB")->caption('Repurchase Income');
         $this->addField("BinaryIncomeFromIntrosShare");
         $this->addField("BinaryIncome");
         $this->addField("FutureBinary");
