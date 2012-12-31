@@ -15,7 +15,7 @@ class View_DistributorSalesVoucher extends View_SalesPurchaseVoucher{
 		$this->dr_details = array('party'=>'total_amount');
 		$this->cr_details = array('account'=>'total_amount');
 
-		$this->form->addField('radio','payment')->setValueList(array('done'=>'Paid','due'=>'Payement Due'))->setNotNull();
+		$this->form->addField('Radio','payment')->setValueList(array('done'=>'Paid','due'=>'Payement Due'))->setNotNull();
 		$this->form->addField('ledger','pay_led','Payment Ledger')->setGroup(array("Cash Group","Bank Accounts"))->setEmptyText("Select Payment mode");                
 
 		if($this->form->isSubmitted()){
