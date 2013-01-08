@@ -90,8 +90,6 @@ class Model_Distributor extends Model_Table {
             $leg->save();
             
             $pin=$this->ref('pin_id');
-            $pin['Used']=true;
-            $pin->save();
 
             $kit=$pin->ref('kit_id');
 
@@ -119,9 +117,12 @@ class Model_Distributor extends Model_Table {
     function afterSave(){
         if($this->recall('new_entry',false)){
             $this->forget('new_entry');
-                $this->createLedger();
-                $this->updateAnsesstors();
-                $this->joiningVoucherEntry();
+            $this->createLedger();
+            $this->updateAnsesstors();
+            $this->joiningVoucherEntry();
+            $pin=$this->ref('pin_id');
+            $pin['Used']=true;
+            $pin->save();
         }
     }
 

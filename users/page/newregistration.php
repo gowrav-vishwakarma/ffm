@@ -4,6 +4,8 @@ class page_newregistration extends Page {
 		parent::init();
 	
 		$form=$this->add('Form');
+		$form->addClass('stacked atk-row');
+		$form->template->trySet('fieldset','span4');
 		$form->setModel('Distributor',array(
 								'sponsor_id',
 								'fullname',
@@ -22,14 +24,35 @@ class page_newregistration extends Page {
 							'Bank',
 							'IFSC',
 							'AccountNumber'));
+		$form->addField('password','re_pass');
 		$form->addField('dropdown','leg')->setValueList(array(
 												"-1"=>"select leg",
 												"A"=>"A",
 												"B"=>"B"))->set('-1');
 		$form->add('Order')->move('leg','after','sponsor')->now();
 		$form->addField('line','new_id','Distributor ID');
-		$form->addField('line','pin');
-		$form->addSubmit('Submit');
+		$form->addField('line','pin');		
+		$btnsubmit=$form->addButton('Submit');
+		$showsubmitbutton=$form->addButton('Wait... Form is being submitted, Click to get submit button AGAIN');
+		$showsubmitbutton->js(true)->hide();
+		$btnsubmit->js('click',array(
+								$btnsubmit->js()->hide(),
+								$form->js()->submit(),
+								$showsubmitbutton->js()->show()
+								)
+								);
+		$showsubmitbutton->js('click',
+									array(
+									$showsubmitbutton->js()->hide(),
+									$btnsubmit->js()->show()
+									)
+									);
+
+
+		$form->add('Order')
+			->move($form->addSeparator('span4'),'before','MobileNo')
+			->move($form->addSeparator('span4'),'before','PanNo')
+			->now();
 
 		if($form->isSubmitted()){
 

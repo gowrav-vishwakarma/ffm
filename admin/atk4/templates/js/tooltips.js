@@ -4,7 +4,8 @@ modified and localized by alexander shurkayev <alshur@narod.ru> | http://htmlcod
 */
 
 window.onerror = null;
-var tooltip_attr_name = "tooltip";
+// var tooltip_attr_name = "tooltip";
+var tooltip_attr_name = "title";
 var tooltip_blank_text = "(откроется в новом окне)"; // текст для ссылок с target="_blank"
 var tooltip_newline_entity = "  "; // укажите пустую строку (""), если не хотите использовать в tooltip'ах многострочность; ежели хотите, то укажите тот символ или символы, которые будут заменяться на перевод строки
 var tooltip_max_width = 0; // максимальная ширина tooltip'а в пикселах; обнулите это значение, если ширина должна быть нелимитирована

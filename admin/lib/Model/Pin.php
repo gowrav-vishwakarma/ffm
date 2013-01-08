@@ -19,6 +19,8 @@ class Model_Pin extends Model_Table {
 
         $this->addField('Pin');
 
+        $this->hasMany('Distributor','pin_id');
+
         $this->addField('Used')->type('boolean')->defaultValue(false);
         $this->addField('published')->type('boolean')->defaultValue(false);
         $this->addField('created_at')->type('date')->defaultValue(date('Y-m-d H:i:s'))->system(true);
@@ -26,7 +28,10 @@ class Model_Pin extends Model_Table {
 
         $this->addField('under_pos')->type('boolean')->defaultValue(true);
 
-        $this->addExpression('distributor_id')->set('id');
+        // $this->addExpression('distributor_id')->set(function($m,$q){
+        //     return $m->refSQL('Distributor')->dsql()->del('field')->field('name')->limit(1);
+        // });
+        $this->addExpression('distributor_id')->set('id')->caption('New Distributor ID');
 
         $this->addHook('beforeSave',$this);
 
@@ -191,7 +196,7 @@ class Model_Pin extends Model_Table {
         // $dist_ledger->debug();
         $dist_ledger->loadAny();
 
-        $pinkit->doSales($noofpins,$dist_ledger->id);
+        $pinkit->doSales($noofpins,$dist_ledger->id,null,"Sales of $noofpins Pins");
 
     }
 
@@ -214,19 +219,20 @@ class Model_Pin extends Model_Table {
 
     }
 
-    function saleFromDistToDist($from_dist=null,$to_dist,$noofpins=1,$narration,$on_date){
-        
+    function saleFromDistToDist($from_dist=null,$to_dist,$noofpins=1,$narration,$on_date=false){
+        if($on_date==false) $on_date=date('Y-m-d H:i:s');
         if($from_dist == null) $from_dist = $this['adcrd_id'];
 
         $pin=$this->add('Model_Pin');
-        $pin->addCondition('kit_id',$this->ref('kit_id')->id);
+        $pin->addCondition('kit_id',(int)$this->ref('kit_id')->id);
         $pin->addCondition('Used',false);
-        $pin->addCondition('adcrd_id',$from_dist);
+        $pin->addCondition('adcrd_id',(int)$from_dist);
         // $pin->addCondition('pos_id',$this->api->auth->model['pos_id']);
         $pin->addCondition('under_pos',false);
-
-        if($pin->count()->do_getOne() < $noofpins)
-            throw $this->exception("There are not sufficient unused pins to transfer");
+        // $pin->debug();
+        $pins_found=$pin->count()->getOne();
+        if( $pins_found < $noofpins)
+            throw $this->exception("There are not sufficient unused pins to transfer, found only ". $pins_found);
 
         // $pin=$this->add('Model_Pin');
         // $pin->addCondition('kit_id',$this->ref('kit_id')->id);

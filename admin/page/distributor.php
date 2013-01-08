@@ -7,7 +7,8 @@ class page_distributor extends Page {
             $tab->addTabURL('distributor_search','Search');
             $tab->addTabURL('distributor_sms','SMS');
             $tab->addTabURL('distributor_idshift','ID Shift');
-        
+            $tab->addTabURL('distributor_treeview','Tree View');
+        	
             
         }
         
